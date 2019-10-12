@@ -1,13 +1,23 @@
+require("dotenv").config();
 const express = require("express");
+var db = require("./models");
+var mongojs = require("mongojs");
+
+const app = express();
+const path = require("path");
+
+var axios = require("axios");
+
 
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
-const app = express();
 
-const path = require("path");
 
 // const apiRoutes = require("./routes/apiRoutes");
+
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -22,7 +32,7 @@ app.use(routes);
 
 // Send every other request to the React app
 // Define any API routes before this runs
-mongoose.connect(process.env.MONGODB_URI || "mongodb://etjcoder:blue4242@ds233288.mlab.com:33288/heroku_nv6mpjh8")
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/miladev")
 
 // app.get("*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "./client/build/index.html"));
