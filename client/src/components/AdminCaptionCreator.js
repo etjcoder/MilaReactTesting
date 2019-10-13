@@ -7,7 +7,7 @@ class AdminCaptionCreator extends Component {
 
     state = {
         caption: "",
-        category: "",
+        category: this.props.categories[0].category,
         author: "",
         reference: "",
         lyric: "",
@@ -29,29 +29,33 @@ class AdminCaptionCreator extends Component {
         });
     };
 
-    // gatherCaptions = () =>{
-    //     API.getCaptions()
-    //         .then(res =>
-    //             console.log(res))
-    //         .catch(err => console.log(err));
-    // }
-
-    // gatherCategories = () =>{
-    //     API.getCategories()
-    //         .then(res =>
-    //             console.log(res))
-    //         .catch(err => console.log(err));
-    // }
-
     testState = () => {
         console.log(this.state.books)
-    }
+    } 
+
+
 
     handleFormSubmit = event => {
         event.preventDefault();
-        console.log(this.state);
-        // this.searchBooks(this.state.search)
+
+        var apiTags = this.state.tags;
+        var lowerCaseTags = apiTags.toLowerCase();
+        var splicedArr = lowerCaseTags.split(", ")
+        console.log(splicedArr)
+
+          API.saveCaption({
+            caption: this.state.caption,
+            category: this.state.category,
+            author: this.state.author,
+            reference: this.state.reference,
+            originalAuthor: this.state.originalAuthor,
+            tags: splicedArr
+        })
+        .then(res => console.log("Successfully added caption"))
+        .catch(err => console.log)
     }
+
+    
 
     render() {
         return (
@@ -63,7 +67,7 @@ class AdminCaptionCreator extends Component {
                     <select value={this.state.category} onChange={this.handleInputChange} name="category">
 
                         {this.props.categories.map(listedcategory => (
-                            <option key={listedcategory._id} value={ listedcategory.category }>{listedcategory.category}</option>
+                           <option key={listedcategory._id} value={listedcategory.category}>{listedcategory.category}</option>
                         ))}
 
                     </select>
