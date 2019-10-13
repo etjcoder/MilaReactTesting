@@ -1,27 +1,12 @@
 import React from "react";
-// import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-// import Books from "./pages/Books";
 import NoMatch from "./pages/NoMatch";
-// import SavedBooks from "./pages/SavedBooks";
 import Nav from "./components/Nav/";
 import Home from "./pages/Home";
 import AdminDash from "./pages/AdminDash";
 import UserDash from "./pages/UserDash";
 // import Test from "./pages/Test";
 
-// class App extends Component {
-  // state = {
-  //   books: [],
-  //   title: "",
-  //   author: "",
-  //   image: "",
-  //   description: "",
-  //   link: "",
-  // }
-
-
-  // render() {
 
 function App () {
     console.log("Mira App loaded");

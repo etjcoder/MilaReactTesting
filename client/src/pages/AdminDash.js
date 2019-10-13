@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron/";
-// import API from "../utils/API";
+import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid/";
 import { List, ListItem } from "../components/List/";
 import { Input, FormBtn } from "../components/Form";
@@ -11,12 +11,25 @@ class AdminDash extends Component {
 
     state = {
         captions: [],
-        showCaptionCreator: false
+        showCaptionCreator: false,
+        categories: []
     }
 
     componentDidMount() {
         console.log("loaded admin Dashboard page");
+        this.gatherCategories()
+
     }
+
+    gatherCategories = () => {
+        API.getCategories()
+            .then(res =>
+                this.setState({
+                    categories: res.data   
+                }))
+            // .catch(err => console.log(err)))
+    }
+ 
 
     onClickCaption = () => {
 
@@ -43,7 +56,7 @@ class AdminDash extends Component {
                         </Jumbotron>
                         <input type="submit" value="CreateCaption" onClick={this.onClickCaption} />
                         <div>
-                            {this.state.showCaptionCreator ? <AdminCaptionCreator toggleShow={this.OnClickCaption} /> : null}
+                            {this.state.showCaptionCreator ? <AdminCaptionCreator categories={this.state.categories} toggleShow={this.OnClickCaption} /> : null}
                         </div>
                     </Col>
                 </Row>
