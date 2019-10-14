@@ -9,6 +9,9 @@ router.route("/captions")
     .post(adminController.createCap)
     .get(adminController.findAllCaps)
 
+router.route("/captions/:id")
+    .put(adminController.update)
+
 module.exports = router;
 
 

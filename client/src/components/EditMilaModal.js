@@ -31,11 +31,21 @@ export default class EditMilaModal extends React.Component {
     handleFormSubmit = event => {
         event.preventDefault();
 
-        // var apiTags = this.props.tags;
+        // var apiTags = this.state.tags;
         // var lowerCaseTags = apiTags.toLowerCase();
         // var splicedArr = lowerCaseTags.split(", ")
-        // console.log(splicedArr);
+        // console.log(splicedArr)
         console.log(this.state);
+
+        API.updateCaption(this.state.id, {
+            caption: this.state.caption,
+            category: this.state.category,
+            author: this.state.author,
+            reference: this.state.reference,
+            originalAuthor: this.state.originalAuthor,
+            tags: this.state.tags
+        })
+        
 
     }
 

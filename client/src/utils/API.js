@@ -12,6 +12,9 @@ export default {
     },
     getCaptions: function() {
         return axios.get("/api/admin/captions")
+    },
+    updateCaption: function(id, data) {
+        return axios.put("/api/admin/captions/" + id, data);
     }
 
 }
