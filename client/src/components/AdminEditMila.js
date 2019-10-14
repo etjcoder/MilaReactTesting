@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Input } from "./Form";
 import API from "../utils/API";
+import EditMilaModal from "./EditMilaModal";
 
 class AdminEditMila extends Component {
 
@@ -13,7 +14,9 @@ class AdminEditMila extends Component {
         lyric: "",
         quote: "",
         originalAuthor: "",
-        tags: ""
+        tags: "",
+        editMilaShown: false,
+        editMilaData: ""
     }
 
     componentDidMount() {
@@ -21,12 +24,59 @@ class AdminEditMila extends Component {
         console.log(this.props.captions);
     }
 
+    // Two ways to do this, pass through entire object or just an ID
+    editMilaRow = (data) => {
 
+        console.log("You've chosen to revise: " + data);
+        console.log("The ID you've chosen is: " + data);
+        if (this.state.editMilaShown === false) {
+            this.setState({
+                editMilaShown: true,
+                editMilaData: data
+            }) 
+        } else {
+                this.setState({
+                    editMilaShown: false,
+                    editMilaData: ""
+                })
+            }
+        }
+    
 
-
+    
     render() {
         return (
-            <h1> Edit Mila</h1>
+            <div>
+                <h5>Edit Mila Captions Below</h5>
+                <div>
+                    {this.state.editMilaShown ? <EditMilaModal /> : null}
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Caption</th>
+                            <th>Category</th>
+                            <th>Author</th>
+                            <th>Reference</th>
+                            <th>Original Author</th>
+                            <th>Tags</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.props.captions.map(caption => (
+                            <tr key={caption._id}>
+                                <td>{caption.caption}</td>
+                                <td>{caption.category}</td>
+                                <td>{caption.author}</td>
+                                <td>{caption.reference}</td>
+                                <td>{caption.originalAuthor}</td>
+                                <td>{caption.tags}</td>
+                                <td><button value={caption._id} onClick={() => this.editMilaRow(caption)}/></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         )
     }
 }
