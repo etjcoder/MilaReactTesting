@@ -1,13 +1,14 @@
 const router = require("express").Router();
 const adminController = require("../../controllers/adminController");
 
-
-// Matches with /api/admin/captions
-// router.route("/")
-//     .get(adminController.getCaptions);
-
 router.route("/category")
-    .get(adminController.findAll);
+    .get(adminController.findAll)
+    .post(adminController.create)
 
+router.route("/captions")
+    .post(adminController.createCap)
 
 module.exports = router;
+
+
+

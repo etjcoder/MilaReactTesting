@@ -2,16 +2,20 @@ import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron/";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid/";
-import { List, ListItem } from "../components/List/";
-import { Input, FormBtn } from "../components/Form";
-import SearchBtn from "../components/SearchBtn";
+// import { List, ListItem } from "../components/List/";
+// import { Input, FormBtn } from "../components/Form";
+// import SearchBtn from "../components/SearchBtn";
 import AdminCaptionCreator from "../components/AdminCaptionCreator";
+import AdminCategoryCreator from "../components/AdminCategoryCreator";
+import AdminEditMila from "../components/AdminEditMila";
 
 class AdminDash extends Component {
 
     state = {
         captions: [],
         showCaptionCreator: false,
+        showCategoryCreator: false,
+        showMilaEditor: false,
         categories: []
     }
 
@@ -32,16 +36,43 @@ class AdminDash extends Component {
  
 
     onClickCaption = () => {
-
         if (this.state.showCaptionCreator === false) {
-
             this.setState({
-                showCaptionCreator: true
+                showCaptionCreator: true,
+                showCategoryCreator: false,
+                showMilaEditor: false
             })
-
         } else {
             this.setState({
                 showCaptionCreator: false
+            })
+        }
+    }
+
+    onClickCategory = () => {
+        if (this.state.showCategoryCreator === false) {
+            this.setState({
+                showCaptionCreator: false,
+                showCategoryCreator: true,
+                showMilaEditor: false
+            })
+        } else {
+            this.setState({
+                showCategoryCreator: false
+            })
+        }
+    }
+
+    onClickEditMila = () => {
+        if (this.state.showMilaEditor === false) {
+            this.setState({
+                showCaptionCreator: false,
+                showCategoryCreator: false,
+                showMilaEditor: true
+            })
+        } else {
+            this.setState({
+                showMilaEditor: false
             })
         }
     }
@@ -58,6 +89,14 @@ class AdminDash extends Component {
                         <div>
                             {this.state.showCaptionCreator ? <AdminCaptionCreator categories={this.state.categories} toggleShow={this.OnClickCaption} /> : null}
                         </div>
+                        <input type="submit" value="CreateCategory" onClick={this.onClickCategory} />
+                        <div>
+                            {this.state.showCategoryCreator ? <AdminCategoryCreator categories={this.state.categories} toggleShow={this.OnClickCategory} /> : null}
+                        </div>
+                        <input type="submit" value="Edit Mila Categories" onClick={this.onClickEditMila} />
+                            <div>
+                                {this.state.showMilaEditor ? <AdminEditMila categories={this.state.categories} toggleShow={this.OnClickEditMila} /> : null}
+                            </div>
                     </Col>
                 </Row>
             </Container>
