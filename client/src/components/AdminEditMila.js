@@ -28,7 +28,7 @@ class AdminEditMila extends Component {
     editMilaRow = (data) => {
 
         console.log("You've chosen to revise: " + data);
-        console.log("The ID you've chosen is: " + data);
+        console.log("The ID you've chosen is: " + JSON.stringify(data));
         if (this.state.editMilaShown === false) {
             this.setState({
                 editMilaShown: true,
@@ -49,8 +49,10 @@ class AdminEditMila extends Component {
             <div>
                 <h5>Edit Mila Captions Below</h5>
                 <div>
-                    {this.state.editMilaShown ? <EditMilaModal /> : null}
+                    {this.state.editMilaShown ? <EditMilaModal caption={this.state.editMilaData} categories={this.props.categories}/> : null}
                 </div>
+                <br />
+                <br />
                 <table>
                     <thead>
                         <tr>
