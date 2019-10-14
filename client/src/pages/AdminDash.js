@@ -12,18 +12,19 @@ import AdminEditMila from "../components/AdminEditMila";
 class AdminDash extends Component {
 
     state = {
-        captions: [],
         showCaptionCreator: false,
         showCategoryCreator: false,
         showMilaEditor: false,
-        categories: []
-    }
+        categories: [],
+        captions: [],
+    };
 
     componentDidMount() {
         console.log("loaded admin Dashboard page");
         this.gatherCategories()
+        this.gatherCaptions()
 
-    }
+    };
 
     gatherCategories = () => {
         API.getCategories()
@@ -32,8 +33,15 @@ class AdminDash extends Component {
                     categories: res.data   
                 }))
             // .catch(err => console.log(err)))
+    };
+    
+    gatherCaptions = () => {
+        API.getCaptions()
+            .then(res => 
+                 this.setState({
+                    captions: res.data
+                }))
     }
- 
 
     onClickCaption = () => {
         if (this.state.showCaptionCreator === false) {
@@ -95,7 +103,7 @@ class AdminDash extends Component {
                         </div>
                         <input type="submit" value="Edit Mila Categories" onClick={this.onClickEditMila} />
                             <div>
-                                {this.state.showMilaEditor ? <AdminEditMila categories={this.state.categories} toggleShow={this.OnClickEditMila} /> : null}
+                                {this.state.showMilaEditor ? <AdminEditMila categories={this.state.categories} captions={this.state.captions} toggleShow={this.OnClickEditMila} /> : null}
                             </div>
                     </Col>
                 </Row>

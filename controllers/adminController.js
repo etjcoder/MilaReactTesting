@@ -20,5 +20,12 @@ module.exports = {
             .create(req.body)
             .then(dbCaption => res.json(dbCaption))
             .catch(err => res.status(422).json(err))
+    },
+    findAllCaps: function(req, res) {
+        db.Maincaption  
+            .find()
+            .sort({"category": 1})
+            .then(dbCaption => res.json(dbCaption))
+            .catch(err => res.status(422).json(err))
     }
 };

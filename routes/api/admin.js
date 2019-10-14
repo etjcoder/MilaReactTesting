@@ -7,6 +7,7 @@ router.route("/category")
 
 router.route("/captions")
     .post(adminController.createCap)
+    .get(adminController.findAllCaps)
 
 module.exports = router;
 

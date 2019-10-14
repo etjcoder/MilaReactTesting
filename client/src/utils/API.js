@@ -9,6 +9,9 @@ export default {
     },
     saveCategory: function(data) {
         return axios.post("/api/admin/category", data);
+    },
+    getCaptions: function() {
+        return axios.get("/api/admin/captions")
     }
 
 }
