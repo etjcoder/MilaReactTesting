@@ -28,24 +28,53 @@ export default class EditMilaModal extends React.Component {
         });
     };
 
-    handleFormSubmit = event => {
+    prepareFormSubmit = event => {
         event.preventDefault();
 
-        // var apiTags = this.state.tags;
-        // var lowerCaseTags = apiTags.toLowerCase();
-        // var splicedArr = lowerCaseTags.split(", ")
-        // console.log(splicedArr)
-        console.log(this.state);
+        var apiTags = this.state.tags
 
-        API.updateCaption(this.state.id, {
-            caption: this.state.caption,
-            category: this.state.category,
-            author: this.state.author,
-            reference: this.state.reference,
-            originalAuthor: this.state.originalAuthor,
-            tags: this.state.tags
-        })
-        
+        if (typeof apiTags === "string") {
+            var dataString = apiTags.replace(/]|[[]\"/g, "");
+
+            this.handleFormSubmit(dataString)
+
+        } else {
+            this.handleFormSubmit(apiTags)
+        }
+
+    }
+
+    handleFormSubmit = arr => {
+
+        if (typeof arr === "string") {
+            var lowerCaseTags = arr.toLowerCase();
+            var splicedArr = lowerCaseTags.split(", ")
+            console.log(splicedArr);
+
+            API.updateCaption(this.state.id, {
+                caption: this.state.caption,
+                category: this.state.category,
+                author: this.state.author,
+                reference: this.state.reference,
+                originalAuthor: this.state.originalAuthor,
+                tags: splicedArr
+            })
+                .then(res => console.log("Successfully updated caption"))
+                .catch(err => console.log)
+
+        } else {
+
+            API.updateCaption(this.state.id, {
+                caption: this.state.caption,
+                category: this.state.category,
+                author: this.state.author,
+                reference: this.state.reference,
+                originalAuthor: this.state.originalAuthor,
+                tags: this.state.tags
+            })
+                .then(res => console.log("Successfully updated caption"))
+                .catch(err => console.log)
+        }
 
     }
 
@@ -66,7 +95,7 @@ export default class EditMilaModal extends React.Component {
                     <Input value={this.state.author} onChange={this.handleInputChange} name="author" placeholder="Your name goes here" />
                     <Input value={this.state.reference} onChange={this.handleInputChange} name="reference" placeholder="Caption's reference goes here" />
                     <Input value={this.state.tags} onChange={this.handleInputChange} name="tags" placeholder="Tags go here, separate with commas!" />
-                    <button onClick={this.handleFormSubmit}>Submit your caption</button>
+                    <button onClick={this.prepareFormSubmit}>Submit your caption</button>
                 </form>
             </div>
         )
