@@ -19,6 +19,7 @@ export default class EditMilaModal extends React.Component {
     componentDidMount() {
         console.log(this.props.caption)
         console.log(this.props.categories)
+  
     }
 
     handleInputChange = event => {
@@ -35,8 +36,9 @@ export default class EditMilaModal extends React.Component {
 
         if (typeof apiTags === "string") {
             var dataString = apiTags.replace(/]|[[]\"/g, "");
+            var noSpaceString = dataString.replace(/ /g, "");
 
-            this.handleFormSubmit(dataString)
+            this.handleFormSubmit(noSpaceString)
 
         } else {
             this.handleFormSubmit(apiTags)
@@ -48,7 +50,7 @@ export default class EditMilaModal extends React.Component {
 
         if (typeof arr === "string") {
             var lowerCaseTags = arr.toLowerCase();
-            var splicedArr = lowerCaseTags.split(", ")
+            var splicedArr = lowerCaseTags.split(",")
             console.log(splicedArr);
 
             API.updateCaption(this.state.id, {
@@ -94,7 +96,8 @@ export default class EditMilaModal extends React.Component {
                     </select>
                     <Input value={this.state.author} onChange={this.handleInputChange} name="author" placeholder="Your name goes here" />
                     <Input value={this.state.reference} onChange={this.handleInputChange} name="reference" placeholder="Caption's reference goes here" />
-                    <Input value={this.state.tags} onChange={this.handleInputChange} name="tags" placeholder="Tags go here, separate with commas!" />
+                    <p>Current Tags {this.props.caption.tags}, must re-enter and separate with comma's!</p>
+                    <Input value={this.state.tags} onChange={this.handleInputChange} name="tags" placeholder="Insert captions here" />
                     <button onClick={this.prepareFormSubmit}>Submit your caption</button>
                 </form>
             </div>

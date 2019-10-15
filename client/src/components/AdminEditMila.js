@@ -73,7 +73,7 @@ class AdminEditMila extends Component {
                                 <td>{caption.reference}</td>
                                 <td>{caption.originalAuthor}</td>
                                 <td>{caption.tags}</td>
-                                <td><button value={caption._id} onClick={() => this.editMilaRow(caption)}/></td>
+                                <td><button value={caption._id} onClick={() => this.editMilaRow(caption)}>Edit</button></td>
                             </tr>
                         ))}
                     </tbody>
