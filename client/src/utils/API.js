@@ -15,6 +15,11 @@ export default {
     },
     updateCaption: function(id, data) {
         return axios.put("/api/admin/captions/" + id, data);
+    },
+    deleteCaption: function(id) {
+        return axios.delete("/api/admin/captions/" + id);
+    },
+    featureCaption: function(id) {
+        return axios.post("/api/admin/captions/" + id);
     }
-
 }

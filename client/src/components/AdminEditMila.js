@@ -42,7 +42,17 @@ class AdminEditMila extends Component {
             }
         }
     
+    deleteCaption = (id) => {
 
+        API.deleteCaption(id)
+            .then(res => console.log("Successfully deleted caption!"))
+            .catch(err => console.log(err));
+    }
+
+    featureCaption = (id) => {
+        API.featureCaption(id)
+            .then(res => console.log("Successfully featured caption!"))
+    }
     
     render() {
         return (
@@ -74,6 +84,8 @@ class AdminEditMila extends Component {
                                 <td>{caption.originalAuthor}</td>
                                 <td>{caption.tags}</td>
                                 <td><button value={caption._id} onClick={() => this.editMilaRow(caption)}>Edit</button></td>
+                                <td><button value={caption._id} onClick={() => this.deleteCaption(caption._id)}>Delete</button></td>
+                                <td><button value={caption._id} onClick={() => this.featureCaption(caption._id)}>Feature</button></td>
                             </tr>
                         ))}
                     </tbody>

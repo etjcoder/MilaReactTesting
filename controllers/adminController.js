@@ -33,5 +33,18 @@ module.exports = {
             .findOneAndUpdate({ _id: req.params.id}, req.body)
             .then(dbCaption => res.json(dbCaption))
             .catch(err => res.status(422).json(err))
+    },
+    deleteCap: function(req, res) {
+        db.Maincaption  
+            .findById({_id: req.params.id})
+            .then(dbCaption => dbCaption.remove())
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+    },
+    featureCap: function(req, res) {
+        db.Maincaption  
+            .findOneAndUpdate({ _id: req.params.id}, {featured: true})
+            .then(dbCaption => res.json(dbCaption))
+            .catch(err => res.status(422).json(err))
     }
 };

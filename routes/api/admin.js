@@ -11,6 +11,8 @@ router.route("/captions")
 
 router.route("/captions/:id")
     .put(adminController.update)
+    .delete(adminController.deleteCap)
+    .post(adminController.featureCap)
 
 module.exports = router;
 

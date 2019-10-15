@@ -101,7 +101,7 @@ class AdminDash extends Component {
                         <div>
                             {this.state.showCategoryCreator ? <AdminCategoryCreator categories={this.state.categories} toggleShow={this.OnClickCategory} /> : null}
                         </div>
-                        <input type="submit" value="Edit Mila Categories" onClick={this.onClickEditMila} />
+                        <input type="submit" value="Edit Mila Main Database Captions" onClick={this.onClickEditMila} />
                             <div>
                                 {this.state.showMilaEditor ? <AdminEditMila categories={this.state.categories} captions={this.state.captions} toggleShow={this.OnClickEditMila} /> : null}
                             </div>
