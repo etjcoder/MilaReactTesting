@@ -14,6 +14,12 @@ router.route("/captions/:id")
     .delete(adminController.deleteCap)
     .post(adminController.featureCap)
 
+router.route("/captions/featured")
+    .get(adminController.findAllFeaturedMila)
+
+router.route("/captions/featured/:id")
+    .put(adminController.unfeatureMila)
+
 module.exports = router;
 
 

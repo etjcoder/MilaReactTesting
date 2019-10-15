@@ -8,6 +8,7 @@ import { Col, Row, Container } from "../components/Grid/";
 import AdminCaptionCreator from "../components/AdminCaptionCreator";
 import AdminCategoryCreator from "../components/AdminCategoryCreator";
 import AdminEditMila from "../components/AdminEditMila";
+import AdminFeaturedMila from "../components/AdminFeaturedMila";
 
 class AdminDash extends Component {
 
@@ -15,14 +16,17 @@ class AdminDash extends Component {
         showCaptionCreator: false,
         showCategoryCreator: false,
         showMilaEditor: false,
+        showMilaFeatured: false,
         categories: [],
         captions: [],
+        featuredCaps: []
     };
 
     componentDidMount() {
         console.log("loaded admin Dashboard page");
         this.gatherCategories()
         this.gatherCaptions()
+        this.gatherFeaturedCaptions()
 
     };
 
@@ -38,8 +42,18 @@ class AdminDash extends Component {
     gatherCaptions = () => {
         API.getCaptions()
             .then(res => 
-                 this.setState({
-                    captions: res.data
+                console.log(res.data)
+                //  this.setState({
+                //     captions: res.data
+                // })
+                )
+    }
+
+    gatherFeaturedCaptions = () => {
+        API.getFeaturedCaptions()
+            .then(res => 
+                this.setState({
+                    featuredCaps: res.data
                 }))
     }
 
@@ -48,7 +62,8 @@ class AdminDash extends Component {
             this.setState({
                 showCaptionCreator: true,
                 showCategoryCreator: false,
-                showMilaEditor: false
+                showMilaEditor: false,
+                showMilaFeatured: false
             })
         } else {
             this.setState({
@@ -62,7 +77,8 @@ class AdminDash extends Component {
             this.setState({
                 showCaptionCreator: false,
                 showCategoryCreator: true,
-                showMilaEditor: false
+                showMilaEditor: false,
+                showMilaFeatured: false
             })
         } else {
             this.setState({
@@ -76,11 +92,27 @@ class AdminDash extends Component {
             this.setState({
                 showCaptionCreator: false,
                 showCategoryCreator: false,
-                showMilaEditor: true
+                showMilaEditor: true,
+                showMilaFeatured: false
             })
         } else {
             this.setState({
                 showMilaEditor: false
+            })
+        }
+    }
+
+    onClickFeaturedMila = () => {
+        if (this.state.showMilaFeatured === false) {
+            this.setState({
+                showCaptionCreator: false,
+                showCategoryCreator: false,
+                showMilaEditor: false,
+                showMilaFeatured: true
+            })
+        } else {
+            this.setState({
+                showMilaFeatured: false
             })
         }
     }
@@ -104,6 +136,10 @@ class AdminDash extends Component {
                         <input type="submit" value="Edit Mila Main Database Captions" onClick={this.onClickEditMila} />
                             <div>
                                 {this.state.showMilaEditor ? <AdminEditMila categories={this.state.categories} captions={this.state.captions} toggleShow={this.OnClickEditMila} /> : null}
+                            </div>
+                            <input type="submit" value="View Featured Mila Captions" onClick={this.onClickFeaturedMila} />
+                            <div>
+                                {this.state.showMilaFeatured ? <AdminFeaturedMila featuredCaps={this.state.featuredCaps} toggleShow={this.OnClickFeaturedMila} /> : null}
                             </div>
                     </Col>
                 </Row>

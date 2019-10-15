@@ -28,6 +28,12 @@ module.exports = {
             .then(dbCaption => res.json(dbCaption))
             .catch(err => res.status(422).json(err))
     },
+    findAllFeaturedMila: function(req, res){
+        db.Maincaption 
+            .find({featured: true})
+            .then(dbCaption => res.json(dbCaption))
+            .catch(err => res.status(422).json(err))
+    },
     update: function(req, res) {
         db.Maincaption
             .findOneAndUpdate({ _id: req.params.id}, req.body)
@@ -44,6 +50,12 @@ module.exports = {
     featureCap: function(req, res) {
         db.Maincaption  
             .findOneAndUpdate({ _id: req.params.id}, {featured: true})
+            .then(dbCaption => res.json(dbCaption))
+            .catch(err => res.status(422).json(err))
+    },
+    unfeatureMila: function(req, res) {
+        db.Maincaption
+            .findOneAndUpdate({ _id: req.params.id}, {featured: false})
             .then(dbCaption => res.json(dbCaption))
             .catch(err => res.status(422).json(err))
     }
