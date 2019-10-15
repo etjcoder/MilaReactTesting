@@ -42,12 +42,12 @@ class UserEditCaptions extends Component {
             }
         }
     
-    // deleteCaption = (id) => {
+    deleteCaption = (id) => {
 
-    //     API.deleteUserCaption(id)
-    //         .then(res => console.log("Successfully deleted caption!"))
-    //         .catch(err => console.log(err));
-    // }
+        API.deleteUserCaption(id)
+            .then(res => console.log("Successfully deleted caption!"))
+            .catch(err => console.log(err));
+    }
 
     
     render() {
@@ -80,7 +80,7 @@ class UserEditCaptions extends Component {
                                 <td>{caption.originalAuthor}</td>
                                 <td>{caption.tags}</td>
                                 <td><button value={caption._id} onClick={() => this.editUserRow(caption)}>Edit</button></td>
-                                {/* <td><button value={caption._id} onClick={() => this.deleteCaption(caption._id)}>Delete</button></td> */}
+                                <td><button value={caption._id} onClick={() => this.deleteCaption(caption._id)}>Delete</button></td>
                             </tr>
                         ))}
                     </tbody>
