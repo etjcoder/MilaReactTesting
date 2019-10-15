@@ -25,11 +25,11 @@ class UserEditCaptions extends Component {
     }
 
     // Two ways to do this, pass through entire object or just an ID
-    editMilaRow = (data) => {
+    editUserRow = (data) => {
 
         console.log("You've chosen to revise: " + data);
         console.log("The ID you've chosen is: " + JSON.stringify(data));
-        if (this.state.editMilaShown === false) {
+        if (this.state.editModalShown === false) {
             this.setState({
                 editModalShown: true,
                 editUserData: data
@@ -55,7 +55,7 @@ class UserEditCaptions extends Component {
             <div>
                 <h5>Edit Your Captions Below</h5>
                 <div>
-                    {/* {this.state.editMilaShown ? <EditMilaModal caption={this.state.editMilaData} categories={this.props.categories}/> : null} */}
+                    {this.state.editModalShown ? <UserEditModal caption={this.state.editUserData} categories={this.props.categories}/> : null}
                 </div>
                 <br />
                 <br />
@@ -80,7 +80,7 @@ class UserEditCaptions extends Component {
                                 <td>{caption.originalAuthor}</td>
                                 <td>{caption.tags}</td>
                                 <td><button value={caption._id} onClick={() => this.editUserRow(caption)}>Edit</button></td>
-                                <td><button value={caption._id} onClick={() => this.deleteCaption(caption._id)}>Delete</button></td>
+                                {/* <td><button value={caption._id} onClick={() => this.deleteCaption(caption._id)}>Delete</button></td> */}
                             </tr>
                         ))}
                     </tbody>

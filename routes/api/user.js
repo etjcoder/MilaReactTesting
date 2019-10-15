@@ -1,12 +1,14 @@
 const router = require("express").Router();
-const booksController = require("../../controllers/userController");
+const userController = require("../../controllers/userController");
 
 //Matches with "/api/user"
 router.route("/captions")
-    .post(booksController.createCommunityCaption)
-    // .get(booksController.getUserCaptions);
+    .post(userController.createCommunityCaption)
 
-router.route("/captions/:user")
-    .get(booksController.getUserCaptions);
+router.route("/captions/:id")
+    .put(userController.updateUserCaption);
+
+router.route("/captions/:username")
+    .get(userController.getUserCaption);
 
 module.exports = router;

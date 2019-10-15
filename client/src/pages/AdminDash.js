@@ -42,11 +42,9 @@ class AdminDash extends Component {
     gatherCaptions = () => {
         API.getCaptions()
             .then(res => 
-                console.log(res.data)
-                //  this.setState({
-                //     captions: res.data
-                // })
-                )
+                 this.setState({
+                    captions: res.data
+                }))
     }
 
     gatherFeaturedCaptions = () => {

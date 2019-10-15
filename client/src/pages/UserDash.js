@@ -22,8 +22,9 @@ class UserDash extends Component {
 
     componentDidMount() {
         console.log("loaded user Dashboard page");
+        var username = "testuser"
         this.gatherCategories();
-        this.gatherCaptions("evanjcleary") 
+        this.importCaptions(username);
     };
 
     gatherCategories = () => {
@@ -34,12 +35,14 @@ class UserDash extends Component {
                 }))
     };
 
-    gatherCaptions = (user) => {
+    importCaptions = (user) => {
         API.getUserCaptions(user)
             .then(res => 
                 this.setState({
                     captions: res.data
-                }))
+                })
+                )
+
     };
 
     onClickCaption = () => {
@@ -79,9 +82,9 @@ class UserDash extends Component {
                         </Jumbotron>
                         <input type="submit" value="Create Community Caption" onClick={this.onClickCaption} />
                         <div>
-                            {this.state.showCaptionCreator ? <UserCaptionCreator categories={this.state.categories} toggleShow={this.OnClickCaption} /> : null }
+                            {this.state.showCaptionCreator ? <UserCaptionCreator categories={this.state.categories} captions={this.state.captions} toggleShow={this.OnClickCaption} /> : null }
                         </div>
-                        <input type="submit" value="View Your Community Captions" onClick={this.onClickEditCaption} />
+                        <input type="submit" value="View/Edit Your Community Captions" onClick={this.onClickEditCaption} />
                         <div>
                             {this.state.showCaptionEditor ? <UserEditCaptions categories={this.state.categories} captions={this.state.captions} toggleShow={this.OnClickEditCaption} /> : null }
                         </div>

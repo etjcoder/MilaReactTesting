@@ -20,6 +20,25 @@ class UserCaptionCreator extends Component {
     componentDidMount() {
         // this.gatherCaptions();
         console.log(this.props.categories);
+        // console.log(this.props.captions);
+        this.getCaptions();
+        this.getUserCaptions();
+    }
+
+    getCaptions = () => {
+        API.getCaptions()
+            .then(res =>
+                console.log(res)
+                
+                )
+    }
+
+    getUserCaptions = () => {
+        API.getUserCaptions()
+            .then(res =>
+                console.log(res)
+                
+                )
     }
 
     handleInputChange = event => {
