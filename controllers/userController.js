@@ -19,5 +19,18 @@ module.exports = {
             .findOneAndUpdate({ _id: req.params.id}, req.body)
             .then(dbCaption => res.json(dbCaption))
             .catch(err => res.status(422).json(err))
+    },
+    deleteUserCaption: function(req, res) {
+        db.Communitycaption
+            .findById({ _id: req.params.id})
+            .then(dbCaption => dbCaption.remove())
+            .then(dbCaption => res.json(dbCaption))
+            .catch(err => res.status(422).json(err));
+    },
+    createUserRequest: function(req, res) {
+        db.Suggestableimage
+            .create(req.body)
+            .then(dbImage => res.json(dbImage))
+            .catch(err => res.status(422).json(err))
     }
 };

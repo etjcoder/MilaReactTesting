@@ -13,6 +13,9 @@ export default {
     saveCategory: function(data) {
         return axios.post("/api/admin/category", data);
     },
+    saveCaptionRequest: function(data) {
+        return axios.post("/api/user/request", data);
+    },
     getCaptions: function() {
         return axios.get("/api/admin/captions")
     },
@@ -30,6 +33,9 @@ export default {
     },
     deleteCaption: function(id) {
         return axios.delete("/api/admin/captions/" + id);
+    },
+    deleteUserCaption: function(id) {
+        return axios.delete("/api/user/captions/" + id);
     },
     featureCaption: function(id) {
         return axios.post("/api/admin/captions/" + id);

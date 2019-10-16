@@ -8,6 +8,7 @@ import SearchBtn from "../components/SearchBtn";
 import UserCaptionCreator from "../components/UserCaptionCreator";
 import UserEditCaptions from "../components/UserEditCaptions";
 import UserEditModal from "../components/UserEditModal";
+import UserRequestCreator from "../components/UserRequestCreator"
 
 
 class UserDash extends Component {
@@ -16,6 +17,7 @@ class UserDash extends Component {
         captions: [],
         showCaptionCreator: false,
         showCaptionEditor: false,
+        showRequestCreator: false,
         categories: [],
         captions: []
     };
@@ -50,6 +52,7 @@ class UserDash extends Component {
             this.setState({
                 showCaptionCreator: true,
                 showCaptionEditor: false,
+                showRequestCreator: false
             }) 
         } else {
             this.setState({
@@ -62,7 +65,8 @@ class UserDash extends Component {
         if (this.state.showCaptionEditor === false) {
             this.setState({
                 showCaptionCreator: false,
-                showCaptionEditor: true
+                showCaptionEditor: true,
+                showRequestCreator: false
             })
         } else {
             this.setState({
@@ -70,6 +74,21 @@ class UserDash extends Component {
             })
         }
     };
+
+    onClickUserRequest = () => {
+        if (this.state.showRequestCreator === false) {
+            this.setState({
+                showCaptionCreator: false,
+                showCaptionEditor: false,
+                showRequestCreator: true
+            })
+        } else {
+            this.setState({
+                showRequestCreator: false
+            })
+        }
+
+    }   
 
     render() {
         return (
@@ -87,6 +106,10 @@ class UserDash extends Component {
                         <input type="submit" value="View/Edit Your Community Captions" onClick={this.onClickEditCaption} />
                         <div>
                             {this.state.showCaptionEditor ? <UserEditCaptions categories={this.state.categories} captions={this.state.captions} toggleShow={this.OnClickEditCaption} /> : null }
+                        </div>
+                        <input type="submit" value="Request a Caption for an Image" onClick={this.onClickUserRequest} />
+                        <div>
+                            {this.state.showRequestCreator ? <UserRequestCreator categories={this.state.categories} toggleShow={this.OnClickEditCaption} /> : null }
                         </div>
                     </Col>
                 </Row>
