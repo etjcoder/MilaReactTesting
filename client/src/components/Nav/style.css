@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Cuprum|Pacifico&display=swap');
+.navbar-brand {
+    font-size: 40px;
+    font-family: 'Cuprum', sans-serif;
+}
+
+.navbar {
+    background-color: #3f0075;
+}
+
 .navbar-text {
     color: white;
+    font-size: 20px; 
 }
