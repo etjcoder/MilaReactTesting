@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Input } from "./Form";
-import API from "../utils/API"
+import { Input } from "../Form";
+import API from "../../utils/API"
 
 
 class UserCaptionCreator extends Component {

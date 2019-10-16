@@ -1,6 +1,6 @@
 import React from "react";
-import { Input } from "./Form";
-import API from "../utils/API"
+import { Input } from "../Form";
+import API from "../../utils/API"
 
 export default class EditMilaModal extends React.Component {
 

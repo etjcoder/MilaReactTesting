@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Input } from "./Form";
-import API from "../utils/API";
-import UserEditModal from "./UserEditModal";
+import { Input } from "../Form";
+import API from "../../utils/API";
+import EditMilaModal from "../EditMilaModal";
 
-class UserEditCaptions extends Component {
+class AdminEditMila extends Component {
 
     state = {
         categories: [],
@@ -15,8 +15,8 @@ class UserEditCaptions extends Component {
         quote: "",
         originalAuthor: "",
         tags: "",
-        editModalShown: false,
-        editUserData: ""
+        editMilaShown: false,
+        editMilaData: ""
     }
 
     componentDidMount() {
@@ -25,37 +25,41 @@ class UserEditCaptions extends Component {
     }
 
     // Two ways to do this, pass through entire object or just an ID
-    editUserRow = (data) => {
+    editMilaRow = (data) => {
 
         console.log("You've chosen to revise: " + data);
         console.log("The ID you've chosen is: " + JSON.stringify(data));
-        if (this.state.editModalShown === false) {
+        if (this.state.editMilaShown === false) {
             this.setState({
-                editModalShown: true,
-                editUserData: data
+                editMilaShown: true,
+                editMilaData: data
             }) 
         } else {
                 this.setState({
-                    editModalShown: false,
-                    editUserData: ""
+                    editMilaShown: false,
+                    editMilaData: ""
                 })
             }
         }
     
     deleteCaption = (id) => {
 
-        API.deleteUserCaption(id)
+        API.deleteCaption(id)
             .then(res => console.log("Successfully deleted caption!"))
             .catch(err => console.log(err));
     }
 
+    featureCaption = (id) => {
+        API.featureCaption(id)
+            .then(res => console.log("Successfully featured caption!"))
+    }
     
     render() {
         return (
             <div>
-                <h5>Edit Your Captions Below</h5>
+                <h5>Edit Mila Captions Below</h5>
                 <div>
-                    {this.state.editModalShown ? <UserEditModal caption={this.state.editUserData} categories={this.props.categories}/> : null}
+                    {this.state.editMilaShown ? <EditMilaModal caption={this.state.editMilaData} categories={this.props.categories}/> : null}
                 </div>
                 <br />
                 <br />
@@ -79,8 +83,9 @@ class UserEditCaptions extends Component {
                                 <td>{caption.reference}</td>
                                 <td>{caption.originalAuthor}</td>
                                 <td>{caption.tags}</td>
-                                <td><button value={caption._id} onClick={() => this.editUserRow(caption)}>Edit</button></td>
+                                <td><button value={caption._id} onClick={() => this.editMilaRow(caption)}>Edit</button></td>
                                 <td><button value={caption._id} onClick={() => this.deleteCaption(caption._id)}>Delete</button></td>
+                                <td><button value={caption._id} onClick={() => this.featureCaption(caption._id)}>Feature</button></td>
                             </tr>
                         ))}
                     </tbody>
@@ -90,4 +95,4 @@ class UserEditCaptions extends Component {
     }
 }
 
-export default UserEditCaptions
+export default AdminEditMila
