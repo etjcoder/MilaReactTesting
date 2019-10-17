@@ -24,7 +24,7 @@ class AdminFeaturedMila extends Component {
     
     render() {
         return (
-            <div>
+            <div className="card bg-dark text-white">
                 <h5>Featured Mila Captions Below</h5>
                 
                 <br />

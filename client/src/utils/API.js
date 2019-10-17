@@ -31,6 +31,9 @@ export default {
     getUserCaptions: function(user) {
         return axios.get("/api/user/captions/" + user)
     },
+    searchByKeyword: function(keyword) {
+        return axios.get("/api/user/search/" + keyword)
+    },
     getFeaturedCaptions: function() {
         return axios.get("/api/admin/captions/featured")
     },

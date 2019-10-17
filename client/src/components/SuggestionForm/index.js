@@ -43,7 +43,7 @@ class SuggestionForm extends Component {
 
     render() {
         return (
-            <div>
+            <div className="card bg-dark text-white">
                 <h4>Comment your Suggestion:</h4>
                 <form>
                     <Input value={this.state.caption} onChange={this.handleInputChange} name="caption" placeholder="Write your caption here" />

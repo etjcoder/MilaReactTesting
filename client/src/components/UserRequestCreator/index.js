@@ -50,7 +50,7 @@ class UserCaptionCreator extends Component {
 
     render() {
         return (
-            <div>
+            <div className="card bg-dark text-white">
                 <form>
                     <h5>Input your Request for a Caption here</h5>
                     <Input value={this.state.imageURL} onChange={this.handleInputChange} name="imageURL" placeholder="Image URL goes here" />

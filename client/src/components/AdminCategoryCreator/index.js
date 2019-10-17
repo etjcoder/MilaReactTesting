@@ -42,7 +42,7 @@ class AdminCategoryCreator extends Component {
 
     render() {
         return (
-            <div>
+            <div className="card bg-dark text-white">
                 <form>
                     <h5>Input your caption here</h5>
                     <Input value={this.state.category} onChange={this.handleInputChange} name="category" placeholder="Category goes here" />

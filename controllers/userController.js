@@ -8,6 +8,12 @@ module.exports = {
             .then(dbCaption => res.json(dbCaption))
             .catch(err => res.status(422).json(err))
     },
+    searchKeywords: function(req, res) {
+        db.Maincaption
+            .find({tags : req.params.keyword})
+            .then(dbCaption => res.json(dbCaption))
+            .catch(err => res.status(422).json(err))
+    },
     getSuggestedCaptions: function(req, res) {
         db.Suggestableimage 
             .findById(req.params.id)

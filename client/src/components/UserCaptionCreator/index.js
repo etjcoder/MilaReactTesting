@@ -73,7 +73,7 @@ class UserCaptionCreator extends Component {
 
     render() {
         return (
-            <div>
+            <div className="card bg-dark text-white">
                 <form>
                     <h5>Input your caption here</h5>
                     <Input value={this.state.caption} onChange={this.handleInputChange} name="caption" placeholder="Caption goes here" />

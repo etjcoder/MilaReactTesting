@@ -52,7 +52,7 @@ class UserEditCaptions extends Component {
     
     render() {
         return (
-            <div>
+            <div className="card bg-dark text-white">
                 <h5>Edit Your Captions Below</h5>
                 <div>
                     {this.state.editModalShown ? <UserEditModal caption={this.state.editUserData} categories={this.props.categories}/> : null}

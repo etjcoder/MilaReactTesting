@@ -56,7 +56,7 @@ class AdminEditMila extends Component {
     
     render() {
         return (
-            <div>
+            <div className="card bg-dark text-white">
                 <h5>Edit Mila Captions Below</h5>
                 <div>
                     {this.state.editMilaShown ? <EditMilaModal caption={this.state.editMilaData} categories={this.props.categories}/> : null}

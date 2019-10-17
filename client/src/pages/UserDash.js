@@ -10,6 +10,7 @@ import UserEditCaptions from "../components/UserEditCaptions";
 import UserEditModal from "../components/UserEditModal";
 import UserRequestCreator from "../components/UserRequestCreator"
 import UserRequestViewer from "../components/UserRequestViewer"
+import UserSearchOptions from "../components/UserSearchOptions"
 
 
 class UserDash extends Component {
@@ -20,6 +21,7 @@ class UserDash extends Component {
         showCaptionEditor: false,
         showRequestCreator: false,
         showRequestViewer: false,
+        showUserSearchOptions: false,
         categories: [],
         captions: []
     };
@@ -55,7 +57,8 @@ class UserDash extends Component {
                 showCaptionCreator: true,
                 showCaptionEditor: false,
                 showRequestCreator: false,
-                showRequestViewer: false
+                showRequestViewer: false,
+                showUserSearchOptions: false,
             }) 
         } else {
             this.setState({
@@ -70,7 +73,8 @@ class UserDash extends Component {
                 showCaptionCreator: false,
                 showCaptionEditor: true,
                 showRequestCreator: false,
-                showRequestViewer: false
+                showRequestViewer: false,
+                showUserSearchOptions: false,
             })
         } else {
             this.setState({
@@ -85,7 +89,8 @@ class UserDash extends Component {
                 showCaptionCreator: false,
                 showCaptionEditor: false,
                 showRequestCreator: true,
-                showRequestViewer: false
+                showRequestViewer: false,
+                showUserSearchOptions: false,
             })
         } else {
             this.setState({
@@ -101,11 +106,29 @@ class UserDash extends Component {
                 showCaptionCreator: false,
                 showCaptionEditor: false,
                 showRequestCreator: false,
-                showRequestViewer: true
+                showRequestViewer: true,
+                showUserSearchOptions: false,
             })
         } else {
             this.setState({
                 showRequestViewer: false
+            })
+        }
+
+    }   
+
+    onClickSearchOptions = () => {
+        if (this.state.showUserSearchOptions === false) {
+            this.setState({
+                showCaptionCreator: false,
+                showCaptionEditor: false,
+                showRequestCreator: false,
+                showRequestViewer: false,
+                showUserSearchOptions: true,
+            })
+        } else {
+            this.setState({
+                showUserSearchOptions: false
             })
         }
 
@@ -135,6 +158,10 @@ class UserDash extends Component {
                         <input type="submit" value="Review Regional Caption Requests" onClick={this.onClickViewRequest} />
                         <div>
                             {this.state.showRequestViewer ? <UserRequestViewer categories={this.state.categories} /> : null }
+                        </div>
+                        <input type="submit" value="Search for Captions" onClick={this.onClickSearchOptions} />
+                        <div>
+                            {this.state.showUserSearchOptions ? <UserSearchOptions categories={this.state.categories} /> : null }
                         </div>
                     </Col>
                 </Row>
