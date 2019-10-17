@@ -15,16 +15,15 @@ class RequestCard extends Component {
     }
 
     componentDidMount() {
-        this.getSuggestions()
+        this.getSuggestions(this.state.id)
     }
 
-    getSuggestions = () =>
-        API.getSuggestions(this.props.id)
+    getSuggestions = (id) =>
+        API.getSuggestions(id)
             .then(res =>
-                console.log(res) 
-                // this.setState({
-                //     suggestions: res.data
-                // })
+                this.setState({
+                    suggestions: res.data.suggestedCaptions
+                })
                 )
 
     onClickSuggestCaption() {
@@ -54,7 +53,7 @@ class RequestCard extends Component {
     render() {
         return (
             <div>
-                <div className="card col-6">
+                <div className="card col-8">
                     <img className="card-image" alt={this.props.id} src={this.props.imageSrc} />
                     <p>By: {this.props.username}</p>
                     <p>Category: {this.props.category}</p>
@@ -62,7 +61,27 @@ class RequestCard extends Component {
                     <p>Current Suggestions: {this.props.suggestedCaptions.length}</p>
                     <p>Current Likes: {this.props.likes}</p>
                     <button onClick={() => this.onClickShowSuggestions()}>Show Suggestions</button>
-                    {this.state.showSuggestions ? <ul class="list-group list-group-flush"><SuggestedCaptions suggestions={this.props.suggestedCaptions} /></ul> : null}
+                    {this.state.showSuggestions ? 
+                    
+                        <ul class="list-group list-group-flush">
+                        
+                        {this.state.suggestions.map(suggestedCap => (
+                            <SuggestedCaptions 
+                            key={suggestedCap._id}
+                            parentID={suggestedCap.parentID}
+                            suggestion={suggestedCap.caption} 
+                            username={suggestedCap.username}
+                            reference={suggestedCap.reference}
+                            lyric={suggestedCap.lyric}
+                            quote={suggestedCap.quote}
+                            originalAuthor={suggestedCap.originalAuthor}
+                            likes={suggestedCap.likes}
+                            goldstar={suggestedCap.goldstar}
+                            />
+                        ))}
+                        
+                        
+                        </ul> : null}
                     <button onClick={() => this.onClickSuggestCaption()}>Suggest a caption</button>
                     {this.state.showSuggestionForm ? <SuggestionForm id={this.props.id} /> : null}
                 </div>

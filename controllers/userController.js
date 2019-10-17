@@ -12,9 +12,10 @@ module.exports = {
         db.Suggestableimage 
             .findById(req.params.id)
             .populate("suggestedCaptions")
-            .then(function(dbCaption){
+            .then(dbCaption =>
                 res.json(dbCaption)
-            })
+            )
+            .catch(err => res.status(422).json(err))
     },
     findAllRequest: function(req, res) {
         db.Suggestableimage 

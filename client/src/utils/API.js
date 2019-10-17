@@ -26,7 +26,7 @@ export default {
         return axios.get("/api/user/request")
     },
     getSuggestions: function(id) {
-        return axios.get("/api/suggestion/" + id)
+        return axios.get("/api/user/suggestion/" + id)
     },
     getUserCaptions: function(user) {
         return axios.get("/api/user/captions/" + user)

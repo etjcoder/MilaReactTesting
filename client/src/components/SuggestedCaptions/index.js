@@ -6,21 +6,32 @@ class SuggestedCaptions extends Component {
 
     state = {
         categories: [],
-        imageID: "",
-        likes: "",
+        imageID: 0,
+        likes: 0,
         goldstar: false
     }
 
-    onClickSubmitCaption(){
-        console.log("Suggest a caption on caption id: " + this.props.id + " / " + this.state.id)
+    componentDidMount(){
+        this.establishState()
+    }
+
+    establishState = () => 
+        this.setState({
+           likes: this.props.likes,
+           goldstar: this.props.goldstar 
+        })
+
+
+    onClickLikeSuggestion() {
+        this.setState({
+            likes: this.state.likes + 1
+        })
     }
 
     render() {
         return (
             <div>
-                <li className="list-group-item">Caption1</li>
-                <li className="list-group-item">Caption2</li>
-                <li className="list-group-item">Caption3</li>
+                <li>{this.props.suggestion} by: {this.props.username} | likes: {this.state.likes} <button onClick={() => this.onClickLikeSuggestion()}>Like</button></li>
             </div>
         );
     }
