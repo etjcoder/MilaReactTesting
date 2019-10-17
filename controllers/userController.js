@@ -14,6 +14,12 @@ module.exports = {
             .then(dbCaption => res.json(dbCaption))
             .catch(err => res.status(422).json(err))
     },
+    searchCategories: function(req, res) {
+        db.Maincaption  
+            .find({category : req.params.category})
+            .then(dbCaption => res.json(dbCaption))
+            .catch(err => res.status(422).json(err))
+    },
     getSuggestedCaptions: function(req, res) {
         db.Suggestableimage 
             .findById(req.params.id)

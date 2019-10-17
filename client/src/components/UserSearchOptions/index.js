@@ -7,7 +7,7 @@ class UserSearchOptions extends Component {
 
     state = {
         keyword: "",
-        category: "",
+        category: "Autumn",
         imageKeywords: [],
         searchResults: [],
         showResults: false
@@ -24,6 +24,13 @@ class UserSearchOptions extends Component {
                 this.setState({
                     searchResults: res.data,
                 })
+            )
+    }
+
+    searchCategory = (category) => {
+        API.searchByCategory(category)
+            .then(res =>
+                console.log(res)
             )
     }
 
@@ -47,6 +54,7 @@ class UserSearchOptions extends Component {
 
     handleCategorySearchSubmit = event => {
         event.preventDefault();
+        this.searchCategory(this.state.category)
         console.log("You're searching for: " + this.state.category)
     }
 

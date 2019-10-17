@@ -34,6 +34,9 @@ export default {
     searchByKeyword: function(keyword) {
         return axios.get("/api/user/search/" + keyword)
     },
+    searchByCategory: function(category) {
+        return axios.get("/api/user/search/" + category)
+    },
     getFeaturedCaptions: function() {
         return axios.get("/api/admin/captions/featured")
     },
