@@ -8,9 +8,10 @@ import SearchBtn from "../components/SearchBtn";
 import UserCaptionCreator from "../components/UserCaptionCreator";
 import UserEditCaptions from "../components/UserEditCaptions";
 import UserEditModal from "../components/UserEditModal";
-import UserRequestCreator from "../components/UserRequestCreator"
-import UserRequestViewer from "../components/UserRequestViewer"
-import UserSearchOptions from "../components/UserSearchOptions"
+import UserRequestCreator from "../components/UserRequestCreator";
+import UserRequestViewer from "../components/UserRequestViewer";
+import UserSearchOptions from "../components/UserSearchOptions";
+import SideNavPage from "../components/SideNavPage";
 
 
 class UserDash extends Component {
@@ -136,6 +137,8 @@ class UserDash extends Component {
 
     render() {
         return (
+            <div>
+            <SideNavPage />
             <Container fluid>
                 <Row>
                     <Col size="lg-12">
@@ -166,6 +169,7 @@ class UserDash extends Component {
                     </Col>
                 </Row>
             </Container>
+            </div>
         )
     }
 }

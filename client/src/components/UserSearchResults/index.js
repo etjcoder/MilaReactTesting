@@ -33,7 +33,7 @@ class UserSearchResults extends Component {
             <div className="card bg-dark text-white">
                 <h5>Search Results Below</h5>
                 <div className="row">
-                    <div className="card col-12">
+                    <div className="card col-12 text-dark">
                         {this.props.results.map(result => (
                             <SearchResult key={result._id}
                                 author={result.author}
