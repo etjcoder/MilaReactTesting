@@ -16,8 +16,17 @@ export default {
     saveCaptionRequest: function(data) {
         return axios.post("/api/user/request", data);
     },
+    saveCaptionSuggestion: function(id, data) {
+        return axios.post("/api/user/suggestion/" + id, data);
+    },
     getCaptions: function() {
         return axios.get("/api/admin/captions")
+    },
+    getRequests: function() {
+        return axios.get("/api/user/request")
+    },
+    getSuggestions: function(id) {
+        return axios.get("/api/suggestion/" + id)
     },
     getUserCaptions: function(user) {
         return axios.get("/api/user/captions/" + user)

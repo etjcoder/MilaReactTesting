@@ -14,5 +14,10 @@ router.route("/captions/:username")
 
 router.route("/request")
     .post(userController.createUserRequest)
+    .get(userController.findAllRequest);
+
+router.route("/suggestion/:id")
+    .post(userController.saveSuggestedCaption)
+    .get(userController.getSuggestedCaptions)
 
 module.exports = router;

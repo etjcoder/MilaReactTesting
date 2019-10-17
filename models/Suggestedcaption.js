@@ -8,9 +8,13 @@ var SuggestedCaptionSchema = new Schema({
         required: true,
         unique: true
     },
+    parentID: {
+        type: String,
+        required: true
+    },
     category: {
         type: String,
-        required: true,
+        required: false,
         unique: false
     },
     tags: {

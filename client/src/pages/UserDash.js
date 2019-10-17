@@ -9,6 +9,7 @@ import UserCaptionCreator from "../components/UserCaptionCreator";
 import UserEditCaptions from "../components/UserEditCaptions";
 import UserEditModal from "../components/UserEditModal";
 import UserRequestCreator from "../components/UserRequestCreator"
+import UserRequestViewer from "../components/UserRequestViewer"
 
 
 class UserDash extends Component {
@@ -18,6 +19,7 @@ class UserDash extends Component {
         showCaptionCreator: false,
         showCaptionEditor: false,
         showRequestCreator: false,
+        showRequestViewer: false,
         categories: [],
         captions: []
     };
@@ -52,7 +54,8 @@ class UserDash extends Component {
             this.setState({
                 showCaptionCreator: true,
                 showCaptionEditor: false,
-                showRequestCreator: false
+                showRequestCreator: false,
+                showRequestViewer: false
             }) 
         } else {
             this.setState({
@@ -66,7 +69,8 @@ class UserDash extends Component {
             this.setState({
                 showCaptionCreator: false,
                 showCaptionEditor: true,
-                showRequestCreator: false
+                showRequestCreator: false,
+                showRequestViewer: false
             })
         } else {
             this.setState({
@@ -80,11 +84,28 @@ class UserDash extends Component {
             this.setState({
                 showCaptionCreator: false,
                 showCaptionEditor: false,
-                showRequestCreator: true
+                showRequestCreator: true,
+                showRequestViewer: false
             })
         } else {
             this.setState({
                 showRequestCreator: false
+            })
+        }
+
+    }   
+
+    onClickViewRequest = () => {
+        if (this.state.showRequestViewer === false) {
+            this.setState({
+                showCaptionCreator: false,
+                showCaptionEditor: false,
+                showRequestCreator: false,
+                showRequestViewer: true
+            })
+        } else {
+            this.setState({
+                showRequestViewer: false
             })
         }
 
@@ -101,15 +122,19 @@ class UserDash extends Component {
                         </Jumbotron>
                         <input type="submit" value="Create Community Caption" onClick={this.onClickCaption} />
                         <div>
-                            {this.state.showCaptionCreator ? <UserCaptionCreator categories={this.state.categories} captions={this.state.captions} toggleShow={this.OnClickCaption} /> : null }
+                            {this.state.showCaptionCreator ? <UserCaptionCreator categories={this.state.categories} captions={this.state.captions}  /> : null }
                         </div>
                         <input type="submit" value="View/Edit Your Community Captions" onClick={this.onClickEditCaption} />
                         <div>
-                            {this.state.showCaptionEditor ? <UserEditCaptions categories={this.state.categories} captions={this.state.captions} toggleShow={this.OnClickEditCaption} /> : null }
+                            {this.state.showCaptionEditor ? <UserEditCaptions categories={this.state.categories} captions={this.state.captions}  /> : null }
                         </div>
                         <input type="submit" value="Request a Caption for an Image" onClick={this.onClickUserRequest} />
                         <div>
-                            {this.state.showRequestCreator ? <UserRequestCreator categories={this.state.categories} toggleShow={this.OnClickEditCaption} /> : null }
+                            {this.state.showRequestCreator ? <UserRequestCreator categories={this.state.categories}  /> : null }
+                        </div>
+                        <input type="submit" value="Review Regional Caption Requests" onClick={this.onClickViewRequest} />
+                        <div>
+                            {this.state.showRequestViewer ? <UserRequestViewer categories={this.state.categories} /> : null }
                         </div>
                     </Col>
                 </Row>
