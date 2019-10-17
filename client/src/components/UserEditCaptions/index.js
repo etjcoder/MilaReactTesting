@@ -64,10 +64,10 @@ class UserEditCaptions extends Component {
                         <tr>
                             <th>Caption</th>
                             <th>Category</th>
-                            <th>Author</th>
+                            {/* <th>Author</th>
                             <th>Reference</th>
                             <th>Original Author</th>
-                            <th>Tags</th>
+                            <th>Tags</th> */}
                         </tr>
                     </thead>
                     <tbody>
@@ -75,10 +75,10 @@ class UserEditCaptions extends Component {
                             <tr key={caption._id}>
                                 <td>{caption.caption}</td>
                                 <td>{caption.category}</td>
-                                <td>{caption.author}</td>
+                                {/* <td>{caption.author}</td>
                                 <td>{caption.reference}</td>
                                 <td>{caption.originalAuthor}</td>
-                                <td>{caption.tags}</td>
+                                <td>{caption.tags}</td> */}
                                 <td><button value={caption._id} onClick={() => this.editUserRow(caption)}>Edit</button></td>
                                 <td><button value={caption._id} onClick={() => this.deleteCaption(caption._id)}>Delete</button></td>
                             </tr>

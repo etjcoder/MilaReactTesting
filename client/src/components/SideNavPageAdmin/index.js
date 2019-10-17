@@ -4,7 +4,7 @@ import { slide as Menu } from 'react-burger-menu';
 
 export default props => {
   return (
-    <Menu width={150}>
+    <Menu width={200}>
 
 
 
@@ -13,27 +13,23 @@ export default props => {
         Home
       </a>
 
-      <a className="menu-item" onClick={props.searchOption}>
-        Search
-      </a>
-
       <a className="menu-item" onClick={props.createOption}>
-        Create
+        Create Caption
       </a>
 
       <a className="menu-item" onClick={props.editOption}>
         View/Edit
       </a>
 
-      <a className="menu-item" onClick={props.requestOption}>
-        Request
+      <a className="menu-item" onClick={props.createCatOption}>
+        Create Category
       </a>
 
-      <a className="menu-item" onClick={props.viewrequestsOption}>
-        View Requests
+      <a className="menu-item" onClick={props.featureOption}>
+        Featured
       </a>
     </Menu>
   );
 };
 
-// export default SideNavPage;
+// export default SideNavPageAdmin;

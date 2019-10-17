@@ -141,10 +141,11 @@ class UserDash extends Component {
             <SideNavPage createOption={this.onClickCaption} editOption={this.onClickEditCaption} requestOption={this.onClickUserRequest} searchOption={this.onClickSearchOptions} viewrequestsOption={this.onClickViewRequest}/>
             <Container fluid>
                 <Row>
-                    <Col size="lg-12">
+                    <Col size="md-3"/>
+                    <Col size="col-sm-6">
                         <Jumbotron>
                             <h1 className="text-dark display-4"><strong>User Dashboard</strong></h1>
-                            <p className="lead"><strong>Please Choose your Option below</strong></p>
+                            <p className="lead"><strong></strong></p>
                         </Jumbotron>
                         {/* <input type="submit" value="Create Community Caption" onClick={this.onClickCaption} /> */}
                         <div>
@@ -167,6 +168,7 @@ class UserDash extends Component {
                             {this.state.showUserSearchOptions ? <UserSearchOptions categories={this.state.categories} /> : null }
                         </div>
                     </Col>
+                    <Col size="md-3"/>
                 </Row>
             </Container>
             </div>

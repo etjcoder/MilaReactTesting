@@ -9,6 +9,7 @@ import AdminCaptionCreator from "../components/AdminCaptionCreator";
 import AdminCategoryCreator from "../components/AdminCategoryCreator";
 import AdminEditMila from "../components/AdminEditMila";
 import AdminFeaturedMila from "../components/AdminFeaturedMila";
+import SideNavPageAdmin from "../components/SideNavPageAdmin";
 
 class AdminDash extends Component {
 
@@ -34,22 +35,22 @@ class AdminDash extends Component {
         API.getCategories()
             .then(res =>
                 this.setState({
-                    categories: res.data   
+                    categories: res.data
                 }))
-            // .catch(err => console.log(err)))
+        // .catch(err => console.log(err)))
     };
-    
+
     gatherCaptions = () => {
         API.getCaptions()
-            .then(res => 
-                 this.setState({
+            .then(res =>
+                this.setState({
                     captions: res.data
                 }))
     }
 
     gatherFeaturedCaptions = () => {
         API.getFeaturedCaptions()
-            .then(res => 
+            .then(res =>
                 this.setState({
                     featuredCaps: res.data
                 }))
@@ -117,21 +118,23 @@ class AdminDash extends Component {
 
     render() {
         return (
-            <Container fluid>
-                <Row>
-                    <Col size="lg-12">
-                        <Jumbotron>
-                            <h1>Admin Dashboard!</h1>
-                        </Jumbotron>
-                        <input type="submit" value="CreateCaption" onClick={this.onClickCaption} />
-                        <div>
-                            {this.state.showCaptionCreator ? <AdminCaptionCreator categories={this.state.categories} toggleShow={this.OnClickCaption} /> : null}
-                        </div>
-                        <input type="submit" value="CreateCategory" onClick={this.onClickCategory} />
-                        <div>
-                            {this.state.showCategoryCreator ? <AdminCategoryCreator categories={this.state.categories} toggleShow={this.OnClickCategory} /> : null}
-                        </div>
-                        <input type="submit" value="Edit Mila Main Database Captions" onClick={this.onClickEditMila} />
+            <div>
+                <SideNavPageAdmin createOption={this.onClickCaption} createCatOption={this.onClickCategory} editOption={this.onClickEditMila} featureOption={this.onClickFeaturedMila} />
+                <Container fluid>
+                    <Row>
+                        <Col size="lg-12">
+                            <Jumbotron>
+                                <h1>Admin Dashboard!</h1>
+                            </Jumbotron>
+                            <input type="submit" value="CreateCaption" onClick={this.onClickCaption} />
+                            <div>
+                                {this.state.showCaptionCreator ? <AdminCaptionCreator categories={this.state.categories} toggleShow={this.OnClickCaption} /> : null}
+                            </div>
+                            <input type="submit" value="CreateCategory" onClick={this.onClickCategory} />
+                            <div>
+                                {this.state.showCategoryCreator ? <AdminCategoryCreator categories={this.state.categories} toggleShow={this.OnClickCategory} /> : null}
+                            </div>
+                            <input type="submit" value="Edit Mila Main Database Captions" onClick={this.onClickEditMila} />
                             <div>
                                 {this.state.showMilaEditor ? <AdminEditMila categories={this.state.categories} captions={this.state.captions} toggleShow={this.OnClickEditMila} /> : null}
                             </div>
@@ -139,9 +142,10 @@ class AdminDash extends Component {
                             <div>
                                 {this.state.showMilaFeatured ? <AdminFeaturedMila featuredCaps={this.state.featuredCaps} toggleShow={this.OnClickFeaturedMila} /> : null}
                             </div>
-                    </Col>
-                </Row>
-            </Container>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         )
     }
 }
