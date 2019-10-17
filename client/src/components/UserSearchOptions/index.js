@@ -30,7 +30,9 @@ class UserSearchOptions extends Component {
     searchCategory = (category) => {
         API.searchByCategory(category)
             .then(res =>
-                console.log(res)
+                this.setState({
+                    searchResults: res.data,
+                })
             )
     }
 

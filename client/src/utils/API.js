@@ -32,10 +32,10 @@ export default {
         return axios.get("/api/user/captions/" + user)
     },
     searchByKeyword: function(keyword) {
-        return axios.get("/api/user/search/" + keyword)
+        return axios.get("/api/user/search/keyword/" + keyword)
     },
     searchByCategory: function(category) {
-        return axios.get("/api/user/search/" + category)
+        return axios.get("/api/user/search/category/" + category)
     },
     getFeaturedCaptions: function() {
         return axios.get("/api/admin/captions/featured")

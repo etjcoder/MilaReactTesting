@@ -12,10 +12,10 @@ router.route("/captions/:id")
 router.route("/captions/:username")
     .get(userController.getUserCaption);
 
-router.route("/search/:keyword")
+router.route("/search/keyword/:keyword")
     .get(userController.searchKeywords);
 
-router.route("/search/:category")
+router.route("/search/category/:category")
     .get(userController.searchCategories)
 
 router.route("/request")

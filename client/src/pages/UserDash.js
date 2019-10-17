@@ -24,7 +24,7 @@ class UserDash extends Component {
         showRequestViewer: false,
         showUserSearchOptions: false,
         categories: [],
-        captions: []
+        captions: [],
     };
 
     componentDidMount() {
@@ -138,7 +138,7 @@ class UserDash extends Component {
     render() {
         return (
             <div>
-            <SideNavPage />
+            <SideNavPage createOption={this.onClickCaption} editOption={this.onClickEditCaption} requestOption={this.onClickUserRequest} searchOption={this.onClickSearchOptions} viewrequestsOption={this.onClickViewRequest}/>
             <Container fluid>
                 <Row>
                     <Col size="lg-12">
@@ -146,23 +146,23 @@ class UserDash extends Component {
                             <h1 className="text-dark display-4"><strong>User Dashboard</strong></h1>
                             <p className="lead"><strong>Please Choose your Option below</strong></p>
                         </Jumbotron>
-                        <input type="submit" value="Create Community Caption" onClick={this.onClickCaption} />
+                        {/* <input type="submit" value="Create Community Caption" onClick={this.onClickCaption} /> */}
                         <div>
                             {this.state.showCaptionCreator ? <UserCaptionCreator categories={this.state.categories} captions={this.state.captions}  /> : null }
                         </div>
-                        <input type="submit" value="View/Edit Your Community Captions" onClick={this.onClickEditCaption} />
+                        {/* <input type="submit" value="View/Edit Your Community Captions" onClick={this.onClickEditCaption} /> */}
                         <div>
                             {this.state.showCaptionEditor ? <UserEditCaptions categories={this.state.categories} captions={this.state.captions}  /> : null }
                         </div>
-                        <input type="submit" value="Request a Caption for an Image" onClick={this.onClickUserRequest} />
+                        {/* <input type="submit" value="Request a Caption for an Image" onClick={this.onClickUserRequest} /> */}
                         <div>
                             {this.state.showRequestCreator ? <UserRequestCreator categories={this.state.categories}  /> : null }
                         </div>
-                        <input type="submit" value="Review Regional Caption Requests" onClick={this.onClickViewRequest} />
+                        {/* <input type="submit" value="Review Regional Caption Requests" onClick={this.onClickViewRequest} /> */}
                         <div>
                             {this.state.showRequestViewer ? <UserRequestViewer categories={this.state.categories} /> : null }
                         </div>
-                        <input type="submit" value="Search for Captions" onClick={this.onClickSearchOptions} />
+                        {/* <input type="submit" value="Search for Captions" onClick={this.onClickSearchOptions} /> */}
                         <div>
                             {this.state.showUserSearchOptions ? <UserSearchOptions categories={this.state.categories} /> : null }
                         </div>
