@@ -96,7 +96,7 @@ export default class EditMilaModal extends React.Component {
                     </select>
                     <Input value={this.state.username} onChange={this.handleInputChange} name="username" placeholder="Your username goes here" />
                     <Input value={this.state.reference} onChange={this.handleInputChange} name="reference" placeholder="Caption's reference goes here" />
-                    <p>Current Tags {this.props.caption.tags}, must re-enter and separate with comma's!</p>
+                    <p>Current Tags {JSON.stringify(this.props.tags)}</p>
                     <Input value={this.state.tags} onChange={this.handleInputChange} name="tags" placeholder="Insert captions here" />
                     <button onClick={this.prepareFormSubmit}>Submit your caption</button>
                 </form>

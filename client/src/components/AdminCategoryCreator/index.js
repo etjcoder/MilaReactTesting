@@ -46,10 +46,10 @@ class AdminCategoryCreator extends Component {
                 <form>
                     <h5>Input your caption here</h5>
                     <Input value={this.state.category} onChange={this.handleInputChange} name="category" placeholder="Category goes here" />
-                    <button onClick={this.handleFormSubmit}>Submit your caption</button>
+                    <button onClick={this.handleFormSubmit}>Create this Category</button>
                 </form>
                 <div>
-                    <h6>Existing Captions: </h6>
+                    <h6>Existing Categories: </h6>
                     {this.props.categories.map(listedcategory => (
                         <p key={listedcategory._id}>{listedcategory.category}</p>
                     ))}

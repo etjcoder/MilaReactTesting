@@ -52,14 +52,14 @@ class UserEditCaptions extends Component {
     
     render() {
         return (
-            <div className="card bg-dark text-white">
+            <div className="card">
                 <h5>Edit Your Captions Below</h5>
                 <div>
                     {this.state.editModalShown ? <UserEditModal caption={this.state.editUserData} categories={this.props.categories}/> : null}
                 </div>
                 <br />
                 <br />
-                <table>
+                <table class="table">
                     <thead>
                         <tr>
                             <th>Caption</th>
@@ -68,6 +68,8 @@ class UserEditCaptions extends Component {
                             <th>Reference</th>
                             <th>Original Author</th>
                             <th>Tags</th> */}
+                            <th>Edit</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -24,12 +24,12 @@ class AdminFeaturedMila extends Component {
     
     render() {
         return (
-            <div className="card bg-dark text-white">
+            <div className="card">
                 <h5>Featured Mila Captions Below</h5>
                 
                 <br />
                 <br />
-                <table>
+                <table className="table">
                     <thead>
                         <tr>
                             <th>Caption</th>
@@ -38,6 +38,7 @@ class AdminFeaturedMila extends Component {
                             <th>Reference</th>
                             <th>Original Author</th>
                             <th>Tags</th>
+                            <th>Un-Feature</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,7 +49,7 @@ class AdminFeaturedMila extends Component {
                                 <td>{caption.author}</td>
                                 <td>{caption.reference}</td>
                                 <td>{caption.originalAuthor}</td>
-                                <td>{caption.tags}</td>
+                                <td>{JSON.stringify(caption.tags)}</td>
                                 <td><button value={caption._id} onClick={() => this.unfeatureCaption(caption._id)}>Un-feature</button></td>
                             </tr>
                         ))}

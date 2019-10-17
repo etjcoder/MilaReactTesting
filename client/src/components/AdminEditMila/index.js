@@ -56,14 +56,14 @@ class AdminEditMila extends Component {
     
     render() {
         return (
-            <div className="card bg-dark text-white">
+            <div className="card">
                 <h5>Edit Mila Captions Below</h5>
                 <div>
                     {this.state.editMilaShown ? <EditMilaModal caption={this.state.editMilaData} categories={this.props.categories}/> : null}
                 </div>
                 <br />
                 <br />
-                <table>
+                <table className="table">
                     <thead>
                         <tr>
                             <th>Caption</th>
@@ -72,6 +72,9 @@ class AdminEditMila extends Component {
                             <th>Reference</th>
                             <th>Original Author</th>
                             <th>Tags</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                            <th>Feature</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -82,7 +85,7 @@ class AdminEditMila extends Component {
                                 <td>{caption.author}</td>
                                 <td>{caption.reference}</td>
                                 <td>{caption.originalAuthor}</td>
-                                <td>{caption.tags}</td>
+                                <td>{JSON.stringify(caption.tags)}</td>
                                 <td><button value={caption._id} onClick={() => this.editMilaRow(caption)}>Edit</button></td>
                                 <td><button value={caption._id} onClick={() => this.deleteCaption(caption._id)}>Delete</button></td>
                                 <td><button value={caption._id} onClick={() => this.featureCaption(caption._id)}>Feature</button></td>

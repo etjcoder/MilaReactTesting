@@ -54,7 +54,7 @@ class RequestCard extends Component {
         return (
             <div>
                 <div className="card bg-dark text-white">
-                    <img className="card-image" style={{}} alt={this.props.id} src={this.props.imageSrc} />
+                    <img className="card-image" alt={this.props.id} src={this.props.imageSrc} />
                     <p>By: {this.props.username}</p>
                     <p>Category: {this.props.category}</p>
                     <p>Description: {this.props.description}</p>
