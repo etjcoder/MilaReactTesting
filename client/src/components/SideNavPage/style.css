@@ -1,4 +1,5 @@
 
+
 #SideNavPage { 
   font-family: sans-serif;
   height: 100vh;
@@ -8,7 +9,7 @@
   display: inline-block;
   text-decoration: none;
   margin-bottom: 10px;
-  color: #d1d1d1;
+  color: white;
   transition: color 0.2s;
 }
 
@@ -38,10 +39,11 @@
 }
 
 .bm-menu {
-  background: #6e6cec;
+  background: #945f96;
+  font-family: 'Cuprum', sans-serif;
   opacity: .9;
   padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
+  font-size: 1.5em;
 }
 
 .bm-morph-shape {
