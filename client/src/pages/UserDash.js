@@ -13,7 +13,6 @@ import UserRequestViewer from "../components/UserRequestViewer";
 import UserSearchOptions from "../components/UserSearchOptions";
 import SideNavPage from "../components/SideNavPage";
 
-
 class UserDash extends Component {
 
     state = {
@@ -141,12 +140,6 @@ class UserDash extends Component {
             <SideNavPage createOption={this.onClickCaption} editOption={this.onClickEditCaption} requestOption={this.onClickUserRequest} searchOption={this.onClickSearchOptions} viewrequestsOption={this.onClickViewRequest}/>
             <Container fluid>
                 <Row>
-                    <Col size="md-3"/>
-                    <Col size="col-sm-6">
-                        <Jumbotron>
-                            <h1 className="text-dark display-4"><strong>User Dashboard</strong></h1>
-                            <p className="lead"><strong></strong></p>
-                        </Jumbotron>
                         {/* <input type="submit" value="Create Community Caption" onClick={this.onClickCaption} /> */}
                         <div>
                             {this.state.showCaptionCreator ? <UserCaptionCreator categories={this.state.categories} captions={this.state.captions}  /> : null }
@@ -167,8 +160,6 @@ class UserDash extends Component {
                         <div>
                             {this.state.showUserSearchOptions ? <UserSearchOptions categories={this.state.categories} /> : null }
                         </div>
-                    </Col>
-                    <Col size="md-3"/>
                 </Row>
             </Container>
             </div>

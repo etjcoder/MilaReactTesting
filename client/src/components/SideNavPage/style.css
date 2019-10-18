@@ -1,3 +1,5 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
 
 
 #SideNavPage { 
@@ -15,6 +17,7 @@
 
 .bm-item:hover {
   color: white;
+  cursor: pointer;
 }
 
 .bm-burger-button {
@@ -39,7 +42,7 @@
 }
 
 .bm-menu {
-  background: #945f96;
+  background: #957c96;
   font-family: 'Cuprum', sans-serif;
   opacity: .9;
   padding: 2.5em 1.5em 0;

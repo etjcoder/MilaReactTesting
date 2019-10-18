@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Jumbotron from "../components/Jumbotron/";
+// import Jumbotron from "../components/Jumbotron/";
 // import API from "../utils/API/";
 import { Col, Row, Container } from "../components/Grid/";
 import { List, ListItem } from "../components/List/";
@@ -23,9 +23,9 @@ class Home extends Component {
             <Container fluid>
                 <Row>
                     <Col size="lg-12">
-                        <Jumbotron>
+                        {/* <Jumbotron> */}
                             <h1>Mila Captions App!</h1>
-                        </Jumbotron>
+                        {/* </Jumbotron> */}
 
                     </Col>
                 </Row>

@@ -123,9 +123,9 @@ class AdminDash extends Component {
                 <Container fluid>
                     <Row>
                         <Col size="lg-12">
-                            <Jumbotron>
-                                <h1>Admin Dashboard!</h1>
-                            </Jumbotron>
+                            {/* <Jumbotron> */}
+                                {/* <h1>Admin Dashboard!</h1> */}
+                            {/* </Jumbotron> */}
                             <input type="submit" value="CreateCaption" onClick={this.onClickCaption} />
                             <div>
                                 {this.state.showCaptionCreator ? <AdminCaptionCreator categories={this.state.categories} toggleShow={this.OnClickCaption} /> : null}
