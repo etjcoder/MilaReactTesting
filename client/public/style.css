@@ -5,3 +5,11 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
+
+li:hover {
+    cursor: pointer;
+}
+
+button:hover {
+    cursor: pointer;
+}
