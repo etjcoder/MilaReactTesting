@@ -57,10 +57,11 @@ class UserCaptionCreator extends Component {
 
     fileUploadHandlerB = (event) => {
         event.preventDefault();
-        const uploadTask = storage.ref(`/${this.state.image.name}`).put(this.state.image);
+        const uploadTask = storage.ref(`*/${this.state.image.name}`).put(this.state.image);
         uploadTask.on('state_changed', 
             (snapshot) => {
                 //progress function .... demonstrates progress
+                console.log(snapshot)
             },
             (error) => {
                 //error function .... 
@@ -68,8 +69,10 @@ class UserCaptionCreator extends Component {
             },
             () => {
                 //complete function ....
-                storage.ref('images').child(this.state.image.name).getDownloadURL().then(url => {
-                    console.log(url);
+                storage.ref('*').child(this.state.image.name).getDownloadURL().then(urlB => {
+                    this.setState({
+                        url: urlB
+                    });
                 })
             });
     }
