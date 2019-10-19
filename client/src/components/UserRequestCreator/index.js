@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Input } from "../Form";
-import API from "../../utils/API"
+import API from "../../utils/API";
+import axios from "axios";
+import {storage} from "../firebase"
 
 
 class UserCaptionCreator extends Component {
@@ -11,7 +13,9 @@ class UserCaptionCreator extends Component {
         description: "",
         tags: "",
         username: "",
-        suggestedCaptions: []
+        suggestedCaptions: [],
+        image: null,
+        url: "",
     }
 
     componentDidMount() {
@@ -27,6 +31,48 @@ class UserCaptionCreator extends Component {
         });
     };
 
+    fileSelectedHandler = event => {
+        event.preventDefault();
+        if (event.target.files[0]) {
+            this.setState({
+                image: event.target.files[0]
+            })
+        }
+    }
+
+    // fileUploadHandler = (event) => {
+    //     event.preventDefault();
+    //     const fd = new FormData();
+    //     fd.append('image', this.state.image, this.state.image.name);
+
+    //     axios.post('', fd, {
+    //         uploadProgress: progressEvent => {
+    //             console.log('Upload Progress ' + Math.round(progressEvent.loaded / progressEvent.total * 100) + '%')
+    //         }
+    //     })
+    //         .then(res => {
+    //             console.log(res);
+    //         })
+    // }
+
+    fileUploadHandlerB = (event) => {
+        event.preventDefault();
+        const uploadTask = storage.ref(`/${this.state.image.name}`).put(this.state.image);
+        uploadTask.on('state_changed', 
+            (snapshot) => {
+                //progress function .... demonstrates progress
+            },
+            (error) => {
+                //error function .... 
+                console.log(error)
+            },
+            () => {
+                //complete function ....
+                storage.ref('images').child(this.state.image.name).getDownloadURL().then(url => {
+                    console.log(url);
+                })
+            });
+    }
 
     handleFormSubmit = event => {
         event.preventDefault();
@@ -36,29 +82,35 @@ class UserCaptionCreator extends Component {
         var splicedArr = lowerCaseTags.split(", ")
         console.log(splicedArr)
 
-          API.saveCaptionRequest({
+        API.saveCaptionRequest({
             imageURL: this.state.imageURL,
             category: this.state.category,
             description: this.state.description,
             username: this.state.username,
         })
-        .then(res => console.log("Successfully added caption"))
-        .catch(err => console.log)
+            .then(res => console.log("Successfully added caption"))
+            .catch(err => console.log)
     }
 
-    
+
 
     render() {
         return (
             <div className="card bg-dark text-white">
                 <form>
                     <h5>Input your Request for a Caption here</h5>
-                    <Input value={this.state.imageURL} onChange={this.handleInputChange} name="imageURL" placeholder="Image URL goes here" />
+                    <Input value={this.state.imageURL} name="imageURL" placeholder="Image URL goes here" />
                     {/* <Input value={this.state.category} onChange={this.handleInputChange} name="category" placeholder="Category goes here" /> */}
+
+                    <input type="file" onChange={this.fileSelectedHandler} />
+                    <button onClick={this.fileUploadHandlerB}>Upload</button>
+
+
+
                     <select value={this.state.category} onChange={this.handleInputChange} name="category">
 
                         {this.props.categories.map(listedcategory => (
-                           <option key={listedcategory._id} value={listedcategory.category}>{listedcategory.category}</option>
+                            <option key={listedcategory._id} value={listedcategory.category}>{listedcategory.category}</option>
                         ))}
 
                     </select>
