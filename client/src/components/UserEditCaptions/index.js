@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import ReactDom from "react-dom";
 import { Input } from "../Form";
 import API from "../../utils/API";
 import UserEditModal from "../UserEditModal";
+import cogoToast from "cogo-toast"
 
 class UserEditCaptions extends Component {
 
@@ -42,10 +44,15 @@ class UserEditCaptions extends Component {
             }
         }
     
+    handleDelete = () => {
+        cogoToast.error("Deleted Caption")
+        this.props.rerender()
+    }
+
     deleteCaption = (id) => {
 
         API.deleteUserCaption(id)
-            .then(res => console.log("Successfully deleted caption!"))
+            .then(res => this.handleDelete())
             .catch(err => console.log(err));
     }
 
@@ -55,7 +62,7 @@ class UserEditCaptions extends Component {
             <div className="card">
                 <h5>Edit Your Captions Below</h5>
                 <div>
-                    {this.state.editModalShown ? <UserEditModal caption={this.state.editUserData} categories={this.props.categories}/> : null}
+                    {this.state.editModalShown ? <UserEditModal caption={this.state.editUserData} rerender={this.props.rerender} categories={this.props.categories}/> : null}
                 </div>
                 <br />
                 <br />

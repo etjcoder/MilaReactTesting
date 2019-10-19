@@ -1,6 +1,8 @@
 import React from "react";
+import ReactDom from "react-dom";
 import { Input } from "../Form";
 import API from "../../utils/API"
+import cogoToast from "cogo-toast"
 
 export default class EditMilaModal extends React.Component {
 
@@ -46,6 +48,12 @@ export default class EditMilaModal extends React.Component {
 
     }
 
+    handleSuccess = () => {
+
+        cogoToast.info("Updated Caption!")
+        this.props.rerender()
+    }
+
     handleFormSubmit = arr => {
 
         if (typeof arr === "string") {
@@ -61,7 +69,7 @@ export default class EditMilaModal extends React.Component {
                 originalAuthor: this.state.originalAuthor,
                 tags: splicedArr
             })
-                .then(res => console.log("Successfully updated caption"))
+                .then(res => this.handleSuccess())
                 .catch(err => console.log)
 
         } else {
@@ -74,7 +82,7 @@ export default class EditMilaModal extends React.Component {
                 originalAuthor: this.state.originalAuthor,
                 tags: this.state.tags
             })
-                .then(res => console.log("Successfully updated caption"))
+                .then(res => this.handleSuccess())
                 .catch(err => console.log)
         }
 

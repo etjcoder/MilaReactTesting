@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import ReactDom from "react-dom";
 import Jumbotron from "../components/Jumbotron/";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid/";
@@ -12,6 +13,7 @@ import UserRequestCreator from "../components/UserRequestCreator";
 import UserRequestViewer from "../components/UserRequestViewer";
 import UserSearchOptions from "../components/UserSearchOptions";
 import SideNavPage from "../components/SideNavPage";
+import cogoToast from "cogo-toast";
 
 class UserDash extends Component {
 
@@ -24,13 +26,13 @@ class UserDash extends Component {
         showUserSearchOptions: false,
         categories: [],
         captions: [],
+        user: "testuser"
     };
 
     componentDidMount() {
         console.log("loaded user Dashboard page");
-        var username = "testuser"
         this.gatherCategories();
-        this.importCaptions(username);
+        this.importCaptions();
     };
 
     gatherCategories = () => {
@@ -41,12 +43,10 @@ class UserDash extends Component {
                 }))
     };
 
-    importCaptions = (user) => {
-        API.getUserCaptions(user)
+    importCaptions = () => {
+        API.getUserCaptions()
             .then(res => 
-                this.setState({
-                    captions: res.data
-                })
+                console.log(res)
                 )
 
     };
@@ -146,7 +146,7 @@ class UserDash extends Component {
                         </div>
                         {/* <input type="submit" value="View/Edit Your Community Captions" onClick={this.onClickEditCaption} /> */}
                         <div>
-                            {this.state.showCaptionEditor ? <UserEditCaptions categories={this.state.categories} captions={this.state.captions}  /> : null }
+                            {this.state.showCaptionEditor ? <UserEditCaptions categories={this.state.categories} rerender={this.importCaptions} captions={this.state.captions}  /> : null }
                         </div>
                         {/* <input type="submit" value="Request a Caption for an Image" onClick={this.onClickUserRequest} /> */}
                         <div>

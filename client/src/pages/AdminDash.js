@@ -132,15 +132,15 @@ class AdminDash extends Component {
                             </div>
                             <input type="submit" value="CreateCategory" onClick={this.onClickCategory} />
                             <div>
-                                {this.state.showCategoryCreator ? <AdminCategoryCreator categories={this.state.categories} toggleShow={this.OnClickCategory} /> : null}
+                                {this.state.showCategoryCreator ? <AdminCategoryCreator categories={this.state.categories} rerender={this.state.gatherCategories} toggleShow={this.OnClickCategory} /> : null}
                             </div>
                             <input type="submit" value="Edit Mila Main Database Captions" onClick={this.onClickEditMila} />
                             <div>
-                                {this.state.showMilaEditor ? <AdminEditMila categories={this.state.categories} captions={this.state.captions} toggleShow={this.OnClickEditMila} /> : null}
+                                {this.state.showMilaEditor ? <AdminEditMila categories={this.state.categories} captions={this.state.captions} rerender={this.gatherCaptions} /> : null}
                             </div>
                             <input type="submit" value="View Featured Mila Captions" onClick={this.onClickFeaturedMila} />
                             <div>
-                                {this.state.showMilaFeatured ? <AdminFeaturedMila featuredCaps={this.state.featuredCaps} toggleShow={this.OnClickFeaturedMila} /> : null}
+                                {this.state.showMilaFeatured ? <AdminFeaturedMila featuredCaps={this.state.featuredCaps} rerender={this.gatherFeaturedCaptions} toggleShow={this.OnClickFeaturedMila} /> : null}
                             </div>
                         </Col>
                     </Row>

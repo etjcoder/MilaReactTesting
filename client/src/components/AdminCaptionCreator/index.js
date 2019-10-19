@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import ReactDom from "react-dom"
 import { Input } from "../Form";
 import API from "../../utils/API"
+import cogoToast from 'cogo-toast'
 
 
 class AdminCaptionCreator extends Component {
@@ -51,7 +53,8 @@ class AdminCaptionCreator extends Component {
             originalAuthor: this.state.originalAuthor,
             tags: splicedArr
         })
-        .then(res => console.log("Successfully added caption"))
+        .then(res => 
+            cogoToast.success("Your caption was saved!"))
         .catch(err => console.log)
     }
 

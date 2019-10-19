@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ReactDom from "react-dom"
+import cogoToast from "cogo-toast"
 import { Input } from "../Form";
 import API from "../../utils/API";
 import EditMilaModal from "../EditMilaModal";
@@ -16,7 +18,8 @@ class AdminEditMila extends Component {
         originalAuthor: "",
         tags: "",
         editMilaShown: false,
-        editMilaData: ""
+        editMilaData: "",
+        rerender: this.props.rerender()
     }
 
     componentDidMount() {
@@ -33,7 +36,8 @@ class AdminEditMila extends Component {
             this.setState({
                 editMilaShown: true,
                 editMilaData: data
-            }) 
+            })
+            cogoToast.loading("You've opened Caption Editor") 
         } else {
                 this.setState({
                     editMilaShown: false,
@@ -41,17 +45,22 @@ class AdminEditMila extends Component {
                 })
             }
         }
+
+    handleDelete = () => {
+        cogoToast.error("You've deleted this caption");
+        this.props.rerender();
+    }
     
     deleteCaption = (id) => {
 
         API.deleteCaption(id)
-            .then(res => console.log("Successfully deleted caption!"))
+            .then(res => this.handleDelete() )
             .catch(err => console.log(err));
     }
 
     featureCaption = (id) => {
         API.featureCaption(id)
-            .then(res => console.log("Successfully featured caption!"))
+            .then(res => cogoToast.success("You've featured this caption!"))
     }
     
     render() {
@@ -59,7 +68,7 @@ class AdminEditMila extends Component {
             <div className="card">
                 <h5>Edit Mila Captions Below</h5>
                 <div>
-                    {this.state.editMilaShown ? <EditMilaModal caption={this.state.editMilaData} categories={this.props.categories}/> : null}
+                    {this.state.editMilaShown ? <EditMilaModal rerender={this.props.rerender} caption={this.state.editMilaData} categories={this.props.categories}/> : null}
                 </div>
                 <br />
                 <br />

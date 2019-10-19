@@ -28,8 +28,8 @@ export default {
     getSuggestions: function(id) {
         return axios.get("/api/user/suggestion/" + id)
     },
-    getUserCaptions: function(user) {
-        return axios.get("/api/user/captions/" + user)
+    getUserCaptions: function() {
+        return axios.get("/api/user/captions")
     },
     searchByKeyword: function(keyword) {
         return axios.get("/api/user/search/keyword/" + keyword)

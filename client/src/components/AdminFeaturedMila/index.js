@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import ReactDom from "react-dom";
+import cogoToast from "cogo-toast"
 import { Input } from "../Form";
 import API from "../../utils/API";
 // import EditMilaModal from "./EditMilaModal";
@@ -13,13 +15,20 @@ class AdminFeaturedMila extends Component {
     componentDidMount() {
         console.log("Component Mounted");
         console.log(this.props.featuredCaps)
+        this.props.rerender();
     }
 
     // Two ways to do this, pass through entire object or just an ID
 
+    handleUnfeature = () => {
+        cogoToast.warn("You've un-featured this caption!")
+        this.props.rerender();
+           
+    }
+
     unfeatureCaption = (id) => {
         API.unfeatureCaption(id)
-            .then(res => console.log("Successfully unfeatured caption!"))
+            .then(res => this.handleUnfeature())
     }
     
     render() {

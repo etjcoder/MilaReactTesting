@@ -4,7 +4,7 @@ const db = require("../models");
 module.exports = {
     getUserCaption: function(req, res) {
         db.Communitycaption
-            .find({"username": req.params.username})
+            .find()
             .then(dbCaption => res.json(dbCaption))
             .catch(err => res.status(422).json(err))
     },

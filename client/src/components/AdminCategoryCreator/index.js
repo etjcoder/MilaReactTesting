@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import ReactDom from "react-dom";
 import { Input } from "../Form";
 import API from "../../utils/API";
+import cogoToast from "cogo-toast"
 
 class AdminCategoryCreator extends Component {
 
@@ -20,13 +22,18 @@ class AdminCategoryCreator extends Component {
         });
     };
 
+    handleSuccess = () => {
+        cogoToast.success("Added new Category!")
+        this.props.rerender();
+    }
+
     handleFormSubmit = event => {
         event.preventDefault();
         console.log(this.state);
         API.saveCategory({
             category: this.state.category
         })
-        .then(res => console.log("Successfully added book"))
+        .then(res => this.handleSuccess())
         .catch(err => console.log(err));
     }
 
