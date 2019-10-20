@@ -38,13 +38,13 @@
 }
 
 .bm-cross {
-  background: #bdc3c7;
+  background: #ffffff;
 }
 
 .bm-menu {
-  background: #957c96;
+  background-color: #8e46d1;
   font-family: 'Cuprum', sans-serif;
-  opacity: .9;
+  opacity: .82;
   padding: 2.5em 1.5em 0;
   font-size: 1.5em;
 }
@@ -58,5 +58,5 @@
 }
 
 .bm-overlay {
-  background: rgba(0, 0, 0, 0.3);
+  background: white;
 }

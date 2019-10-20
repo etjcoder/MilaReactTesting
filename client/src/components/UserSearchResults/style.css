@@ -1,0 +1,9 @@
+#searchResults {
+    background-color: white;
+    border-radius: 8px; 
+    padding: 2px; 
+}
+
+#searchResults h5 {
+    color: rgb(29, 28, 28); 
+}

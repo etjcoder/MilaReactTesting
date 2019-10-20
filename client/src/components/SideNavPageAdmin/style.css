@@ -33,13 +33,13 @@
     width: 24px;
   }
   
-  .bm-cross {
+  /* .bm-cross {
     background: #bdc3c7;
-  }
+  } */
   
   .bm-menu {
-    background: #6e6cec;
-    opacity: .9;
+    background-color: #8e46d1;
+    opacity: .82;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
   }

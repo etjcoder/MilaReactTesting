@@ -1,0 +1,31 @@
+#searchKeyword {
+    width: 600px; 
+    padding: 50px; 
+    margin-left: 85%; 
+    margin-top: 90px;
+    border-radius: 20px; 
+    background-color: rgb(18, 8, 54);
+    opacity: 0.95; 
+}
+
+.card h4 {
+    font-size: 23px; 
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold; 
+    color: white; 
+}
+
+.card button {
+    background-color:  #8e46d1;
+    border-radius: 8px; 
+    color: white; 
+}
+ 
+.card button:hover {
+    background-color: rgb(191, 132, 247);
+    color: white;
+}
+
+hr {
+    background-color: white; 
+}
