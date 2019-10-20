@@ -123,22 +123,20 @@ class AdminDash extends Component {
                 <Container fluid>
                     <Row>
                         <Col size="lg-12">
-                            {/* <Jumbotron> */}
-                                {/* <h1>Admin Dashboard!</h1> */}
-                            {/* </Jumbotron> */}
-                            <input type="submit" value="CreateCaption" onClick={this.onClickCaption} />
+                       
+                            {/* <input type="submit" value="CreateCaption" onClick={this.onClickCaption} /> */}
                             <div>
                                 {this.state.showCaptionCreator ? <AdminCaptionCreator categories={this.state.categories} toggleShow={this.OnClickCaption} /> : null}
                             </div>
-                            <input type="submit" value="CreateCategory" onClick={this.onClickCategory} />
+                            {/* <input type="submit" value="CreateCategory" onClick={this.onClickCategory} /> */}
                             <div>
                                 {this.state.showCategoryCreator ? <AdminCategoryCreator categories={this.state.categories} rerender={this.state.gatherCategories} toggleShow={this.OnClickCategory} /> : null}
                             </div>
-                            <input type="submit" value="Edit Mila Main Database Captions" onClick={this.onClickEditMila} />
+                            {/* <input type="submit" value="Edit Mila Main Database Captions" onClick={this.onClickEditMila} /> */}
                             <div>
                                 {this.state.showMilaEditor ? <AdminEditMila categories={this.state.categories} captions={this.state.captions} rerender={this.gatherCaptions} /> : null}
                             </div>
-                            <input type="submit" value="View Featured Mila Captions" onClick={this.onClickFeaturedMila} />
+                            {/* <input type="submit" value="View Featured Mila Captions" onClick={this.onClickFeaturedMila} /> */}
                             <div>
                                 {this.state.showMilaFeatured ? <AdminFeaturedMila featuredCaps={this.state.featuredCaps} rerender={this.gatherFeaturedCaptions} toggleShow={this.OnClickFeaturedMila} /> : null}
                             </div>

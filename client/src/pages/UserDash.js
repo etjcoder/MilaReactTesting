@@ -13,6 +13,7 @@ import UserRequestCreator from "../components/UserRequestCreator";
 import UserRequestViewer from "../components/UserRequestViewer";
 import UserSearchOptions from "../components/UserSearchOptions";
 import SideNavPage from "../components/SideNavPage";
+import CommunityInfiniteScroll from "../components/CommunityInfiniteScroll";
 import cogoToast from "cogo-toast";
 
 class UserDash extends Component {
@@ -136,10 +137,14 @@ class UserDash extends Component {
 
     render() {
         return (
-            <div>
-            <SideNavPage createOption={this.onClickCaption} editOption={this.onClickEditCaption} requestOption={this.onClickUserRequest} searchOption={this.onClickSearchOptions} viewrequestsOption={this.onClickViewRequest}/>
+        <div>
+           <SideNavPage createOption={this.onClickCaption} editOption={this.onClickEditCaption} requestOption={this.onClickUserRequest} searchOption={this.onClickSearchOptions} viewrequestsOption={this.onClickViewRequest}/>
             <Container fluid>
                 <Row>
+                <Col size ="1">
+                {/* Blank Space for SideNavPage */}
+                </Col>
+                <Col size ="8">
                         {/* <input type="submit" value="Create Community Caption" onClick={this.onClickCaption} /> */}
                         <div>
                             {this.state.showCaptionCreator ? <UserCaptionCreator categories={this.state.categories} captions={this.state.captions}  /> : null }
@@ -160,15 +165,18 @@ class UserDash extends Component {
                         <div>
                             {this.state.showUserSearchOptions ? <UserSearchOptions categories={this.state.categories} /> : null }
                         </div>
-                </Row>
-            </Container>
-            </div>
+                    </Col>
+           <Col size="3">
+           <CommunityInfiniteScroll />
+           </Col>
+           </Row>
+           </Container>
+           </div>
         )
     }
 }
 
 export default UserDash;
-
 
 
 
