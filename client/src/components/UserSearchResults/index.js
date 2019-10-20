@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Input } from "../Form";
 import API from "../../utils/API";
 import SearchResult from "../SearchResult"
+import "./style.css";
 
 class UserSearchResults extends Component {
 
@@ -30,10 +31,10 @@ class UserSearchResults extends Component {
 
     render() {
         return (
-            <div className="card bg-dark text-white">
+            <div className="card" id="searchResults">
                 <h5>Search Results Below</h5>
                 <div className="row">
-                    <div className="card col-12 text-dark">
+                    <div className="card col-12">
                         {this.props.results.map(result => (
                             <SearchResult key={result._id}
                                 author={result.author}

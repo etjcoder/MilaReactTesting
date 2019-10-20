@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Input } from "../Form";
 import API from "../../utils/API";
 import UserSearchResults from "../UserSearchResults"
+import "./style.css";
 
 class UserSearchOptions extends Component {
 
@@ -62,24 +63,27 @@ class UserSearchOptions extends Component {
 
     render() {
         return (
-            <div className="card bg-dark text-white">
+            <div className="card" id="searchKeyword">
                 <form>
-                    <h4>Search By Keyword</h4>
+                    <h4>Search By Keyword</h4><br/>
                     <Input value={this.state.keyword} onChange={this.handleInputChange} name="keyword" placeholder="Enter search terms here" />
                     <button onClick={this.handleKeywordSearchSubmit}>Search by Tags</button>
                 </form>
-                <br />
+                <hr/>
                 <form>
                     <h4>Search By Category</h4>
+                    <br/>
                     <select value={this.state.category} onChange={this.handleInputChange} name="category">
                         {this.props.categories.map(listedcategory => (
                             <option key={listedcategory._id} value={listedcategory.category}>{listedcategory.category}</option>
                         ))}
-                    </select>
-                    <button onClick={this.handleCategorySearchSubmit}>Search by Category</button>
+                    </select>{' '}
+                    <button onClick={this.handleCategorySearchSubmit}> Search by Category</button>
                 </form>
+                <hr/>
                 <br/>
                 <button>Search By Imagereader (Coming soon!)</button>
+                <br/>
                 <UserSearchResults results={this.state.searchResults}/>
             </div>
         )

@@ -4,6 +4,8 @@ import { Input } from "../Form";
 import API from "../../utils/API";
 import UserEditModal from "../UserEditModal";
 import cogoToast from "cogo-toast"
+import "./style.css";
+
 
 class UserEditCaptions extends Component {
 
@@ -59,7 +61,7 @@ class UserEditCaptions extends Component {
     
     render() {
         return (
-            <div className="card">
+            <div className="card" id="editCaptions">
                 <h5>Edit Your Captions Below</h5>
                 <div>
                     {this.state.editModalShown ? <UserEditModal caption={this.state.editUserData} rerender={this.props.rerender} categories={this.props.categories}/> : null}
