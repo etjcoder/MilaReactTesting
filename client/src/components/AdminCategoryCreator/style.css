@@ -1,0 +1,21 @@
+#adminCategory {
+    width: 500px; 
+    padding: 50px; 
+    margin-left: 35%; 
+    margin-top: 60px;
+    border-radius: 20px; 
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: rgb(18, 8, 54);
+    opacity: 0.95; 
+    color: white; 
+}
+
+.card h5 {
+    font-size: 24px;
+    font-weight: bold; 
+}
+
+#adminCategory button {
+    padding: 5px; 
+    font-size: 20px;
+}

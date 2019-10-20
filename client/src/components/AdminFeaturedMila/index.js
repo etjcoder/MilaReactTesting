@@ -3,6 +3,7 @@ import ReactDom from "react-dom";
 import cogoToast from "cogo-toast"
 import { Input } from "../Form";
 import API from "../../utils/API";
+import "./style.css";
 // import EditMilaModal from "./EditMilaModal";
 
 class AdminFeaturedMila extends Component {
@@ -33,7 +34,7 @@ class AdminFeaturedMila extends Component {
     
     render() {
         return (
-            <div className="card">
+            <div className="card" id="adminFeatured">
                 <h5>Featured Mila Captions Below</h5>
                 
                 <br />
