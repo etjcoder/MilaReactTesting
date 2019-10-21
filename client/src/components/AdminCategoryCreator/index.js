@@ -3,6 +3,8 @@ import ReactDom from "react-dom";
 import { Input } from "../Form";
 import API from "../../utils/API";
 import cogoToast from "cogo-toast"
+import "./style.css";
+
 
 class AdminCategoryCreator extends Component {
 
@@ -49,13 +51,14 @@ class AdminCategoryCreator extends Component {
 
     render() {
         return (
-            <div className="card bg-dark text-white">
+            <div className="card" id="adminCategory">
                 <form>
                     <h5>Input your caption here</h5>
                     <Input value={this.state.category} onChange={this.handleInputChange} name="category" placeholder="Category goes here" />
                     <button onClick={this.handleFormSubmit}>Create this Category</button>
                 </form>
-                <div>
+                <div> 
+                    <br />
                     <h6>Existing Categories: </h6>
                     {this.props.categories.map(listedcategory => (
                         <p key={listedcategory._id}>{listedcategory.category}</p>
