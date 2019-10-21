@@ -1,0 +1,32 @@
+header {
+    font-family: 'Cuprum', sans-serif;
+    font-size: 117px;
+    text-align: center;
+    color: rgb(39, 39, 39);
+    height: 195px;
+}
+
+#nunc {
+    font-family: 'Wire One', sans-serif;
+    font-size: 28px;
+    text-align: center;
+    color: rgb(39, 39, 39);
+    margin-top: -40px;
+}
+
+.teamLink, .contactLink, .loginLink {
+    font-family: 'Open Sans Condensed', sans-serif;
+    float: right;
+    margin-top: -140px;
+    margin-right: 40px;
+}
+
+/* // responsiveness */
+@media only screen and (max-width: 1200px) {
+    a {
+      font-size: 16px; 
+    }
+    .topnav {
+      margin-right: 20px; 
+    }
+  }

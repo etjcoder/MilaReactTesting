@@ -1,0 +1,67 @@
+body, html {
+    height: 100%;
+    margin: 0;
+  }*
+  
+   {
+     box-sizing: border-box;
+   }
+  a {
+    font-size: 22px;
+    color: rgb(47, 47, 48);
+    text-align: center;
+  }
+  
+  a:hover {
+    color: #b87aff;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .bg-image {
+    /* Full height */
+    height: 25%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .img1 { background-image: url("../assets/images/girl.jpg"); height: 600px; }
+  .img2 { background-image: url("../assets/images/white.jpg"); height: 520px; }
+  .img3 { background-image: url("../assets/images/white.jpg"); height: 70%; }
+  .img4 { background-image: url("../assets/images/darkgrey.jpg"); height: 70%; }
+  
+  @media only screen and (max-width: 1000px) {
+    .img1 {
+      height:  380px;
+    }
+  }
+  
+  @media only screen and (max-width: 700px) {
+    .img1 {
+      height:  380px;
+    }
+    .img2 {
+      height: 60%;
+    }
+    #saying2 {
+      font-size: 11px;
+    }
+    a {
+      font-size: 16px; 
+    }
+    .topnav {
+      margin-right: 20px; 
+    }
+    .item2, .item3, .item4, .item5, .item6 {
+      margin: 0 auto;
+      clear: both;
+      border: 2px solid white;
+      float: center;
+    }
+    .beach, .relax, .engagement, .basic, .umbrella, .pizza {
+      font-size: 45px;
+    }
+  }

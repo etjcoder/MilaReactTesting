@@ -1,0 +1,33 @@
+#saying {
+    font-family: 'Pacifico', cursive;
+    font-size: 55px;
+    color: white;
+    margin-top: 50px;
+    text-shadow: 1px solid black;
+    z-index: 2;
+    margin-left: -69px;
+    /* position: relative; */
+    margin-top: -50px; 
+}
+
+#saying2 {
+    color: white;
+    font-size: 26px;
+    font-family: 'Abel', sans-serif;
+    padding: 30px; 
+    margin-left: -110px;
+    margin-top: 20px;
+    font-weight: bold; 
+}
+
+@media only screen and (max-width: 1000px) {
+    #saying2 {
+      font-size: 14px;
+      margin-top: -30px;
+      margin-left: 5px;
+    }
+    #saying {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+  }

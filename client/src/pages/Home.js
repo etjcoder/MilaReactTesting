@@ -1,11 +1,17 @@
 import React, {Component} from "react";
-// import Jumbotron from "../components/Jumbotron/";
-// import API from "../utils/API/";
-import { Col, Row, Container } from "../components/Grid/";
-import { List, ListItem } from "../components/List/";
-import { Input, FormBtn } from "../components/Form";
-import SearchBtn from "../components/SearchBtn";
+import "./Home.css";
+import AOS from 'aos';
 
+import Header from "../components/Header"
+import Photothingy from "../components/Photothingy"
+import LoginForm from "../components/LoginForm"
+import Banner from "../components/BannerOne";
+import Header2 from "../components/Header2";
+import QuickSearch from "../components/QuickSearch";
+import Footer from "../components/Footer";
+
+
+const photoThingData = require('../staticData/photoThingy')
 
 class Home extends Component {
 
@@ -18,18 +24,47 @@ class Home extends Component {
     }
 
     render() {
-
+        AOS.init()
         return (
-            <Container fluid>
-                <Row>
-                    <Col size="lg-12">
-                        {/* <Jumbotron> */}
-                            <h1>Mila Captions App!</h1>
-                        {/* </Jumbotron> */}
-
-                    </Col>
-                </Row>
-            </Container>
+            <>
+      <Header/>
+      <div className="bg-image img1">
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <Banner/>
+              <LoginForm/>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <QuickSearch/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-image img3">
+      <div className="container">
+        <div className="row">
+        <Header2/> 
+          <div className="lg-col-12">
+            {photoThingData && photoThingData.map((item, i) => {
+              return <Photothingy
+                textclass={item.typeclass}
+                key={i}
+                item={item.classname}
+                aosAction={item.aosAction}
+                captions={item.captions}
+              />
+            })}
+          </div>
+        </div>
+        </div>
+      </div>
+      <div className="bg-image img4">
+      <Footer/>
+      </div>
+    </>
 
         )
 

@@ -1,0 +1,28 @@
+#howTo {
+    color: white;
+    font-family: 'Pacifico', cursive;
+    font-size: 60px; 
+    text-align: center; 
+    margin-top: 80px;
+    margin-bottom: -10px; 
+    background-color: rgb(31, 31, 31);
+    padding-left: 62px; 
+    padding-right: 692px; 
+    /* text-shadow:
+		-2px -2px 0 white,
+		2px -2px 0 white,
+		-1px 1px 0 white,
+    1px 1px 0 white */
+}
+
+@media only screen and (max-width: 1200px) {
+  #howTo { 
+    font-size: 50px;
+    padding: 1px;
+    background-color: rgb(223, 223, 223);
+    padding-left: 320px;
+    padding-right: 320px; 
+    margin: 0 auto;
+    text-align: left;
+  }
+}
