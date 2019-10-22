@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "./Home.css";
 import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import Header from "../components/Header"
 import Photothingy from "../components/Photothingy"
@@ -13,7 +14,7 @@ import Footer from "../components/Footer";
 
 const photoThingData = require('../staticData/photoThingy')
 
-class Home extends Component {
+class Home extends Component { 
 
     state = {
         starterImages: []

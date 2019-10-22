@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
+import Nav from "./components/Nav/";
 import { Col, Row, Container } from "../components/Grid/";
 import { List, ListItem } from "../components/List";
 // import { Input, FormBtn } from "../components/Form";
 import DeleteBtn from "../components/DeleteBtn";
+import "./page-styles/css/style.css";
 
 
 class SavedBooks extends Component {
@@ -44,6 +46,7 @@ class SavedBooks extends Component {
     render() {
         return(
             <Container fluid>
+            <Nav />
                 <Row>
                     <Col size="xs-12">
                         <Jumbotron>
