@@ -12,6 +12,8 @@ import UserEditModal from "../components/UserEditModal";
 import UserRequestCreator from "../components/UserRequestCreator";
 import UserRequestViewer from "../components/UserRequestViewer";
 import UserSearchOptions from "../components/UserSearchOptions";
+import Nav from "../components/Nav/";
+import "./page-styles/css/style.css";
 import SideNavPage from "../components/SideNavPage";
 import CommunityInfiniteScroll from "../components/CommunityInfiniteScroll";
 import cogoToast from "cogo-toast";
@@ -138,6 +140,7 @@ class UserDash extends Component {
     render() {
         return (
         <div>
+            <Nav />
            <SideNavPage createOption={this.onClickCaption} editOption={this.onClickEditCaption} requestOption={this.onClickUserRequest} searchOption={this.onClickSearchOptions} viewrequestsOption={this.onClickViewRequest}/>
             <Container fluid>
                 <Row>

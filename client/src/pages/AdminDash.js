@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron/";
 import API from "../utils/API";
+import Nav from "../components/Nav/";
 import { Col, Row, Container } from "../components/Grid/";
 // import { List, ListItem } from "../components/List/";
 // import { Input, FormBtn } from "../components/Form";
@@ -10,6 +11,7 @@ import AdminCategoryCreator from "../components/AdminCategoryCreator";
 import AdminEditMila from "../components/AdminEditMila";
 import AdminFeaturedMila from "../components/AdminFeaturedMila";
 import SideNavPageAdmin from "../components/SideNavPageAdmin";
+import "./page-styles/css/style.css";
 
 class AdminDash extends Component {
 
@@ -119,6 +121,7 @@ class AdminDash extends Component {
     render() {
         return (
             <div>
+                <Nav />
                 <SideNavPageAdmin createOption={this.onClickCaption} createCatOption={this.onClickCategory} editOption={this.onClickEditMila} featureOption={this.onClickFeaturedMila} />
                 <Container fluid>
                     <Row>

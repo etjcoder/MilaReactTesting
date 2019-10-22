@@ -26,7 +26,7 @@ class Photothingy extends React.Component {
         <p className={this.props.textclass}>
           <Typing loop={true} hideCursor={true} onFinishedTyping={() => this.setNewWord()}>
             <span>{this.state.word}</span>
-            <Typing.Backspace count={this.state.word.length} delay={5000} />
+            <Typing.Backspace count={this.state.word.length} delay={2000} />
           </Typing>
         </p>
       </div>
