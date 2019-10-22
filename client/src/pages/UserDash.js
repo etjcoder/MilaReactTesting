@@ -38,6 +38,7 @@ class UserDash extends Component {
         console.log("loaded user Dashboard page");
         this.gatherCategories();
         this.importCaptions();
+        console.log(this.props.user)
     };
 
     gatherCategories = () => {

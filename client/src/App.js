@@ -37,18 +37,18 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
+      // <Router>
         <div>
-          <Switch>
-            {/* { this.state.user ? <UserDash /> : <Home />} */}
-            <Route exact path="/" component={Home} />
-            <Route exact path="/user" component={UserDash} />
-            <Route exact path="/admin" component={AdminDash} />
+          {/* <Switch> */}
+            { this.state.user ? <UserDash user={this.state.user}/> : <Home />}
+            {/* <Route exact path="/" component={Home} /> */}
+            {/* <Route exact path="/user" component={UserDash} /> */}
+            {/* <Route exact path="/admin" component={AdminDash} /> */}
             {/* <Route exact path="/test" component={Test} /> */}
-            <Route component={NoMatch} />
-          </Switch>
+            {/* <Route component={NoMatch} /> */}
+          {/* </Switch> */}
         </div>
-  </Router>
+  // </Router>
     );
   }
 
