@@ -17,6 +17,8 @@ import "./page-styles/css/style.css";
 import SideNavPage from "../components/SideNavPage";
 import CommunityInfiniteScroll from "../components/CommunityInfiniteScroll";
 import cogoToast from "cogo-toast";
+import fire from "../config/Fire";
+import FlipCard from "../components/FlipCard";
 
 class UserDash extends Component {
 
@@ -100,7 +102,6 @@ class UserDash extends Component {
                 showRequestCreator: false
             })
         }
-
     }   
 
     onClickViewRequest = () => {
@@ -117,7 +118,6 @@ class UserDash extends Component {
                 showRequestViewer: false
             })
         }
-
     }   
 
     onClickSearchOptions = () => {
@@ -134,14 +134,18 @@ class UserDash extends Component {
                 showUserSearchOptions: false
             })
         }
-
     }   
+
+    onClickLogout() {
+        fire.auth().signOut();
+        cogoToast.success("You've logged out!")
+    }
 
     render() {
         return (
         <div>
             <Nav />
-           <SideNavPage createOption={this.onClickCaption} editOption={this.onClickEditCaption} requestOption={this.onClickUserRequest} searchOption={this.onClickSearchOptions} viewrequestsOption={this.onClickViewRequest}/>
+           <SideNavPage createOption={this.onClickCaption} editOption={this.onClickEditCaption} requestOption={this.onClickUserRequest} searchOption={this.onClickSearchOptions} viewrequestsOption={this.onClickViewRequest} logOut={this.onClickLogout}/>
             <Container fluid>
                 <Row>
                 <Col size ="1">
@@ -168,6 +172,7 @@ class UserDash extends Component {
                         <div>
                             {this.state.showUserSearchOptions ? <UserSearchOptions categories={this.state.categories} /> : null }
                         </div>
+                        <FlipCard />
                     </Col>
            <Col size="3">
            <CommunityInfiniteScroll />

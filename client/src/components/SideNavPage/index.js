@@ -35,6 +35,13 @@ export default props => {
       <i class="fa fa-hashtag"></i>&nbsp;
         View Requests
       </a>
+
+
+      <a className="menu-item" onClick={props.logOut}>
+      <i class="fa fa-hashtag"></i>&nbsp;
+        X Logout
+      </a>
+
     </Menu>
   );
 };

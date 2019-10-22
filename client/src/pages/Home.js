@@ -10,6 +10,7 @@ import Banner from "../components/BannerOne";
 import Header2 from "../components/Header2";
 import QuickSearch from "../components/QuickSearch";
 import Footer from "../components/Footer";
+import LoginRegister from "../components/LoginRegister";
 
 
 const photoThingData = require('../staticData/photoThingy')
@@ -17,7 +18,8 @@ const photoThingData = require('../staticData/photoThingy')
 class Home extends Component { 
 
     state = {
-        starterImages: []
+        starterImages: [],
+        showLogin: false,
     }
 
     componentDidMount() {
