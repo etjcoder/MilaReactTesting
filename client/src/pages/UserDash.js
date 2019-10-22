@@ -13,6 +13,7 @@ import UserRequestCreator from "../components/UserRequestCreator";
 import UserRequestViewer from "../components/UserRequestViewer";
 import UserSearchOptions from "../components/UserSearchOptions";
 import Nav from "../components/Nav/";
+import FlipCard from "../components/FlipCard/";
 import "./page-styles/css/style.css";
 import SideNavPage from "../components/SideNavPage";
 import CommunityInfiniteScroll from "../components/CommunityInfiniteScroll";
@@ -148,6 +149,7 @@ class UserDash extends Component {
                 {/* Blank Space for SideNavPage */}
                 </Col>
                 <Col size ="8">
+                <FlipCard/> 
                         {/* <input type="submit" value="Create Community Caption" onClick={this.onClickCaption} /> */}
                         <div>
                             {this.state.showCaptionCreator ? <UserCaptionCreator categories={this.state.categories} captions={this.state.captions}  /> : null }
