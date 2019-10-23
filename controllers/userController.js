@@ -3,8 +3,9 @@ const db = require("../models");
 
 module.exports = {
     getUserCaption: function(req, res) {
-        db.Communitycaption
-            .find()
+        db.User
+            .findById(req.params.id)
+            .populate("myCommunityCaptions")
             .then(dbCaption => res.json(dbCaption))
             .catch(err => res.status(422).json(err))
     },
@@ -41,7 +42,7 @@ module.exports = {
             .then(function(dbCaption){
 
                 return db.User.findByIdAndUpdate({ _id: req.params.id}, { $push: { myCommunityCaptions: dbCaption._id} }, {new: true});
-                
+
             })
             .catch(err => res.status(422).json(err))
     },

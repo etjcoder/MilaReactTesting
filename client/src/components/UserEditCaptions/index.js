@@ -20,12 +20,17 @@ class UserEditCaptions extends Component {
         originalAuthor: "",
         tags: "",
         editModalShown: false,
-        editUserData: ""
+        editUserData: "",
+        userdata: ""
     }
 
     componentDidMount() {
         console.log("Component Mounted");
         console.log(this.props.captions);
+        this.setState({
+            userdata: this.props.userdata
+        })
+        this.getUserCaptions()
     }
 
     // Two ways to do this, pass through entire object or just an ID
@@ -45,7 +50,20 @@ class UserEditCaptions extends Component {
                 })
             }
         }
+
+    getUserCaptions = () => {
+
+        var id = this.props.userdata[0]._id
     
+        API.getUserCaptions(id)
+            .then(res => 
+                console.log(res)
+
+                // this.setState({
+                //     captions: res.data.communityCaptions
+                // })
+                )
+    }
     handleDelete = () => {
         cogoToast.error("Deleted Caption")
         this.props.rerender()
@@ -82,18 +100,15 @@ class UserEditCaptions extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.captions.map(caption => (
+                        {/* {this.state.captions.map(caption => (
                             <tr key={caption._id}>
                                 <td>{caption.caption}</td>
                                 <td>{caption.category}</td>
-                                {/* <td>{caption.author}</td>
-                                <td>{caption.reference}</td>
-                                <td>{caption.originalAuthor}</td>
-                                <td>{caption.tags}</td> */}
+                              
                                 <td><button value={caption._id} onClick={() => this.editUserRow(caption)}>Edit</button></td>
                                 <td><button value={caption._id} onClick={() => this.deleteCaption(caption._id)}>Delete</button></td>
                             </tr>
-                        ))}
+                        ))} */}
                     </tbody>
                 </table>
             </div>

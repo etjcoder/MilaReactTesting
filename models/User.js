@@ -52,11 +52,11 @@ var UserSchema = new Schema({
     }, 
     myCommunityCaptions: [{
         type: Schema.Types.ObjectId,
-        ref: "Communitycaptions"
+        ref: "Communitycaption"
     }], 
     mySuggestedCaptions: [{
         type: Schema.Types.ObjectId,
-        ref: "Suggestedcaptions"
+        ref: "Suggestedcaption"
     }],
     comments: [{
         type: Schema.Types.ObjectId,

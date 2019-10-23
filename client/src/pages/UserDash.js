@@ -40,7 +40,6 @@ class UserDash extends Component {
         console.log("loaded user Dashboard page");
         this.getUserData();
         this.gatherCategories();
-        this.importCaptions();
     };
 
 
@@ -50,13 +49,6 @@ class UserDash extends Component {
                 this.setState({
                     categories: res.data
                 }))
-    };
-
-    importCaptions = () => {
-        API.getUserCaptions()
-            .then(res => 
-                console.log(res)
-            )
     };
 
     getUserData = () => {
@@ -196,7 +188,7 @@ class UserDash extends Component {
                         </div>
                         {/* <input type="submit" value="View/Edit Your Community Captions" onClick={this.onClickEditCaption} /> */}
                         <div>
-                            {this.state.showCaptionEditor ? <UserEditCaptions categories={this.state.categories} rerender={this.importCaptions} captions={this.state.captions}  /> : null }
+                            {this.state.showCaptionEditor ? <UserEditCaptions userdata={this.state.userData} categories={this.state.categories} rerender={this.importCaptions} captions={this.state.captions}  /> : null }
                         </div>
                         {/* <input type="submit" value="Request a Caption for an Image" onClick={this.onClickUserRequest} /> */}
                         <div>
