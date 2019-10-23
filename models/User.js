@@ -14,6 +14,22 @@ var UserSchema = new Schema({
         required: true,
         unique: true
     },
+    firstName: {
+        type: String,
+        required: true,
+        default: ""
+    },
+    lastName: {
+        type: String,
+        required: true,
+        default: ""
+    },
+    profileDesc: {
+        type: String,
+        required: true,
+        unique: false,
+        default: ""
+    },
     image: {
         type: String,
         required: false,

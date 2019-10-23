@@ -19,6 +19,7 @@ import CommunityInfiniteScroll from "../components/CommunityInfiniteScroll";
 import cogoToast from "cogo-toast";
 import fire from "../config/Fire";
 import FlipCard from "../components/FlipCard";
+import UserProfileEdit from "../components/UserProfileEdit"
 
 class UserDash extends Component {
 
@@ -29,6 +30,7 @@ class UserDash extends Component {
         showRequestCreator: false,
         showRequestViewer: false,
         showUserSearchOptions: false,
+        showProfileEdit: false,
         categories: [],
         captions: [],
         userData: "",
@@ -62,7 +64,9 @@ class UserDash extends Component {
 
         API.getUserData(userID)
             .then(res => 
-                console.log(res)
+                this.setState({
+                    userData: res.data
+                })
             )
     }
 
@@ -151,11 +155,35 @@ class UserDash extends Component {
         cogoToast.success("You've logged out!")
     }
 
+    onClickProfileEdit = () => {
+        if (this.state.showProfileEdit === false) {
+            this.setState({
+                showCaptionCreator: false,
+                showCaptionEditor: false,
+                showRequestCreator: false,
+                showRequestViewer: false,
+                showUserSearchOptions: false,
+                showProfileEdit: true
+            })
+        } else {
+            this.setState({
+                showProfileEdit: false
+            })
+        }
+    }
+
     render() {
         return (
         <div>
             <Nav />
-           <SideNavPage createOption={this.onClickCaption} editOption={this.onClickEditCaption} requestOption={this.onClickUserRequest} searchOption={this.onClickSearchOptions} viewrequestsOption={this.onClickViewRequest} logOut={this.onClickLogout}/>
+           <SideNavPage createOption={this.onClickCaption} 
+                        editOption={this.onClickEditCaption} 
+                        requestOption={this.onClickUserRequest} 
+                        searchOption={this.onClickSearchOptions} 
+                        viewrequestsOption={this.onClickViewRequest} 
+                        logOut={this.onClickLogout} 
+                        editProfile={this.onClickProfileEdit}
+                                                            />
             <Container fluid>
                 <Row>
                 <Col size ="1">
@@ -182,7 +210,11 @@ class UserDash extends Component {
                         <div>
                             {this.state.showUserSearchOptions ? <UserSearchOptions categories={this.state.categories} /> : null }
                         </div>
+                        <div>
+                            {this.state.showProfileEdit ? <UserProfileEdit userdata={this.state.userData} /> : null }
+                        </div>
                         <FlipCard />
+                        
                     </Col>
            <Col size="3">
            <CommunityInfiniteScroll />

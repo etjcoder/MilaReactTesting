@@ -38,8 +38,14 @@ export default props => {
 
 
       <a className="menu-item" onClick={props.logOut}>
-      <i class="fa fa-hashtag"></i>&nbsp;
+      <i class="fa fa-home"></i>&nbsp;
         X Logout
+      </a>
+
+
+      <a className="menu-item" onClick={props.editProfile}>
+      <i class="fa fa-edit"></i>&nbsp;
+        Edit Profile
       </a>
 
     </Menu>

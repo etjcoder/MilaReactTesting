@@ -28,6 +28,7 @@ router.route("/data")
     .post(userController.createUserData)
 
 router.route("/data/:id")
-    .get(userController.getUserData);
+    .get(userController.getUserData)
+    .put(userController.updateUserData);
 
 module.exports = router;

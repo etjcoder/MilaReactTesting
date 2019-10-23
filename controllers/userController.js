@@ -81,5 +81,11 @@ module.exports = {
         .find({ uid: req.params.id })
         .then(dbUser => res.json(dbUser))
         .catch(err => res.status(422).json(err))
+    },
+    updateUserData: function(req, res) {
+        db.User
+            .findOneAndUpdate({ _id: req.params.id}, req.body)
+            .then(dbUser => res.json(dbUser))
+            .catch(err => res.status(422).json(err))
     }
 };

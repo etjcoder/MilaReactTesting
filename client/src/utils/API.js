@@ -63,5 +63,8 @@ export default {
     },
     getUserData: function(id) {
         return axios.get("/api/user/data/" + id)
+    },
+    updateUser: function(id, data) {
+        return axios.put("/api/user/data/" + id, data)
     }
 }
