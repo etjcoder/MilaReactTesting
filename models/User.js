@@ -16,17 +16,17 @@ var UserSchema = new Schema({
     },
     firstName: {
         type: String,
-        required: true,
+        required: false,
         default: ""
     },
     lastName: {
         type: String,
-        required: true,
+        required: false,
         default: ""
     },
     profileDesc: {
         type: String,
-        required: true,
+        required: false,
         unique: false,
         default: ""
     },
@@ -34,7 +34,6 @@ var UserSchema = new Schema({
         type: String,
         required: false,
         unique: false,
-        default: ""
     }, 
     userCreated: {
         type: Date,
