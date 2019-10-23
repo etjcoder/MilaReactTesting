@@ -57,12 +57,11 @@ class UserEditCaptions extends Component {
     
         API.getUserCaptions(id)
             .then(res => 
-                console.log(res)
-
-                // this.setState({
-                //     captions: res.data.communityCaptions
-                // })
-                )
+                // console.log(res)
+                this.setState({
+                    captions: res.data.myCommunityCaptions
+                })
+            )
     }
     handleDelete = () => {
         cogoToast.error("Deleted Caption")
@@ -91,16 +90,12 @@ class UserEditCaptions extends Component {
                         <tr>
                             <th>Caption</th>
                             <th>Category</th>
-                            {/* <th>Author</th>
-                            <th>Reference</th>
-                            <th>Original Author</th>
-                            <th>Tags</th> */}
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {/* {this.state.captions.map(caption => (
+                        {this.state.captions.map(caption => (
                             <tr key={caption._id}>
                                 <td>{caption.caption}</td>
                                 <td>{caption.category}</td>
@@ -108,7 +103,7 @@ class UserEditCaptions extends Component {
                                 <td><button value={caption._id} onClick={() => this.editUserRow(caption)}>Edit</button></td>
                                 <td><button value={caption._id} onClick={() => this.deleteCaption(caption._id)}>Delete</button></td>
                             </tr>
-                        ))} */}
+                        ))}
                     </tbody>
                 </table>
             </div>

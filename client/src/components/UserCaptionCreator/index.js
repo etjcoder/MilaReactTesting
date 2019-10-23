@@ -25,25 +25,10 @@ class UserCaptionCreator extends Component {
         this.setState({
             userID: this.props.userdata[0]._id
         })
-        this.getCaptions();
-        this.getUserCaptions();
     }
 
-    getCaptions = () => {
-        API.getCaptions()
-            .then(res =>
-                console.log(res)
-                
-                )
-    }
+    
 
-    getUserCaptions = () => {
-        API.getUserCaptions()
-            .then(res =>
-                console.log(res)
-                
-                )
-    }
 
     handleInputChange = event => {
         const { name, value } = event.target;

@@ -70,6 +70,7 @@ class UserDash extends Component {
                 showRequestCreator: false,
                 showRequestViewer: false,
                 showUserSearchOptions: false,
+                showProfileEdit: false
             }) 
         } else {
             this.setState({
@@ -86,6 +87,7 @@ class UserDash extends Component {
                 showRequestCreator: false,
                 showRequestViewer: false,
                 showUserSearchOptions: false,
+                showProfileEdit: false
             })
         } else {
             this.setState({
@@ -102,6 +104,7 @@ class UserDash extends Component {
                 showRequestCreator: true,
                 showRequestViewer: false,
                 showUserSearchOptions: false,
+                showProfileEdit: false
             })
         } else {
             this.setState({
@@ -118,6 +121,7 @@ class UserDash extends Component {
                 showRequestCreator: false,
                 showRequestViewer: true,
                 showUserSearchOptions: false,
+                showProfileEdit: false
             })
         } else {
             this.setState({
@@ -134,6 +138,7 @@ class UserDash extends Component {
                 showRequestCreator: false,
                 showRequestViewer: false,
                 showUserSearchOptions: true,
+                showProfileEdit: false
             })
         } else {
             this.setState({
