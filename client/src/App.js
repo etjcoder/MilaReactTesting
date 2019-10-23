@@ -37,16 +37,25 @@ class App extends Component {
 
   render() {
     return (
-      // <Router>
+      <Router>
         <div>
-          {/* <Switch> */}
-            { this.state.user ? <UserDash user={this.state.user}/> : <Home />}
-            {/* <Route exact path="/" component={Home} /> */}
-            {/* <Route exact path="/user" component={UserDash} /> */}
-            {/* <Route exact path="/admin" component={AdminDash} /> */}
-            {/* <Route exact path="/test" component={Test} /> */}
-            {/* <Route component={NoMatch} /> */}
-          {/* </Switch> */}
+          <Switch>
+            { this.state.user ? 
+            <>
+            <Route exact path="/">
+              <Home/>
+            </Route>
+            <Route exact path="/user">
+              <UserDash user={this.state.user}/> 
+            </Route>
+            <Route exact path="/admin" >
+              <AdminDash user={this.state.user}/>
+            </Route>
+            </>
+            : 
+            <Home />}
+           
+          </Switch>
         </div>
   // </Router>
     );

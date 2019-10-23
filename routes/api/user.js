@@ -24,4 +24,7 @@ router.route("/suggestion/:id")
     .post(userController.saveSuggestedCaption)
     .get(userController.getSuggestedCaptions)
 
+router.route("/data")
+    .post(userController.createUserData);
+
 module.exports = router;

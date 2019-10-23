@@ -57,5 +57,8 @@ export default {
     },
     unfeatureCaption: function(id) {
         return axios.put("/api/admin/captions/featured/" + id)
+    },
+    createUser: function(data) {
+        return axios.post("/api/user/data", data)
     }
 }

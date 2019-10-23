@@ -69,5 +69,11 @@ module.exports = {
 
             })
             .catch(err => res.status(422).json(err))
+    },
+    createUserData: function(req, res) {
+        db.User
+        .create(req.body)
+        .then(dbUser => res.json(dbUser))
+        .catch(err => res.status(422).json(err))
     }
 };

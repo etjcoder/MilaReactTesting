@@ -31,7 +31,7 @@ class UserDash extends Component {
         showUserSearchOptions: false,
         categories: [],
         captions: [],
-        user: "testuser"
+        userData: "",
     };
 
     componentDidMount() {
@@ -39,6 +39,7 @@ class UserDash extends Component {
         this.gatherCategories();
         this.importCaptions();
         console.log(this.props.user)
+        // this.getUserData();
     };
 
     gatherCategories = () => {
@@ -54,8 +55,18 @@ class UserDash extends Component {
             .then(res => 
                 console.log(res)
                 )
-
     };
+
+    // getUserData = () => {
+    //     var userD = this.props.user
+
+    //     // console.log();
+
+    //     API.getUserData(userD)
+    //         .then(res => 
+    //             console.log(res)
+    //             )
+    // }
 
     onClickCaption = () => {
         if (this.state.showCaptionCreator === false ) {
