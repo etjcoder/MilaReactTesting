@@ -47,6 +47,12 @@ class LoginForm extends Component {
     });
   };
 
+  logOut(e) {
+    e.preventDefault();
+    fire.auth().signOut();
+    cogoToast.success("You've logged out!")
+  }
+
 
   render() {
     return (
@@ -64,7 +70,7 @@ class LoginForm extends Component {
           <br />
           <button type="submit" onClick={this.login} className="btn">Login</button>
           <button onClick={this.signup} style={{ marginLeft: '25px' }} className="btn btn-success">Signup</button>
-
+          <button onClick={this.logOut} sryle={{ marginLeft: '25px'  }} className="btn btn-danger">Logout</button>
         </form>
       </div>
     )

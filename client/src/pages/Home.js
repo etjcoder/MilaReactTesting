@@ -25,6 +25,7 @@ class Home extends Component {
     componentDidMount() {
         console.log("loaded home page");
     }
+    
 
     render() {
         AOS.init()
@@ -36,7 +37,7 @@ class Home extends Component {
           <div className="row">
             <div className="col-12">
               <Banner/>
-              <LoginForm/>
+              <LoginForm logOut={this.onClickLogout}/>
             </div>
           </div>
           <div className="row">
