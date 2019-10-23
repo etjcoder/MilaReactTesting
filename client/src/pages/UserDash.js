@@ -36,13 +36,13 @@ class UserDash extends Component {
         userData: "",
     };
 
-    componentDidMount() {
+    componentDidMount = () => {
         console.log("loaded user Dashboard page");
+        this.getUserData();
         this.gatherCategories();
         this.importCaptions();
-        console.log(this.props.user)
-        this.getUserData();
     };
+
 
     gatherCategories = () => {
         API.getCategories()
@@ -175,7 +175,7 @@ class UserDash extends Component {
     render() {
         return (
         <div>
-            <Nav />
+            <Nav user={this.props.user}/>
            <SideNavPage createOption={this.onClickCaption} 
                         editOption={this.onClickEditCaption} 
                         requestOption={this.onClickUserRequest} 
