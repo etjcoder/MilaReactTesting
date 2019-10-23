@@ -5,10 +5,10 @@ export default {
         return axios.get("/api/admin/category")
     },
     saveCaption: function(data) {
-        return axios.post("/api/admin/captions", data);
+        return axios.post("/api/admin/captions/", data);
     },
-    saveCommunityCaption: function(data) {
-        return axios.post("/api/user/captions", data);
+    saveCommunityCaption: function(id, data) {
+        return axios.post("/api/user/captions/" + id, data);
     },
     saveCategory: function(data) {
         return axios.post("/api/admin/category", data);

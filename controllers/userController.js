@@ -38,7 +38,11 @@ module.exports = {
     createCommunityCaption: function(req, res) {
         db.Communitycaption 
             .create(req.body)
-            .then(dbCategory => res.json(dbCategory))
+            .then(function(dbCaption){
+
+                return db.User.findByIdAndUpdate({ _id: req.params.id}, { $push: { myCommunityCaptions: dbCaption._id} }, {new: true});
+                
+            })
             .catch(err => res.status(422).json(err))
     },
     updateUserCaption: function(req, res) {

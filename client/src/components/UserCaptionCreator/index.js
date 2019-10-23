@@ -14,13 +14,17 @@ class UserCaptionCreator extends Component {
         quote: "",
         originalAuthor: "",
         tags: "",
-        categories: []
+        categories: [],
+        userID: ""
     }
 
     componentDidMount() {
         // this.gatherCaptions();
         console.log(this.props.categories);
-        // console.log(this.props.captions);
+        console.log(this.props.userdata)
+        this.setState({
+            userID: this.props.userdata[0]._id
+        })
         this.getCaptions();
         this.getUserCaptions();
     }
@@ -57,7 +61,7 @@ class UserCaptionCreator extends Component {
         var splicedArr = lowerCaseTags.split(", ")
         console.log(splicedArr)
 
-          API.saveCommunityCaption({
+          API.saveCommunityCaption( this.state.userID, {
             caption: this.state.caption,
             category: this.state.category,
             username: this.state.username,

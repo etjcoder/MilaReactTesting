@@ -192,7 +192,7 @@ class UserDash extends Component {
                 <Col size ="8">
                         {/* <input type="submit" value="Create Community Caption" onClick={this.onClickCaption} /> */}
                         <div>
-                            {this.state.showCaptionCreator ? <UserCaptionCreator categories={this.state.categories} captions={this.state.captions}  /> : null }
+                            {this.state.showCaptionCreator ? <UserCaptionCreator userdata={this.state.userData} categories={this.state.categories} captions={this.state.captions}  /> : null }
                         </div>
                         {/* <input type="submit" value="View/Edit Your Community Captions" onClick={this.onClickEditCaption} /> */}
                         <div>
