@@ -39,7 +39,7 @@ class UserDash extends Component {
         this.gatherCategories();
         this.importCaptions();
         console.log(this.props.user)
-        // this.getUserData();
+        this.getUserData();
     };
 
     gatherCategories = () => {
@@ -54,19 +54,17 @@ class UserDash extends Component {
         API.getUserCaptions()
             .then(res => 
                 console.log(res)
-                )
+            )
     };
 
-    // getUserData = () => {
-    //     var userD = this.props.user
+    getUserData = () => {
+        var userID = this.props.user.uid
 
-    //     // console.log();
-
-    //     API.getUserData(userD)
-    //         .then(res => 
-    //             console.log(res)
-    //             )
-    // }
+        API.getUserData(userID)
+            .then(res => 
+                console.log(res)
+            )
+    }
 
     onClickCaption = () => {
         if (this.state.showCaptionCreator === false ) {

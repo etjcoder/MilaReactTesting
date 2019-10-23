@@ -60,5 +60,8 @@ export default {
     },
     createUser: function(data) {
         return axios.post("/api/user/data", data)
+    },
+    getUserData: function(id) {
+        return axios.get("/api/user/data/" + id)
     }
 }

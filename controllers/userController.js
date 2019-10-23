@@ -75,5 +75,11 @@ module.exports = {
         .create(req.body)
         .then(dbUser => res.json(dbUser))
         .catch(err => res.status(422).json(err))
+    },
+    getUserData: function(req, res) {
+        db.User
+        .find({ uid: req.params.id })
+        .then(dbUser => res.json(dbUser))
+        .catch(err => res.status(422).json(err))
     }
 };
