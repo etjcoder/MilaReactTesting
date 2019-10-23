@@ -16,8 +16,8 @@ class LoginForm extends Component {
   login = e => {
     e.preventDefault();
     fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then(() => {
-      // u.status or u.email --> pass info into a create routeß
-
+      cogoToast.success("You've logged in!");
+      document.location.href = '/user'
     }).catch((error) => {
       console.log(error);
     })
