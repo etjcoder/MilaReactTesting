@@ -71,7 +71,7 @@ module.exports = {
             .create(req.body)
             .then(function(dbCaption){ 
                 
-                return db.Suggestableimage.findByIdAndUpdate({ _id: req.params.id}, { $push: { suggestedCaptions: dbCaption._id} }, {new: true}, {useFindAndModify: false});
+                return db.Suggestableimage.findByIdAndUpdate({ _id: req.params.id}, { $push: { suggestedCaptions: dbCaption._id} }, {new: true});
 
             })
             .catch(err => res.status(422).json(err))
