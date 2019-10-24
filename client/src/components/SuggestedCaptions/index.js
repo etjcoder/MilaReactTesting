@@ -30,9 +30,9 @@ class SuggestedCaptions extends Component {
 
     render() {
         return (
-            <div>
-                <li>{this.props.suggestion} by: {this.props.username} | likes: {this.state.likes} <button onClick={() => this.onClickLikeSuggestion()}>Like</button></li>
-            </div>
+            
+                <div className="li">{this.props.suggestion} <button onClick={() => this.onClickLikeSuggestion()}>Like</button></div>
+        
         );
     }
 }

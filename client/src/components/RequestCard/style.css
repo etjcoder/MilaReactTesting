@@ -9,7 +9,7 @@
     height: 500px;
     position: relative;
     text-align: center;
-    color: #fff;
+    color: lightslategray;
     font-size: 20px;
     /* line-height: 300px; */
     cursor: pointer
@@ -29,8 +29,10 @@
 
      #flipcard .back {
      position: absolute;
+     margin: 50px;
      width: 100%;
      height: 100%;
+     font-size: 20px;
      background: #4f1288;
      opacity: 0.95; 
      border-radius: 40px; 
@@ -46,3 +48,8 @@
      #flipcard:hover .back {
      transform: perspective(600px) rotateY(0deg)
  } 
+
+ .ul {
+     text-align: center;
+     margin-top: 50px
+ }

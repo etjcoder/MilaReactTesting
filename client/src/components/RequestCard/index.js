@@ -10,8 +10,8 @@ class RequestCard extends Component {
     state = {
         categories: [],
         id: this.props.id,
-        showSuggestions: false,
-        showSuggestionForm: false,
+        showSuggestions: true,
+        showSuggestionForm: true,
         suggestions: []
     }
 
@@ -65,10 +65,10 @@ class RequestCard extends Component {
 
                     <div class="back">
                             {/* <div id="caption-here"> */}
-                            <button onClick={() => this.onClickShowSuggestions()}>Show Suggestions</button>
+                            {/* <button onClick={() => this.onClickShowSuggestions()}>Show Suggestions</button> */}
                             {this.state.showSuggestions ?
 
-                                <ul class="list-group list-group-flush">
+                                <div class="ul">
 
                                     {this.state.suggestions.map(suggestedCap => (
                                         <SuggestedCaptions
@@ -86,9 +86,9 @@ class RequestCard extends Component {
                                     ))}
 
 
-                                </ul> : null}
-                            <button onClick={() => this.onClickSuggestCaption()}>Suggest a caption</button>
-                            {this.state.showSuggestionForm ? <SuggestionForm userdata={this.props.userdata} id={this.props.id} /> : null}
+                                </div> : null}
+                            {this.state.showSuggestionForm ? 
+                            <div style={{marginTop: "50%"}}><SuggestionForm rerender={this.getSuggestions} userdata={this.props.userdata} id={this.props.id} /> </div>: null}
                         {/* </div> */}
                     </div>
                 </div>

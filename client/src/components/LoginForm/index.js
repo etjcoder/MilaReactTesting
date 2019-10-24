@@ -66,11 +66,9 @@ class LoginForm extends Component {
           <br />
           <br />
           <input value={this.state.password} onChange={this.handleChange} type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
-          <br />
-          <br />
-          <button type="submit" onClick={this.login} className="btn">Login</button>
-          <button onClick={this.signup} style={{ marginLeft: '25px' }} className="btn btn-success">Signup</button>
-          <button onClick={this.logOut} sryle={{ marginLeft: '25px'  }} className="btn btn-danger">Logout</button>
+          <button type="submit" onClick={this.login} style={{marginTop: '5px', marginLeft: '25px'}} className="btn btn-primary">Login</button>
+          <button onClick={this.signup} style={{ marginTop: '5px', marginLeft: '25px' }} className="btn btn-success">Signup</button>
+          <button onClick={this.logOut} style={{ marginTop: '5px', marginLeft: '25px' }} className="btn btn-danger">Logout</button>
         </form>
       </div>
     )
