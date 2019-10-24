@@ -59,18 +59,22 @@ module.exports = {
             .then(dbCaption => res.json(dbCaption))
             .catch(err => res.status(422).json(err));
     },
-    createUserRequest: function(req, res) {
-        db.Suggestableimage
-            .create(req.body)
-            .then(dbImage => res.json(dbImage))
-            .catch(err => res.status(422).json(err))
-    },
     saveSuggestedCaption: function(req, res) {
         db.Suggestedcaption
             .create(req.body)
             .then(function(dbCaption){ 
                 
-                return db.Suggestableimage.findByIdAndUpdate({ _id: req.params.id}, { $push: { suggestedCaptions: dbCaption._id} }, {new: true});
+                return db.Suggestableimage.findByIdAndUpdate({ _id: req.params.id}, { $push: { suggestedCaptions: dbCaption._id} }, {new: true}, {useFindAndModify: false});
+
+            })
+            .catch(err => res.status(422).json(err))
+    },
+    saveUserRequest: function(req, res) {
+        db.Suggestableimage
+            .create(req.body)
+            .then(function(dbCaption){
+
+                return db.User.findByIdAndUpdate({ _id: req.params.id}, { $push: { myRequestedImages: dbCaption._id} }, {new: true});
 
             })
             .catch(err => res.status(422).json(err))

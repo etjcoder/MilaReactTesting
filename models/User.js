@@ -24,6 +24,11 @@ var UserSchema = new Schema({
         required: false,
         default: ""
     },
+    username: {
+        type: String,
+        required: false,
+        default: ""
+    },
     profileDesc: {
         type: String,
         required: false,
@@ -57,9 +62,13 @@ var UserSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Suggestedcaption"
     }],
+    myRequestedImages: [{
+        type: Schema.Types.ObjectId,
+        ref: "Suggestableimage"
+    }],
     comments: [{
         type: Schema.Types.ObjectId,
-        ref: "Comments"
+        ref: "Comment"
     }],
 }, {
     timestamps: {

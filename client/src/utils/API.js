@@ -13,8 +13,8 @@ export default {
     saveCategory: function(data) {
         return axios.post("/api/admin/category", data);
     },
-    saveCaptionRequest: function(data) {
-        return axios.post("/api/user/request", data);
+    saveCaptionRequest: function(id, data) {
+        return axios.post("/api/user/request/" + id, data);
     },
     saveCaptionSuggestion: function(id, data) {
         return axios.post("/api/user/suggestion/" + id, data);

@@ -10,13 +10,19 @@ var SuggestableimageSchema = new Schema({
     },
     category: {
         type: String,
-        required: true,
+        required: false,
         unique: false
     },
     description: {
         type: String,
-        required: true,
+        required: false,
         unique: false
+    },
+    username: {
+        type: String,
+        required: false,
+        unique: false,
+        default: ""
     },
     tags: {
         type: [String],
@@ -30,7 +36,7 @@ var SuggestableimageSchema = new Schema({
     },
     likes: {
         type: Number,
-        required: true,
+        required: false,
         default: 0
     },
     suggestedCaptions: [{

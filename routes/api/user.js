@@ -16,8 +16,10 @@ router.route("/search/category/:category")
     .get(userController.searchCategories)
 
 router.route("/request")
-    .post(userController.createUserRequest)
     .get(userController.findAllRequest);
+
+router.route("/request/:id")
+    .post(userController.saveUserRequest)
 
 router.route("/suggestion/:id")
     .post(userController.saveSuggestedCaption)
