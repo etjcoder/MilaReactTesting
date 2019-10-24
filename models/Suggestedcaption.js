@@ -6,11 +6,12 @@ var SuggestedCaptionSchema = new Schema({
     caption: {
         type: String,
         required: true,
-        unique: true
+        unique: false
     },
     parentID: {
         type: String,
-        required: true
+        required: true,
+        unique: false
     },
     category: {
         type: String,
@@ -34,12 +35,12 @@ var SuggestedCaptionSchema = new Schema({
     },
     lyric: {
         type: Boolean,
-        required: true,
+        required: false,
         default: false
     }, 
     quote: {
         type: Boolean,
-        required: true,
+        required: false,
         default: false
     },
     originalAuthor: {

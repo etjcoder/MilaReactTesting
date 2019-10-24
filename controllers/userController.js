@@ -9,6 +9,13 @@ module.exports = {
             .then(dbCaption => res.json(dbCaption))
             .catch(err => res.status(422).json(err))
     },
+    findUserRequest: function(req, res) {
+        db.User
+        .findById(req.params.id)
+        .populate("myRequestedImages")
+        .then(dbCaption => res.json(dbCaption))
+        .catch(err => res.status(422).json(err))
+    },
     searchKeywords: function(req, res) {
         db.Maincaption
             .find({tags : req.params.keyword})

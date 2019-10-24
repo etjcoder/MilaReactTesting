@@ -20,6 +20,7 @@ router.route("/request")
 
 router.route("/request/:id")
     .post(userController.saveUserRequest)
+    .get(userController.findUserRequest)
 
 router.route("/suggestion/:id")
     .post(userController.saveSuggestedCaption)

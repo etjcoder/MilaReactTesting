@@ -28,12 +28,17 @@ export default props => {
 
       <a className="menu-item" onClick={props.requestOption}>
       <i class="fa fa-camera-retro"></i>&nbsp;
-        Request
+        Request a Caption
+      </a>
+
+      <a className="menu-item" onClick={props.viewMyRequests}>
+      <i class="fa fa-hashtag"></i>&nbsp;
+        View My Requests
       </a>
 
       <a className="menu-item" onClick={props.viewrequestsOption}>
       <i class="fa fa-hashtag"></i>&nbsp;
-        View Requests
+        View Community Requests
       </a>
 
 
@@ -47,6 +52,8 @@ export default props => {
       <i class="fa fa-edit"></i>&nbsp;
         Edit Profile
       </a>
+
+      
 
     </Menu>
   );

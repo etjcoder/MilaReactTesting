@@ -6,12 +6,17 @@ import API from "../../utils/API";
 class SuggestionForm extends Component {
 
     state = {
-        categories: [],
-        imageID: this.props.id,
         caption: "",
         username: "",
         reference: "",
-        parentID: this.props.id
+    }
+
+    componentDidMount() {
+
+        this.setState({
+            username: this.props.userdata[0].username
+        })
+
     }
 
     handleInputChange = event => {
@@ -26,19 +31,13 @@ class SuggestionForm extends Component {
 
         console.log(this.state)
 
-        API.saveCaptionSuggestion( this.state.imageID, {
+        API.saveCaptionSuggestion( this.props.id, {
             caption: this.state.caption,
             username: this.state.username,
-            reference: this.state.reference,
-            parentID: this.state.imageID
+            parentID: this.props.id
         })
         .then(res => console.log("Successfully saved your suggestion"))
         .catch(err => console.log(err))
-    }
-
-
-    onClickSubmitCaption() {
-        console.log("Suggest a caption on caption id: " + this.props.id + " / " + this.state.id)
     }
 
     render() {
@@ -47,9 +46,7 @@ class SuggestionForm extends Component {
                 <h4>Comment your Suggestion:</h4>
                 <form>
                     <Input value={this.state.caption} onChange={this.handleInputChange} name="caption" placeholder="Write your caption here" />
-                    <Input value={this.state.username} onChange={this.handleInputChange} name="username" placeholder="Username goes here" />
-                    <Input value={this.state.reference} onChange={this.handleInputChange} name="reference" placeholder="Reference" />
-                    <button onClick={this.handleFormSubmit}>Submit your suggestion</button>
+                    <button className="btn-sm btn-outline-warning" onClick={this.handleFormSubmit}>Submit your suggestion</button>
                 </form>
             </div>
         );
