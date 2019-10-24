@@ -15,11 +15,12 @@ import UserSearchOptions from "../components/UserSearchOptions";
 import Nav from "../components/Nav/";
 import "./page-styles/css/style.css";
 import SideNavPage from "../components/SideNavPage";
-import CommunityInfiniteScroll from "../components/CommunityInfiniteScroll";
+import CommunityInfiniteScroll from "../components/InfiniteUsers";
 import cogoToast from "cogo-toast";
 import fire from "../config/Fire";
 import FlipCard from "../components/FlipCard";
 import UserProfileEdit from "../components/UserProfileEdit"
+import InfiniteUsers from "../components/InfiniteUsers";
 
 class UserDash extends Component {
 
@@ -172,7 +173,7 @@ class UserDash extends Component {
     render() {
         return (
         <div>
-            <Nav user={this.props.user}/>
+        <Nav user={this.props.user}/>
            <SideNavPage createOption={this.onClickCaption} 
                         editOption={this.onClickEditCaption} 
                         requestOption={this.onClickUserRequest} 
@@ -214,7 +215,7 @@ class UserDash extends Component {
                         
                     </Col>
            <Col size="3">
-           <CommunityInfiniteScroll />
+           <InfiniteUsers/>
            </Col>
            </Row>
            </Container>

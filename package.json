@@ -30,6 +30,7 @@
     "express": "^4.16.3",
     "firebase": "^7.2.1",
     "if-env": "^1.0.4",
+    "lodash.debounce": "^4.0.8",
     "mongojs": "^2.6.0",
     "mongoose": "^5.7.4",
     "path": "^0.12.7",
@@ -38,6 +39,7 @@
     "react-dom": "^16.10.2",
     "react-infinite-scroll-component": "^4.5.3",
     "react-router-dom": "^5.1.2",
-    "react-typing-animation": "^1.6.2"
+    "react-typing-animation": "^1.6.2",
+    "superagent": "^5.1.0"
   }
 }
