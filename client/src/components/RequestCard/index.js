@@ -88,7 +88,7 @@ class RequestCard extends Component {
 
                                 </ul> : null}
                             <button onClick={() => this.onClickSuggestCaption()}>Suggest a caption</button>
-                            {this.state.showSuggestionForm ? <SuggestionForm id={this.props.id} /> : null}
+                            {this.state.showSuggestionForm ? <SuggestionForm userdata={this.props.userdata} id={this.props.id} /> : null}
                         {/* </div> */}
                     </div>
                 </div>

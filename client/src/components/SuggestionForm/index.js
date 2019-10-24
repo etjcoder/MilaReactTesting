@@ -7,17 +7,8 @@ class SuggestionForm extends Component {
 
     state = {
         caption: "",
-        username: "",
-        reference: "",
     }
 
-    componentDidMount() {
-
-        this.setState({
-            username: this.props.userdata[0].username
-        })
-
-    }
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -29,11 +20,12 @@ class SuggestionForm extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
 
-        console.log(this.state)
+       
+        console.log("Working on caption suggestion into database...")
 
         API.saveCaptionSuggestion( this.props.id, {
             caption: this.state.caption,
-            username: this.state.username,
+            username: this.props.userdata[0].username,
             parentID: this.props.id
         })
         .then(res => console.log("Successfully saved your suggestion"))
