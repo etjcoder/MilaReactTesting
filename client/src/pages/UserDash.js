@@ -15,7 +15,7 @@ import UserSearchOptions from "../components/UserSearchOptions";
 import Nav from "../components/Nav/";
 import "./page-styles/css/style.css";
 import SideNavPage from "../components/SideNavPage";
-// import CommunityInfiniteScroll from "../components/InfiniteUsers";
+import CommunityInfiniteScroll from "../components/InfiniteUsers";
 import cogoToast from "cogo-toast";
 import fire from "../config/Fire";
 import FlipCard from "../components/FlipCard";
@@ -244,8 +244,10 @@ class UserDash extends Component {
                             {this.state.showMyRequests ? <UserMyRequests userdata={this.state.userData} /> : null }
                         </div>
                     </Col>
+
            <Col size="3">          
            <InfiniteUsers  style={{height:'100', overflow:'auto'}}/>  
+
            </Col>
            </Row>
            </Container>

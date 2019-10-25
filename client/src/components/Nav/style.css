@@ -17,17 +17,20 @@
     position: relative;
     top: -50px;
     margin-bottom: -50px;
-    border: 5px solid white;
+    border: 5px solid white;
     max-width: 50px;
     max-height: 50px;
     /* -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px; */
-    }
-    
+
+}
+        
+
 .card-image {
-    text-align: center;
-    justify-content:right;
-    border: 5px solid white;
+    text-align: right;
+    justify-content: right;
+    border: 5px solid white;
+
 }
     

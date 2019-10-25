@@ -29,7 +29,7 @@ class Nav extends Component {
         <a className="navbar-brand" href="/">
           M I L A
       </a>
-       
+
         <a href="/user" className="navbar-text ml-auto"> View User Dash/  </a>
         <a href="/admin" className="navbar-text">  View Admin Dash </a>
         <div class="avatar ml-auto">

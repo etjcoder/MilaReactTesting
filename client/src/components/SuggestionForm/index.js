@@ -20,7 +20,7 @@ class SuggestionForm extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
 
-       
+
         console.log("Working on caption suggestion into database...")
 
         API.saveCaptionSuggestion( this.props.id, {
@@ -28,19 +28,18 @@ class SuggestionForm extends Component {
             username: this.props.userdata[0].username,
             parentID: this.props.id
         })
-        .then(res => console.log("Successfully saved your suggestion"))
+        .then(res => this.props.rerender(this.props.id))
         .catch(err => console.log(err))
     }
 
     render() {
         return (
-            <div className="card bg-dark text-white">
-                <h4>Comment your Suggestion:</h4>
+                <div className="center-block">
                 <form>
                     <Input value={this.state.caption} onChange={this.handleInputChange} name="caption" placeholder="Write your caption here" />
                     <button className="btn-sm btn-outline-warning" onClick={this.handleFormSubmit}>Submit your suggestion</button>
                 </form>
-            </div>
+                </div>
         );
     }
 }
