@@ -11,6 +11,10 @@ var SuggestedCaptionSchema = new Schema({
         type: String,
         required: false,
     },
+    authorID: {
+        type: String,
+        required: false
+    },
     category: {
         type: String,
         required: false,

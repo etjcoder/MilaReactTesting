@@ -3,7 +3,8 @@ import "./style.css"
 import API from "../../utils/API";
 import SuggestedCaptions from "../SuggestedCaptions"
 import SuggestionForm from "../SuggestionForm"
-import Image from 'react-image-resizer'
+import Image from 'react-image-resizer';
+import InfiniteUsersReqCard from "../InfiniteUsersReqCard";
 
 class RequestCard extends Component {
 
@@ -56,42 +57,28 @@ class RequestCard extends Component {
             <div id="flipcard">
                 <div class="container">
                     <div class="front">
-                            <div id="image-here">
-                            <img className="card-image" style={{ width: 280, height: 280, marginTop: "10%"}} alt={this.props.id} src={this.props.imageSrc} />
+                        <div id="image-here">
+                            <img className="card-image" style={{ width: 280, height: 280, marginTop: "10%" }} alt={this.props.id} src={this.props.imageSrc} />
                             <p>Current Likes: {this.props.likes}</p>
-                            <SuggestionForm id={this.props.id} userdata={this.props.userdata}/>
-                            </div>
+                            <SuggestionForm id={this.props.id} userdata={this.props.userdata} />
+                        </div>
                     </div>
 
                     <div class="back">
-                            {/* <div id="caption-here"> */}
-                            {/* <button onClick={() => this.onClickShowSuggestions()}>Show Suggestions</button> */}
-                            {this.state.showSuggestions ?
+                        {/* <div id="caption-here"> */}
+                        {/* <button onClick={() => this.onClickShowSuggestions()}>Show Suggestions</button> */}
+                        {this.state.showSuggestions ?
 
-                                <div class="ul">
-
-                                    {this.state.suggestions.map(suggestedCap => (
-                                        <SuggestedCaptions
-                                            key={suggestedCap._id}
-                                            id={suggestedCap._id}
-                                            parentID={suggestedCap.parentID}
-                                            suggestion={suggestedCap.caption}
-                                            username={suggestedCap.username}
-                                            reference={suggestedCap.reference}
-                                            lyric={suggestedCap.lyric}
-                                            quote={suggestedCap.quote}
-                                            originalAuthor={suggestedCap.originalAuthor}
-                                            likes={suggestedCap.likes}
-                                            likedBy={suggestedCap.likedBy}
-                                            goldstar={suggestedCap.goldstar}
-                                            userdata={this.props.userdata}
-                                        />
-                                    ))}
+                            <div className="ul" style={{ height: 300, overflow: 'auto' }}>
+                                <InfiniteUsersReqCard suggestions={this.state.suggestions} userdata={this.props.userdata}/>
+                            </div>
 
 
-                                </div> : null}
-                            {this.state.showSuggestionForm ? 
-                            <div style={{marginTop: "50%"}}><SuggestionForm rerender={this.getSuggestions} userdata={this.props.userdata} id={this.props.id} /> </div>: null}
+
+
+                            : null}
+                        {this.state.showSuggestionForm ?
+                            <div style={{ marginTop: "5%" }}><SuggestionForm rerender={this.getSuggestions} userdata={this.props.userdata} id={this.props.id} /> </div> : null}
                         {/* </div> */}
                     </div>
                 </div>
