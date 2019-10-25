@@ -6,13 +6,9 @@ import API from "../../utils/API";
 class SuggestionForm extends Component {
 
     state = {
-        categories: [],
-        imageID: this.props.id,
         caption: "",
-        username: "",
-        reference: "",
-        parentID: this.props.id
     }
+
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -24,34 +20,26 @@ class SuggestionForm extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
 
-        console.log(this.state)
 
-        API.saveCaptionSuggestion( this.state.imageID, {
+        console.log("Working on caption suggestion into database...")
+
+        API.saveCaptionSuggestion( this.props.id, {
             caption: this.state.caption,
-            username: this.state.username,
-            reference: this.state.reference,
-            parentID: this.state.imageID
+            username: this.props.userdata[0].username,
+            parentID: this.props.id
         })
-        .then(res => console.log("Successfully saved your suggestion"))
+        .then(res => this.props.rerender(this.props.id))
         .catch(err => console.log(err))
-    }
-
-
-    onClickSubmitCaption() {
-        console.log("Suggest a caption on caption id: " + this.props.id + " / " + this.state.id)
     }
 
     render() {
         return (
-            <div className="card bg-dark text-white">
-                <h4>Comment your Suggestion:</h4>
+                <div className="center-block">
                 <form>
                     <Input value={this.state.caption} onChange={this.handleInputChange} name="caption" placeholder="Write your caption here" />
-                    <Input value={this.state.username} onChange={this.handleInputChange} name="username" placeholder="Username goes here" />
-                    <Input value={this.state.reference} onChange={this.handleInputChange} name="reference" placeholder="Reference" />
-                    <button onClick={this.handleFormSubmit}>Submit your suggestion</button>
+                    <button className="btn-sm btn-outline-warning" onClick={this.handleFormSubmit}>Submit your suggestion</button>
                 </form>
-            </div>
+                </div>
         );
     }
 }

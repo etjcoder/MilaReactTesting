@@ -13,8 +13,8 @@ export default {
     saveCategory: function(data) {
         return axios.post("/api/admin/category", data);
     },
-    saveCaptionRequest: function(data) {
-        return axios.post("/api/user/request", data);
+    saveCaptionRequest: function(id, data) {
+        return axios.post("/api/user/request/" + id, data);
     },
     saveCaptionSuggestion: function(id, data) {
         return axios.post("/api/user/suggestion/" + id, data);
@@ -30,6 +30,9 @@ export default {
     },
     getUserCaptions: function(id) {
         return axios.get("/api/user/captions/" +id)
+    },
+    getSpecificUserRequests: function(id) {
+        return axios.get("/api/user/request/" +id)
     },
     searchByKeyword: function(keyword) {
         return axios.get("/api/user/search/keyword/" + keyword)

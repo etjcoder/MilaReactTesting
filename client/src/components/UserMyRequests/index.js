@@ -1,31 +1,46 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import RequestCard from "../RequestCard";
+import { Col, Row, Container } from "../Grid";
 
-class UserRequestViewer extends Component {
+class UserMyRequests extends Component {
 
     state = {
         categories: [],
         requests: [],
         captions: [],
-        caption: "",
-        category: "",
-        reference: "",
-        lyric: "",
-        quote: "",
-        originalAuthor: "",
-        tags: "",
-        editModalShown: false,
-        editUserData: ""
+        editRequestsShown: false,
+        editRequestData: "",
+        goldStarsLeft: 0,
+        userdata: ""
     }
 
     componentDidMount() {
-        console.log("Component Mounted");
-        this.importRequests();
-        console.log(this.props.categories);
+        console.log("UserMyRequests Component Mounted");
+        this.setState({
+            userdata: this.props.userdata
+        })
+        this.getMyRequests();
     }
 
-   importRequests = () => {
+
+    getMyRequests = () => {
+
+        var id = this.props.userdata[0]._id
+
+        API.getSpecificUserRequests(id)
+            .then(res => 
+                
+                this.setState({
+                    requests: res.data.myRequestedImages
+                })
+                
+                )
+            .catch(err => console.log(err))
+
+    }
+
+    importRequests = () => {
         API.getRequests()
             .then(res =>
                 this.setState({
@@ -34,10 +49,12 @@ class UserRequestViewer extends Component {
             )
    };
 
+
     render() {
         return (
-            <div>
+            <Row>
                {this.state.requests.map(request =>(
+                   <Col size="6">
                    <RequestCard 
                    key={request._id}
                    imageSrc={request.imageURL} 
@@ -50,10 +67,11 @@ class UserRequestViewer extends Component {
                    tags={request.tags}
                    userdata={this.props.userdata}
                    />
+                   </Col>
                ))}
-            </div>
+            </Row>
                 )
             }
         }
         
-export default UserRequestViewer
+export default UserMyRequests

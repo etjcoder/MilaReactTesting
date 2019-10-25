@@ -2,26 +2,29 @@ import React, { Component } from "react";
 import { Input } from "../Form";
 import API from "../../utils/API";
 import axios from "axios";
-import {storage} from "../firebase"
+import {storage} from "../../config/Fire";
+import cogoToast from "cogo-toast";
 
 
 class UserCaptionCreator extends Component {
 
     state = {
-        imageURL: "",
         category: this.props.categories[0].category,
         description: "",
         tags: "",
-        username: "",
         suggestedCaptions: [],
         image: null,
         url: "",
+        userdata: ""
     }
 
     componentDidMount() {
         // this.gatherCaptions();
         console.log(this.props.categories);
         // console.log(this.props.captions);
+        this.setState({
+            userdata: this.props.userdata[0]
+        })
     }
 
     handleInputChange = event => {
@@ -39,21 +42,6 @@ class UserCaptionCreator extends Component {
             })
         }
     }
-
-    // fileUploadHandler = (event) => {
-    //     event.preventDefault();
-    //     const fd = new FormData();
-    //     fd.append('image', this.state.image, this.state.image.name);
-
-    //     axios.post('', fd, {
-    //         uploadProgress: progressEvent => {
-    //             console.log('Upload Progress ' + Math.round(progressEvent.loaded / progressEvent.total * 100) + '%')
-    //         }
-    //     })
-    //         .then(res => {
-    //             console.log(res);
-    //         })
-    // }
 
     fileUploadHandlerB = (event) => {
         event.preventDefault();
@@ -84,16 +72,17 @@ class UserCaptionCreator extends Component {
         var lowerCaseTags = apiTags.toLowerCase();
         var splicedArr = lowerCaseTags.split(", ")
         console.log(splicedArr)
-
-        API.saveCaptionRequest({
-            imageURL: this.state.imageURL,
+        cogoToast.success("You've created a request!")
+        API.saveCaptionRequest(this.state.userdata._id, {
+            imageURL: this.state.url,
             category: this.state.category,
             description: this.state.description,
-            username: this.state.username,
-        })
-            .then(res => console.log("Successfully added caption"))
-            .catch(err => console.log)
-    }
+            username: this.props.userdata[0].username
+        }) 
+        .then(res => console.log("Successfully created request"))
+        .catch(err => console.log)
+    } 
+    /// << Need to find a way to get this .then to trigger
 
 
 
@@ -102,7 +91,6 @@ class UserCaptionCreator extends Component {
             <div className="card bg-dark text-white">
                 <form>
                     <h5>Input your Request for a Caption here</h5>
-                    <Input value={this.state.imageURL} name="imageURL" placeholder="Image URL goes here" />
                     {/* <Input value={this.state.category} onChange={this.handleInputChange} name="category" placeholder="Category goes here" /> */}
 
                     <input type="file" onChange={this.fileSelectedHandler} />
@@ -117,7 +105,6 @@ class UserCaptionCreator extends Component {
                         ))}
 
                     </select>
-                    <Input value={this.state.username} onChange={this.handleInputChange} name="username" placeholder="Your name goes here" />
                     <Input value={this.state.description} onChange={this.handleInputChange} name="description" placeholder="Description of your photo goes here" />
                     {/* <Input value={this.state.lyric} onChange={this.handleInputchange} name="caption" placeholder="Is this a Lyric? (true or false)"/> */}
                     {/* <Input value={this.state.quote} onChange={this.handleInputchange} name="quote" placeholder="Is this a quote? (true or false)"/> */}

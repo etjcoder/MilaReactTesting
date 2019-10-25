@@ -29,7 +29,7 @@ class SearchResult extends Component {
 
     render() {
         return (
-            <div>
+            <div id="search-text">
                <h4><u>Caption</u> <i>{this.props.caption}</i></h4>
                <h5><u>by</u> {this.props.author} </h5>
                <h6><u>Category</u> {this.props.category}</h6>

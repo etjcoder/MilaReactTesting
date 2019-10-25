@@ -1,14 +1,14 @@
 import React, {Component} from "react";
-import ReactDom from "react-dom";
-import Jumbotron from "../components/Jumbotron/";
+// import ReactDom from "react-dom";
+// import Jumbotron from "../components/Jumbotron/";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid/";
-import { List, ListItem } from "../components/List/";
-import { Input, FormBtn } from "../components/Form";
-import SearchBtn from "../components/SearchBtn";
+// import { List, ListItem } from "../components/List/";
+// import { Input, FormBtn } from "../components/Form";
+// import SearchBtn from "../components/SearchBtn";
 import UserCaptionCreator from "../components/UserCaptionCreator";
 import UserEditCaptions from "../components/UserEditCaptions";
-import UserEditModal from "../components/UserEditModal";
+// import UserEditModal from "../components/UserEditModal";
 import UserRequestCreator from "../components/UserRequestCreator";
 import UserRequestViewer from "../components/UserRequestViewer";
 import UserSearchOptions from "../components/UserSearchOptions";
@@ -21,6 +21,7 @@ import fire from "../config/Fire";
 import FlipCard from "../components/FlipCard";
 import UserProfileEdit from "../components/UserProfileEdit"
 import InfiniteUsers from "../components/InfiniteUsers";
+import UserMyRequests from "../components/UserMyRequests";
 
 class UserDash extends Component {
 
@@ -32,6 +33,7 @@ class UserDash extends Component {
         showRequestViewer: false,
         showUserSearchOptions: false,
         showProfileEdit: false,
+        showMyRequests: false,
         categories: [],
         captions: [],
         userData: "",
@@ -71,7 +73,8 @@ class UserDash extends Component {
                 showRequestCreator: false,
                 showRequestViewer: false,
                 showUserSearchOptions: false,
-                showProfileEdit: false
+                showProfileEdit: false,
+                showMyRequests: false
             }) 
         } else {
             this.setState({
@@ -88,7 +91,8 @@ class UserDash extends Component {
                 showRequestCreator: false,
                 showRequestViewer: false,
                 showUserSearchOptions: false,
-                showProfileEdit: false
+                showProfileEdit: false,
+                showMyRequests: false
             })
         } else {
             this.setState({
@@ -105,7 +109,8 @@ class UserDash extends Component {
                 showRequestCreator: true,
                 showRequestViewer: false,
                 showUserSearchOptions: false,
-                showProfileEdit: false
+                showProfileEdit: false,
+                showMyRequests: false
             })
         } else {
             this.setState({
@@ -122,7 +127,8 @@ class UserDash extends Component {
                 showRequestCreator: false,
                 showRequestViewer: true,
                 showUserSearchOptions: false,
-                showProfileEdit: false
+                showProfileEdit: false,
+                showMyRequests: false
             })
         } else {
             this.setState({
@@ -139,7 +145,8 @@ class UserDash extends Component {
                 showRequestCreator: false,
                 showRequestViewer: false,
                 showUserSearchOptions: true,
-                showProfileEdit: false
+                showProfileEdit: false,
+                showMyRequests: false
             })
         } else {
             this.setState({
@@ -161,7 +168,8 @@ class UserDash extends Component {
                 showRequestCreator: false,
                 showRequestViewer: false,
                 showUserSearchOptions: false,
-                showProfileEdit: true
+                showProfileEdit: true,
+                showMyRequests: false
             })
         } else {
             this.setState({
@@ -169,6 +177,26 @@ class UserDash extends Component {
             })
         }
     }
+
+    onClickViewMyRequests = () => {
+        if (this.state.showMyRequests === false) {
+            this.setState({
+                showCaptionCreator: false,
+                showCaptionEditor: false,
+                showRequestCreator: false,
+                showRequestViewer: false,
+                showUserSearchOptions: false,
+                showProfileEdit: false,
+                showMyRequests: true
+            })
+        } else {
+            this.setState({
+                showMyRequests: false
+            })
+        }
+    }
+ 
+    
 
     render() {
         return (
@@ -181,6 +209,7 @@ class UserDash extends Component {
                         viewrequestsOption={this.onClickViewRequest} 
                         logOut={this.onClickLogout} 
                         editProfile={this.onClickProfileEdit}
+                        viewMyRequests={this.onClickViewMyRequests}
                                                             />
             <Container fluid>
                 <Row>
@@ -198,11 +227,11 @@ class UserDash extends Component {
                         </div>
                         {/* <input type="submit" value="Request a Caption for an Image" onClick={this.onClickUserRequest} /> */}
                         <div>
-                            {this.state.showRequestCreator ? <UserRequestCreator categories={this.state.categories}  /> : null }
+                            {this.state.showRequestCreator ? <UserRequestCreator userdata={this.state.userData} categories={this.state.categories}  /> : null }
                         </div>
                         {/* <input type="submit" value="Review Regional Caption Requests" onClick={this.onClickViewRequest} /> */}
                         <div>
-                            {this.state.showRequestViewer ? <UserRequestViewer categories={this.state.categories} /> : null }
+                            {this.state.showRequestViewer ? <UserRequestViewer userdata={this.state.userData} categories={this.state.categories} /> : null }
                         </div>
                         {/* <input type="submit" value="Search for Captions" onClick={this.onClickSearchOptions} /> */}
                         <div>
@@ -211,11 +240,14 @@ class UserDash extends Component {
                         <div>
                             {this.state.showProfileEdit ? <UserProfileEdit userdata={this.state.userData} /> : null }
                         </div>
-                        <FlipCard />
-                        
+                        <div>
+                            {this.state.showMyRequests ? <UserMyRequests userdata={this.state.userData} /> : null }
+                        </div>
                     </Col>
            <Col size="3">
+
            <InfiniteUsers/>
+
            </Col>
            </Row>
            </Container>

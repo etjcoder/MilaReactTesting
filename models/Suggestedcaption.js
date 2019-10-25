@@ -5,42 +5,35 @@ var Schema = mongoose.Schema;
 var SuggestedCaptionSchema = new Schema({
     caption: {
         type: String,
-        required: true,
-        unique: true
+        required: false,
     },
     parentID: {
         type: String,
-        required: true
+        required: false,
     },
     category: {
         type: String,
         required: false,
-        unique: false
     },
     tags: {
-        type: [String],
+        type: String,
         required: false,
-        unique: false
     },
     username: {
         type: String,
         required: false,
-        unique: false,
     },
     reference: {
         type: String,
         required: false,
-        unique: false
     },
     lyric: {
         type: Boolean,
-        required: true,
-        default: false
+        required: false,
     }, 
     quote: {
         type: Boolean,
-        required: true,
-        default: false
+        required: false,
     },
     originalAuthor: {
         type: String,
@@ -48,16 +41,16 @@ var SuggestedCaptionSchema = new Schema({
     },
     likes: {
         type: Number,
-        required: true,
+        required: false,
         default: 0
     }, 
     goldstar: {
         type: Boolean,
-        required: true,
+        required: false,
         default: false
     }, 
     images: {
-        type: [String],
+        type: String,
         required: false,
         unique: false
     }, 
@@ -65,11 +58,6 @@ var SuggestedCaptionSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Comment"
     }], 
-    
-}, {
-    timestamps: {
-        createdAt: 'created_at'
-    }
 })
 
 var Suggestedcaption = mongoose.model("Suggestedcaption", SuggestedCaptionSchema);

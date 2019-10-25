@@ -64,6 +64,7 @@ class UserSearchOptions extends Component {
     render() {
         return (
             <div className="card" id="searchKeyword">
+            <div>
                 <form>
                     <h4>Search By Keyword</h4><br/>
                     <Input value={this.state.keyword} onChange={this.handleInputChange} name="keyword" placeholder="Enter search terms here" />
@@ -84,9 +85,11 @@ class UserSearchOptions extends Component {
                 <br/>
                 <button>Search By Imagereader (Coming soon!)</button>
                 <br/>
-                <UserSearchResults results={this.state.searchResults}/>
+            </div>
+            <UserSearchResults results={this.state.searchResults}/>
             </div>
         )
+
     }
 
 }
