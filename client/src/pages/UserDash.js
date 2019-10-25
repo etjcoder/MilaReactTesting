@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 // import ReactDom from "react-dom";
 // import Jumbotron from "../components/Jumbotron/";
 import API from "../utils/API";
@@ -22,6 +22,7 @@ import FlipCard from "../components/FlipCard";
 import UserProfileEdit from "../components/UserProfileEdit"
 import InfiniteUsers from "../components/InfiniteUsers";
 import UserMyRequests from "../components/UserMyRequests";
+import '../pages/page-styles/css/style.css'
 
 class UserDash extends Component {
 
@@ -48,7 +49,7 @@ class UserDash extends Component {
 
     gatherCategories = () => {
         API.getCategories()
-            .then(res => 
+            .then(res =>
                 this.setState({
                     categories: res.data
                 }))
@@ -58,7 +59,7 @@ class UserDash extends Component {
         var userID = this.props.user.uid
 
         API.getUserData(userID)
-            .then(res => 
+            .then(res =>
                 this.setState({
                     userData: res.data
                 })
@@ -66,7 +67,7 @@ class UserDash extends Component {
     }
 
     onClickCaption = () => {
-        if (this.state.showCaptionCreator === false ) {
+        if (this.state.showCaptionCreator === false) {
             this.setState({
                 showCaptionCreator: true,
                 showCaptionEditor: false,
@@ -75,7 +76,7 @@ class UserDash extends Component {
                 showUserSearchOptions: false,
                 showProfileEdit: false,
                 showMyRequests: false
-            }) 
+            })
         } else {
             this.setState({
                 showCaptionCreator: false
@@ -117,7 +118,7 @@ class UserDash extends Component {
                 showRequestCreator: false
             })
         }
-    }   
+    }
 
     onClickViewRequest = () => {
         if (this.state.showRequestViewer === false) {
@@ -135,7 +136,7 @@ class UserDash extends Component {
                 showRequestViewer: false
             })
         }
-    }   
+    }
 
     onClickSearchOptions = () => {
         if (this.state.showUserSearchOptions === false) {
@@ -153,7 +154,7 @@ class UserDash extends Component {
                 showUserSearchOptions: false
             })
         }
-    }   
+    }
 
     onClickLogout() {
         fire.auth().signOut();
@@ -195,63 +196,64 @@ class UserDash extends Component {
             })
         }
     }
- 
-    
+
+
 
     render() {
         return (
-        <div>
-        <Nav user={this.props.user}/>
-           <SideNavPage createOption={this.onClickCaption} 
-                        editOption={this.onClickEditCaption} 
-                        requestOption={this.onClickUserRequest} 
-                        searchOption={this.onClickSearchOptions} 
-                        viewrequestsOption={this.onClickViewRequest} 
-                        logOut={this.onClickLogout} 
-                        editProfile={this.onClickProfileEdit}
-                        viewMyRequests={this.onClickViewMyRequests}
-                                                            />
-            <Container fluid>
-                <Row>
-                <Col size ="1">
-                {/* Blank Space for SideNavPage */}
-                </Col>
-                <Col size ="8">
-                        {/* <input type="submit" value="Create Community Caption" onClick={this.onClickCaption} /> */}
-                        <div>
-                            {this.state.showCaptionCreator ? <UserCaptionCreator userdata={this.state.userData} categories={this.state.categories} captions={this.state.captions}  /> : null }
-                        </div>
-                        {/* <input type="submit" value="View/Edit Your Community Captions" onClick={this.onClickEditCaption} /> */}
-                        <div>
-                            {this.state.showCaptionEditor ? <UserEditCaptions userdata={this.state.userData} categories={this.state.categories} rerender={this.importCaptions} captions={this.state.captions}  /> : null }
-                        </div>
-                        {/* <input type="submit" value="Request a Caption for an Image" onClick={this.onClickUserRequest} /> */}
-                        <div>
-                            {this.state.showRequestCreator ? <UserRequestCreator userdata={this.state.userData} categories={this.state.categories}  /> : null }
-                        </div>
-                        {/* <input type="submit" value="Review Regional Caption Requests" onClick={this.onClickViewRequest} /> */}
-                        <div>
-                            {this.state.showRequestViewer ? <UserRequestViewer userdata={this.state.userData} categories={this.state.categories} /> : null }
-                        </div>
-                        {/* <input type="submit" value="Search for Captions" onClick={this.onClickSearchOptions} /> */}
-                        <div>
-                            {this.state.showUserSearchOptions ? <UserSearchOptions categories={this.state.categories} /> : null }
-                        </div>
-                        <div>
-                            {this.state.showProfileEdit ? <UserProfileEdit userdata={this.state.userData} /> : null }
-                        </div>
-                        <div>
-                            {this.state.showMyRequests ? <UserMyRequests userdata={this.state.userData} /> : null }
-                        </div>
-                    </Col>
+            <div>
+                <Nav user={this.props.user} />
+                <SideNavPage createOption={this.onClickCaption}
+                    editOption={this.onClickEditCaption}
+                    requestOption={this.onClickUserRequest}
+                    searchOption={this.onClickSearchOptions}
+                    viewrequestsOption={this.onClickViewRequest}
+                    logOut={this.onClickLogout}
+                    editProfile={this.onClickProfileEdit}
+                    viewMyRequests={this.onClickViewMyRequests}
+                />
+                <Container fluid>
+                    <Row>
+                        <Col size="1">
+                            {/* Blank Space for SideNavPage */}
+                        </Col>
+                        <Col size="8">
+                            {/* <input type="submit" value="Create Community Caption" onClick={this.onClickCaption} /> */}
+                            <div>
+                                {this.state.showCaptionCreator ? <UserCaptionCreator userdata={this.state.userData} categories={this.state.categories} captions={this.state.captions} /> : null}
+                            </div>
+                            {/* <input type="submit" value="View/Edit Your Community Captions" onClick={this.onClickEditCaption} /> */}
+                            <div>
+                                {this.state.showCaptionEditor ? <UserEditCaptions userdata={this.state.userData} categories={this.state.categories} rerender={this.importCaptions} captions={this.state.captions} /> : null}
+                            </div>
+                            {/* <input type="submit" value="Request a Caption for an Image" onClick={this.onClickUserRequest} /> */}
+                            <div>
+                                {this.state.showRequestCreator ? <UserRequestCreator userdata={this.state.userData} categories={this.state.categories} /> : null}
+                            </div>
+                            {/* <input type="submit" value="Review Regional Caption Requests" onClick={this.onClickViewRequest} /> */}
+                            <div>
+                                {this.state.showRequestViewer ? <UserRequestViewer userdata={this.state.userData} categories={this.state.categories} /> : null}
+                            </div>
+                            {/* <input type="submit" value="Search for Captions" onClick={this.onClickSearchOptions} /> */}
+                            <div>
+                                {this.state.showUserSearchOptions ? <UserSearchOptions categories={this.state.categories} /> : null}
+                            </div>
+                            <div>
+                                {this.state.showProfileEdit ? <UserProfileEdit userdata={this.state.userData} /> : null}
+                            </div>
+                            <div>
+                                {this.state.showMyRequests ? <UserMyRequests userdata={this.state.userData} /> : null}
+                            </div>
+                        </Col>
 
-           <Col size="3">          
-           <InfiniteUsers  style={{height:'100', overflow:'auto'}}/>  
-
-           </Col>
-           </Row>
-           </Container>
-           </div>
+                        <Col size="3">
+                            <div className="card" id="infinite-card" style={{ height: 800, overflow: 'auto' }}>
+                                <InfiniteUsers />
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </div >
         )
     }
 }
