@@ -11,7 +11,7 @@ import SuggestedCaptions from "../SuggestedCaptions"
 import "./style.css";
 
 
-class InfiniteUsers extends Component {
+class InfiniteUsersReqCard extends Component {
   constructor(props) {
     super(props);
     // Sets up our initial state
@@ -39,7 +39,7 @@ class InfiniteUsers extends Component {
         window.innerHeight + document.documentElement.scrollTop
         === document.documentElement.offsetHeight
       ) {
-        loadUsers();
+        console.log("This is where they would've loaded users..")
       }
     };
   }
@@ -68,6 +68,7 @@ class InfiniteUsers extends Component {
             parentID={suggestedCap.parentID}
             suggestion={suggestedCap.caption}
             username={suggestedCap.username}
+            authorID={suggestedCap.authorID}
             reference={suggestedCap.reference}
             lyric={suggestedCap.lyric}
             quote={suggestedCap.quote}
@@ -76,6 +77,7 @@ class InfiniteUsers extends Component {
             likedBy={suggestedCap.likedBy}
             goldstar={suggestedCap.goldstar}
             userdata={this.props.userdata}
+            goldStarGiven={this.props.goldStarGiven}
           />
         ))}
 
@@ -89,5 +91,4 @@ class InfiniteUsers extends Component {
     );
   }
 }
-export default InfiniteUsers
-
+export default InfiniteUsersReqCard

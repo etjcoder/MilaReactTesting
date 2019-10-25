@@ -26,7 +26,8 @@ class SuggestionForm extends Component {
         API.saveCaptionSuggestion( this.props.id, {
             caption: this.state.caption,
             username: this.props.userdata[0].username,
-            parentID: this.props.id
+            parentID: this.props.id,
+            authorID: this.props.userdata[0]._id
         })
         .then(res => this.props.rerender(this.props.id))
         .catch(err => console.log(err))

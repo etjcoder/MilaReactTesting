@@ -66,6 +66,7 @@ class UserMyRequests extends Component {
                    username={request.username}
                    tags={request.tags}
                    userdata={this.props.userdata}
+                   goldStarGiven={request.goldStarGiven}
                    />
                    </Col>
                ))}

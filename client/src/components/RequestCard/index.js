@@ -13,7 +13,8 @@ class RequestCard extends Component {
         id: this.props.id,
         showSuggestions: true,
         showSuggestionForm: true,
-        suggestions: []
+        suggestions: [],
+        goldStarGiven: ""
     }
 
     componentDidMount() {
@@ -24,7 +25,8 @@ class RequestCard extends Component {
         API.getSuggestions(id)
             .then(res =>
                 this.setState({
-                    suggestions: res.data.suggestedCaptions
+                    suggestions: res.data.suggestedCaptions,
+                    goldStarGiven: this.props.goldStarGiven
                 })
             )
 
@@ -59,7 +61,7 @@ class RequestCard extends Component {
                     <div class="front">
                         <div id="image-here">
                             <img className="card-image" style={{ width: 280, height: 280, marginTop: "10%" }} alt={this.props.id} src={this.props.imageSrc} />
-                            <p>Current Likes: {this.props.likes}</p>
+                
                             <SuggestionForm id={this.props.id} userdata={this.props.userdata} />
                         </div>
                     </div>
@@ -70,7 +72,7 @@ class RequestCard extends Component {
                         {this.state.showSuggestions ?
 
                             <div className="ul" style={{ height: 300, overflow: 'auto' }}>
-                                <InfiniteUsersReqCard suggestions={this.state.suggestions} userdata={this.props.userdata}/>
+                                <InfiniteUsersReqCard goldStarGiven={this.props.goldStarGiven} suggestions={this.state.suggestions} userdata={this.props.userdata}/>
                             </div>
 
 

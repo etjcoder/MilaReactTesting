@@ -78,7 +78,8 @@ class UserCaptionCreator extends Component {
             imageURL: this.state.url,
             category: this.state.category,
             description: this.state.description,
-            username: this.props.userdata[0].username
+            username: this.props.userdata[0].username,
+            authorID: this.props.userdata._id
         }) 
         .then(res => console.log("Successfully created request"))
         .catch(err => console.log)

@@ -109,5 +109,23 @@ module.exports = {
             .findOneAndUpdate({ _id: req.params.id}, req.body)
             .then(dbCaption => res.json(dbCaption))
             .catch(err => res.status(422).json(err))
+    },
+    updateUserGold: function(req, res) {
+        db.User
+            .findOneAndUpdate({ _id: req.params.id}, { $inc: {goldstars: 1} } )
+            .then(dbCaption => res.json(dbCaption))
+            .catch(err => res.status(422).json(err))
+    },
+    updateCardGold: function(req, res) {
+        db.Suggestableimage
+            .findOneAndUpdate({ _id: req.params.id}, { goldStarGiven: true} )
+            .then(dbCaption => res.json(dbCaption))
+            .catch(err => res.status(422).json(err))
+    },
+    updateCaptionGold: function(req, res) {
+        db.Suggestedcaption
+            .findOneAndUpdate({ _id: req.params.id}, { goldstar: true } )
+            .then(dbCaption => res.json(dbCaption))
+            .catch(err => res.status(422).json(err422))
     }
 };

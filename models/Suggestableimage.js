@@ -34,6 +34,11 @@ var SuggestableimageSchema = new Schema({
         required: false,
         unique: false,
     },
+    goldStarGiven: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
     likes: {
         type: Number,
         required: false,

@@ -34,4 +34,11 @@ router.route("/data/:id")
     .get(userController.getUserData)
     .put(userController.updateUserData);
 
+router.route("/goldstars/:id")
+    .put(userController.updateUserGold)
+    .post(userController.updateCardGold)
+
+router.route("/goldstar/:id")
+    .put(userController.updateCaptionGold)
+
 module.exports = router;

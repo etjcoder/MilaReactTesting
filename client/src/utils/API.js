@@ -72,5 +72,14 @@ export default {
     },
     updateUser: function(id, data) {
         return axios.put("/api/user/data/" + id, data)
+    },
+    updateUserGoldStars: function(id) {
+        return axios.put("/api/user/goldstars/" + id)
+    },
+    updateCardGoldStars: function(id) {
+        return axios.post("/api/user/goldstars/" + id)
+    },
+    updateCaptionGoldStars: function(id) {
+        return axios.put("/api/user/goldstar/" + id)
     }
 }
