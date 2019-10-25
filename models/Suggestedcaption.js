@@ -44,6 +44,11 @@ var SuggestedCaptionSchema = new Schema({
         required: false,
         default: 0
     }, 
+    likedBy: {
+        type: [String],
+        required: true,
+        default: ""
+    },
     goldstar: {
         type: Boolean,
         required: false,

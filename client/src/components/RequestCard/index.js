@@ -73,6 +73,7 @@ class RequestCard extends Component {
                                     {this.state.suggestions.map(suggestedCap => (
                                         <SuggestedCaptions
                                             key={suggestedCap._id}
+                                            id={suggestedCap._id}
                                             parentID={suggestedCap.parentID}
                                             suggestion={suggestedCap.caption}
                                             username={suggestedCap.username}
@@ -81,7 +82,9 @@ class RequestCard extends Component {
                                             quote={suggestedCap.quote}
                                             originalAuthor={suggestedCap.originalAuthor}
                                             likes={suggestedCap.likes}
+                                            likedBy={suggestedCap.likedBy}
                                             goldstar={suggestedCap.goldstar}
+                                            userdata={this.props.userdata}
                                         />
                                     ))}
 

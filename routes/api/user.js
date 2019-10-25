@@ -25,6 +25,7 @@ router.route("/request/:id")
 router.route("/suggestion/:id")
     .post(userController.saveSuggestedCaption)
     .get(userController.getSuggestedCaptions)
+    .put(userController.updateSuggestion)
 
 router.route("/data")
     .post(userController.createUserData)

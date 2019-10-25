@@ -103,5 +103,11 @@ module.exports = {
             .findOneAndUpdate({ _id: req.params.id}, req.body)
             .then(dbUser => res.json(dbUser))
             .catch(err => res.status(422).json(err))
+    },
+    updateSuggestion: function(req, res) {
+        db.Suggestedcaption
+            .findOneAndUpdate({ _id: req.params.id}, req.body)
+            .then(dbCaption => res.json(dbCaption))
+            .catch(err => res.status(422).json(err))
     }
 };

@@ -49,6 +49,9 @@ export default {
     updateUserCaption: function(id, data) {
         return axios.put("/api/user/captions/" + id, data);
     },
+    updateUserSuggestedCaption: function(id, data) {
+        return axios.put("/api/user/suggestion/" + id, data)
+    },
     deleteCaption: function(id) {
         return axios.delete("/api/admin/captions/" + id);
     },

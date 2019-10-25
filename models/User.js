@@ -48,7 +48,12 @@ var UserSchema = new Schema({
         type: Number,
         required: false,
         default: 0
-    }, 
+    },
+    likedCaptions: {
+        type: [String],
+        required: false,
+        unique: false
+    },
     goldstars: {
         type: Number,
         required: false,
