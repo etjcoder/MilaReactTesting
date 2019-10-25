@@ -4,7 +4,7 @@ import { slide as Menu } from 'react-burger-menu';
 
 export default props => {
   return (
-    <Menu width={300}>
+    <Menu width={285}>
 
       <a className="menu-item" href="/user">
       <i class="fa fa-home"></i>&nbsp;
@@ -37,23 +37,26 @@ export default props => {
       </a>
 
       <a className="menu-item" onClick={props.viewrequestsOption}>
-      <i class="fa fa-hashtag"></i>&nbsp;
-        View Community Requests
+      <i class="fa fa-users"></i>&nbsp;
+        Community Requests
       </a>
-
 
       <a className="menu-item" onClick={props.logOut}>
       <i class="fa fa-home"></i>&nbsp;
-        X Logout
+        Logout
       </a>
-
 
       <a className="menu-item" onClick={props.editProfile}>
-      <i class="fa fa-edit"></i>&nbsp;
+      <i class="far fa-user-circle"></i>&nbsp;
         Edit Profile
-      </a>
+      </a>     
 
-      
+
+      <a className="menu-item">
+        A D M I N  B E L O W 
+      </a> 
+
+      {/* insert admin options here when admin page becomes obsolete */}
 
     </Menu>
   );

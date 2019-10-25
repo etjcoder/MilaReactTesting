@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Input } from "../Form";
 import API from "../../utils/API"
+import "./style.css";
 
 
 class UserCaptionCreator extends Component {
@@ -62,7 +63,7 @@ class UserCaptionCreator extends Component {
 
     render() {
         return (
-            <div className="card bg-dark text-white">
+            <div className="card" id="createCard">
                 <form>
                     <h5>Input your caption here</h5>
                     <Input value={this.state.caption} onChange={this.handleInputChange} name="caption" placeholder="Caption goes here" />

@@ -4,6 +4,7 @@ import API from "../../utils/API";
 import axios from "axios";
 import {storage} from "../../config/Fire";
 import cogoToast from "cogo-toast";
+import "./style.css";
 
 
 class UserCaptionCreator extends Component {
@@ -88,15 +89,13 @@ class UserCaptionCreator extends Component {
 
     render() {
         return (
-            <div className="card bg-dark text-white">
+            <div className="card" id="createCard">
                 <form>
                     <h5>Input your Request for a Caption here</h5>
                     {/* <Input value={this.state.category} onChange={this.handleInputChange} name="category" placeholder="Category goes here" /> */}
 
                     <input type="file" onChange={this.fileSelectedHandler} />
                     <button onClick={this.fileUploadHandlerB}>Upload</button>
-
-
 
                     <select value={this.state.category} onChange={this.handleInputChange} name="category">
 
@@ -109,7 +108,7 @@ class UserCaptionCreator extends Component {
                     {/* <Input value={this.state.lyric} onChange={this.handleInputchange} name="caption" placeholder="Is this a Lyric? (true or false)"/> */}
                     {/* <Input value={this.state.quote} onChange={this.handleInputchange} name="quote" placeholder="Is this a quote? (true or false)"/> */}
                     <Input value={this.state.tags} onChange={this.handleInputChange} name="tags" placeholder="Tags go here, separate with commas!" />
-                    <button onClick={this.handleFormSubmit}>Submit your caption</button>
+                    <button onClick={this.handleFormSubmit}>Submit</button>
                 </form>
             </div>
         )
