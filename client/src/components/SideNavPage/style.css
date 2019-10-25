@@ -11,6 +11,7 @@
   display: inline-block;
   text-decoration: none;
   margin-bottom: 10px;
+  text-align: left;
   color: white;
   transition: color 0.2s;
 }
@@ -21,7 +22,7 @@
 }
 
 .bm-burger-button {
-  position: fixed;
+  position: absolute;
   width: 36px;
   height: 30px;
   left: 130px;
@@ -42,9 +43,9 @@
 }
 
 .bm-menu {
-  background-color: #8e46d1;
+  background-color: #4f1f8f;
   font-family: 'Cuprum', sans-serif;
-  opacity: .82;
+  opacity: .8;
   padding: 2.5em 1.5em 0;
   font-size: 1.5em;
 }

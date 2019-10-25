@@ -244,8 +244,8 @@ class UserDash extends Component {
                             {this.state.showMyRequests ? <UserMyRequests userdata={this.state.userData} /> : null }
                         </div>
                     </Col>
-           <Col size="3">
-           <InfiniteUsers />
+           <Col size="3">          
+           <InfiniteUsers  style={{height:'100', overflow:'auto'}}/>  
            </Col>
            </Row>
            </Container>

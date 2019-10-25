@@ -3,15 +3,17 @@
 import React, { Component, Fragment } from "react";
 import { render } from "react-dom";
 import request from "superagent";
+// import InfiniteScroll from 'react-infinite-scroller';
 import debounce from "lodash.debounce";
+import VirtualList from 'react-virtual-list';
+
 import "./style.css";
 
 
 class InfiniteUsers extends Component {
   constructor(props) {
     super(props);
-
-    // Sets up  initial state
+    // Sets up our initial state
     this.state = {
       error: false,
       hasMore: true,
@@ -19,8 +21,8 @@ class InfiniteUsers extends Component {
       users: [],
     };
 
-    // Binds scroll event handler
-    window.onscroll = debounce(() => {
+    // Binds our scroll event handler
+    window.onscroll = () => {
       const {
         loadUsers,
         state: {
@@ -30,20 +32,15 @@ class InfiniteUsers extends Component {
         },
       } = this;
 
-      // Bails early if:
-      // * there's an error
-      // * it's already loading
-      // * there's nothing left to load
-      if (error || isLoading || !hasMore) return;
-
-      // Checks that the page has scrolled to the bottom
+     
+      // // Checks that the page has scrolled to the bottom
       if (
         window.innerHeight + document.documentElement.scrollTop
         === document.documentElement.offsetHeight
       ) {
         loadUsers();
       }
-    }, 100);
+    };
   }
 
   componentWillMount() {
@@ -54,7 +51,7 @@ class InfiniteUsers extends Component {
   loadUsers = () => {
     this.setState({ isLoading: true }, () => {
       request
-        .get('https://randomuser.me/api/?results=20')
+        .get('https://randomuser.me/api/?results=50')
         .then((results) => {
           // Creates an array of user and caption data
           // will replace with highest ranked caption and the submitted photo
@@ -96,44 +93,35 @@ class InfiniteUsers extends Component {
     } = this.state;
 
     return (
-      <div>
-        <h1 style={{ color: 'white' }}>Community Captions</h1>
+      <container>
+        <h1>Community Captions</h1>
         {users.map(user => (
           <Fragment key={user.username}>
             <hr />
-            <div style={{ display: 'flex' }}>
+            <div id="scrolly" style={{ display: 'flex' }}>
               <img
                 alt={user.username}
                 src={user.photo}
                 style={{
                   borderRadius: '50%',
-                  height: 70,
-                  marginRight: 20,
-                  width: 72,
                 }}
               />
               <div id="CommunityCard">
-                <p>
-                  @{user.username}
-                </p>
-                <p>Name: {user.name}</p>
+              <p>Caption: {user.name}</p>
+              <p> @{user.username}  </p>
               </div>
             </div>
           </Fragment>
         ))}
         <hr />
-        {error &&
-          <div style={{ color: '#900' }}>
-            {error}
-          </div>
-        }
+    
         {isLoading &&
           <div style={{ color: 'white'}}>Loading...</div>
         }
         {!hasMore &&
           <div style={{ color: 'white'}}>Come back later for more!</div>
         }
-      </div>
+      </container>
     );
   }
 }
