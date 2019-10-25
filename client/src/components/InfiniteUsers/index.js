@@ -137,5 +137,5 @@ class InfiniteUsers extends Component {
     );
   }
 }
+export default InfiniteUsers 
 
-export default InfiniteUsers  
