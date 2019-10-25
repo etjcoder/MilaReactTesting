@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./style.css"
 import API from "../../utils/API";
+import cogoToast from "cogo-toast"
 
 class SuggestedCaptions extends Component {
 
@@ -69,6 +70,7 @@ class SuggestedCaptions extends Component {
             likedBy: newLikedBy
         }, () => {
             this.updateDB()
+            cogoToast.warn("You unliked a caption")
         })
     }
 
@@ -81,13 +83,14 @@ class SuggestedCaptions extends Component {
             likedBy: newStateArray
         }, () => {
             this.updateDB()
+            cogoToast.success("You liked a caption")
         })
     }
 
     render() {
         return (
 
-            <div className="li">{this.props.suggestion} <button onClick={() => this.onClickLikeSuggestion(this.props.userdata[0]._id)}>Like</button></div>
+            <div className="li">{this.props.suggestion} <button onClick={() => this.onClickLikeSuggestion(this.props.userdata[0]._id)}>Vote</button> <span>Likes: {this.props.likes}</span></div>
 
         );
     }
