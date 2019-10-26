@@ -97,17 +97,18 @@ class InfiniteUsers extends Component {
         <h1>Community Captions</h1>
         {users.map(user => (
           <Fragment key={user.username}>
-            <hr />
+            {/* <hr /> */}
             <div id="scrolly" style={{ display: 'flex' }}>
               <img
                 alt={user.username}
                 src={user.photo}
                 style={{
                   borderRadius: '50%',
+                  marginLeft: '4%',
                 }}
               />
-              <div id="CommunityCard">
-              <p>Caption: {user.name}</p>
+              <div id="CommunityCard" style ={{ marginLeft: '4%', marginTop: '2%'}}>
+              <p>Caption: {user.name} </p>
               <p> @{user.username}  </p>
               </div>
             </div>

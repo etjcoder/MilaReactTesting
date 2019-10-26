@@ -6,19 +6,30 @@
 h1 {
 
     font-family: 'Pacifico', cursive;
-    color:white;
+    color:rgb(21, 7, 54);
+    font-size: 26px;
+    text-align: center; 
+    margin-top: 10px; 
+    padding: 2px;
+}
+
+hr {
+    background-color: rgb(207, 206, 209);
+    opacity: 0.95;
 }
 
 
 #scrolly {
     background-color: white;
-    opacity: .8;
     font-size: 16px;
     font-family: 'PT Sans Narrow', sans-serif;
     color: black;
     margin: 10;
     height: 90;
     width: 75;
+    cursor: pointer;
+    padding: 3px;
+    margin-top: 9px;
 }
 
 #scrolly:hover {

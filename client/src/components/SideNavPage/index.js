@@ -41,15 +41,15 @@ export default props => {
         Community Requests
       </a>
 
-      <a className="menu-item" onClick={props.logOut}>
-      <i class="fa fa-home"></i>&nbsp;
-        Logout
-      </a>
-
       <a className="menu-item" onClick={props.editProfile}>
-      <i class="far fa-user-circle"></i>&nbsp;
+      <i class="fa fa-user-circle"></i>&nbsp;
         Edit Profile
       </a>     
+
+      <a className="menu-item" onClick={props.logOut}>
+      <i class="fa fa-sign-out"></i>&nbsp;
+        Logout
+      </a>
 
 
       <a className="menu-item">
