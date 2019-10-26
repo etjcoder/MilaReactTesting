@@ -11,6 +11,11 @@ export default props => {
         Home
       </a>
 
+      <a className="menu-item" onClick={props.editProfile}>
+      <i class="fa fa-user-circle"></i>&nbsp;
+        Edit Profile
+      </a>   
+
       <a className="menu-item" onClick={props.searchOption}>
       <i class="fa fa-search"></i>&nbsp;
         Search
@@ -44,16 +49,11 @@ export default props => {
       <a className="menu-item" onClick={props.logOut}>
       <i class="fa fa-sign-out"></i>&nbsp;
         Logout
-      </a>
-
-      <a className="menu-item" onClick={props.editProfile}>
-      <i class="fa fa-user-circle"></i>&nbsp;
-        Edit Profile
-      </a>     
+      </a>  
 
 
-      <a className="menu-item">
-        A D M I N  B E L O W 
+      <a className="admin-item">
+        MILA Admin 
       </a> 
 
       {/* insert admin options here when admin page becomes obsolete */}
@@ -66,7 +66,7 @@ export default props => {
 
       <a className="menu-item" onClick={props.editMilaOption}>
       <i class="fa fa-edit"></i>&nbsp;
-        View/Edit Mila Captions
+        View/Edit Captions
       </a>
 
       <a className="menu-item" onClick={props.createCategoryOption}>

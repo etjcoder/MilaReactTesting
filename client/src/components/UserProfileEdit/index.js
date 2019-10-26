@@ -3,6 +3,7 @@ import ReactDom from "react-dom";
 import cogoToast from "cogo-toast";
 import { Input } from "../Form";
 import API from "../../utils/API";
+import "./style.css";
 
 export default class UserProfileEdit extends React.Component {
 
@@ -55,7 +56,7 @@ export default class UserProfileEdit extends React.Component {
 
     render() {
         return(
-            <div className="card bg-dark text-white">
+            <div className="card" id="userEdit">
                 <form>
                     <h5>Update your profile</h5>
                     <Input value={this.state.firstName} onChange={this.handleInputChange} name="firstName" placeholder="What is your first name?" />

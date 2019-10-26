@@ -5,7 +5,7 @@
     margin-top: 60px;
     border-radius: 20px; 
     font-family: 'Open Sans Condensed', sans-serif;
-    background-color: rgb(18, 8, 54);
+    background-image: linear-gradient(315deg, rgb(38, 19, 114) 9%, rgb(18, 8, 54)74%);
     opacity: 0.95; 
     color: white; 
 }
