@@ -6,22 +6,37 @@
 h1 {
 
     font-family: 'Pacifico', cursive;
-    color:white;
+    background-color: rgb(18, 8, 54);
+    opacity: 0.92;
+    padding: 10px;
+    color: white;
+    font-size: 26px;
+    text-align: center; 
+    border-radius: 10px; 
+    margin-top: 10px; 
+}
+
+hr {
+    background-color: rgb(207, 206, 209);
+    opacity: 0.95;
 }
 
 
 #scrolly {
     background-color: white;
-    opacity: .8;
     font-size: 16px;
     font-family: 'PT Sans Narrow', sans-serif;
-    color: black;
+    color: rgb(59, 59, 59);
     margin: 10;
     height: 90;
     width: 75;
+    cursor: pointer;
+    padding: 3px;
+    margin-top: 12px;
 }
 
 #scrolly:hover {
-    background-color: white;
-    opacity: 1;
+    background-color: #8e46d1;
+    opacity: 0.8;
+    color: white;
 } 

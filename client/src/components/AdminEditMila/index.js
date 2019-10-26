@@ -5,6 +5,7 @@ import { Input } from "../Form";
 import API from "../../utils/API";
 import EditMilaModal from "../EditMilaModal";
 import "./style.css";
+import InfiniteUsersAdminEdit from "../InfiniteUsersAdminEdit"
 
 class AdminEditMila extends Component {
 
@@ -73,7 +74,7 @@ class AdminEditMila extends Component {
                 </div>
                 <br />
                 <br />
-                <table className="table">
+                {/* <table className="table">
                     <thead>
                         <tr>
                             <th>Caption</th>
@@ -87,22 +88,12 @@ class AdminEditMila extends Component {
                             <th>Feature</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {this.props.captions.map(caption => (
-                            <tr key={caption._id}>
-                                <td>{caption.caption}</td>
-                                <td>{caption.category}</td>
-                                <td>{caption.author}</td>
-                                <td>{caption.reference}</td>
-                                <td>{caption.originalAuthor}</td>
-                                <td>{JSON.stringify(caption.tags)}</td>
-                                <td><button value={caption._id} onClick={() => this.editMilaRow(caption)}>Edit</button></td>
-                                <td><button value={caption._id} onClick={() => this.deleteCaption(caption._id)}>Delete</button></td>
-                                <td><button value={caption._id} onClick={() => this.featureCaption(caption._id)}>Feature</button></td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                    <tbody > */}
+                        <div style={{ height: 800, overflow: 'auto'}}>
+                        <InfiniteUsersAdminEdit milacaptions={this.props.captions} editMilaRow={this.editMilaRow} deleteCaption={this.deleteCaption} featureCaption={this.featureCaption}captions={this.props.caption}/>
+                        </div>
+                    {/* </tbody>
+                </table> */}
             </div>
         )
     }

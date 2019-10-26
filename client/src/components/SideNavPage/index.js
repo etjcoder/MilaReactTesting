@@ -42,12 +42,12 @@ export default props => {
       </a>
 
       <a className="menu-item" onClick={props.logOut}>
-      <i class="fa fa-home"></i>&nbsp;
+      <i class="fa fa-sign-out"></i>&nbsp;
         Logout
       </a>
 
       <a className="menu-item" onClick={props.editProfile}>
-      <i class="far fa-user-circle"></i>&nbsp;
+      <i class="fa fa-user-circle"></i>&nbsp;
         Edit Profile
       </a>     
 
@@ -57,6 +57,27 @@ export default props => {
       </a> 
 
       {/* insert admin options here when admin page becomes obsolete */}
+      
+
+      <a className="menu-item" onClick={props.createAdminOption}>
+      <i class="fa fa-plus-circle"></i>&nbsp;
+        Create Mila Caption
+      </a>
+
+      <a className="menu-item" onClick={props.editMilaOption}>
+      <i class="fa fa-edit"></i>&nbsp;
+        View/Edit Mila Captions
+      </a>
+
+      <a className="menu-item" onClick={props.createCategoryOption}>
+      <i class="fas fa-folder-plus"></i>&nbsp;
+        Create Category
+      </a>
+
+      <a className="menu-item" onClick={props.featureOption}>
+      <i class="fa fa-star"></i>&nbsp;
+        Feature Captions
+      </a>
 
     </Menu>
   );

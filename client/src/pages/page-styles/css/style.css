@@ -16,7 +16,5 @@ button:hover {
 
 #infinite-card {
         width: 100%;
-        border-radius: 20px;
-        background-color: rgb(18, 8, 54);
-        opacity: 0.95;
+        background-color: transparent;
 }

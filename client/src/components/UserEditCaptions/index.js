@@ -42,11 +42,15 @@ class UserEditCaptions extends Component {
             this.setState({
                 editModalShown: true,
                 editUserData: data
+            }, () => {
+                this.getUserCaptions()
             }) 
         } else {
                 this.setState({
                     editModalShown: false,
                     editUserData: ""
+                }, () => {
+                    this.getUserCaptions()
                 })
             }
         }
@@ -65,7 +69,7 @@ class UserEditCaptions extends Component {
     }
     handleDelete = () => {
         cogoToast.error("Deleted Caption")
-        this.props.rerender()
+        this.getUserCaptions()
     }
 
     deleteCaption = (id) => {

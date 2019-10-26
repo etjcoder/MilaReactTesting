@@ -1,14 +1,8 @@
 import React, { Component } from "react";
-// import ReactDom from "react-dom";
-// import Jumbotron from "../components/Jumbotron/";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid/";
-// import { List, ListItem } from "../components/List/";
-// import { Input, FormBtn } from "../components/Form";
-// import SearchBtn from "../components/SearchBtn";
 import UserCaptionCreator from "../components/UserCaptionCreator";
 import UserEditCaptions from "../components/UserEditCaptions";
-// import UserEditModal from "../components/UserEditModal";
 import UserRequestCreator from "../components/UserRequestCreator";
 import UserRequestViewer from "../components/UserRequestViewer";
 import UserSearchOptions from "../components/UserSearchOptions";
@@ -22,12 +16,15 @@ import FlipCard from "../components/FlipCard";
 import UserProfileEdit from "../components/UserProfileEdit"
 import InfiniteUsers from "../components/InfiniteUsers";
 import UserMyRequests from "../components/UserMyRequests";
-import '../pages/page-styles/css/style.css'
+import '../pages/page-styles/css/style.css';
+import AdminCaptionCreator from "../components/AdminCaptionCreator";
+import AdminCategoryCreator from "../components/AdminCategoryCreator";
+import AdminEditMila from "../components/AdminEditMila";
+import AdminFeaturedMila from "../components/AdminFeaturedMila";
 
 class UserDash extends Component {
 
     state = {
-        captions: [],
         showCaptionCreator: false,
         showCaptionEditor: false,
         showRequestCreator: false,
@@ -38,12 +35,20 @@ class UserDash extends Component {
         categories: [],
         captions: [],
         userData: "",
+        showAdminCaptionCreator: false,
+        showCategoryCreator: false,
+        showMilaEditor: false,
+        showMilaFeatured: false,
+        featuredCaps: []
     };
 
     componentDidMount = () => {
         console.log("loaded user Dashboard page");
         this.getUserData();
         this.gatherCategories();
+        this.gatherAdminCaptions();
+        this.gatherFeaturedCaptions();
+
     };
 
 
@@ -66,16 +71,124 @@ class UserDash extends Component {
             )
     }
 
-    onClickCaption = () => {
-        if (this.state.showCaptionCreator === false) {
+    gatherAdminCaptions = () => {
+        API.getCaptions()
+            .then(res =>
+                this.setState({
+                    captions: res.data
+                }))
+    }
+
+    gatherFeaturedCaptions = () => {
+        API.getFeaturedCaptions()
+            .then(res =>
+                this.setState({
+                    featuredCaps: res.data
+                }))
+    }
+
+    onClickAdminCaption = () => {
+        if (this.state.showAdminCaptionCreator === false) {
             this.setState({
-                showCaptionCreator: true,
+                showAdminCaptionCreator: true,
+                showCategoryCreator: false,
+                showMilaEditor: false,
+                showMilaFeatured: false,
+                showCaptionCreator: false,
                 showCaptionEditor: false,
                 showRequestCreator: false,
                 showRequestViewer: false,
                 showUserSearchOptions: false,
                 showProfileEdit: false,
                 showMyRequests: false
+            })
+        } else {
+            this.setState({
+                showAdminCaptionCreator: false
+            })
+        }
+    }
+
+    onClickCategory = () => {
+        if (this.state.showCategoryCreator === false) {
+            this.setState({
+                showAdminCaptionCreator: false,
+                showCategoryCreator: true,
+                showMilaEditor: false,
+                showMilaFeatured: false,
+                showCaptionCreator: false,
+                showCaptionEditor: false,
+                showRequestCreator: false,
+                showRequestViewer: false,
+                showUserSearchOptions: false,
+                showProfileEdit: false,
+                showMyRequests: false
+            })
+        } else {
+            this.setState({
+                showCategoryCreator: false
+            })
+        }
+    }
+
+    onClickEditMila = () => {
+        if (this.state.showMilaEditor === false) {
+            this.setState({
+                showAdminCaptionCreator: false,
+                showCategoryCreator: false,
+                showMilaEditor: true,
+                showMilaFeatured: false,
+                showCaptionCreator: false,
+                showCaptionEditor: false,
+                showRequestCreator: false,
+                showRequestViewer: false,
+                showUserSearchOptions: false,
+                showProfileEdit: false,
+                showMyRequests: false
+            })
+        } else {
+            this.setState({
+                showMilaEditor: false
+            })
+        }
+    }
+
+    onClickFeaturedMila = () => {
+        if (this.state.showMilaFeatured === false) {
+            this.setState({
+                showAdminCaptionCreator: false,
+                showCategoryCreator: false,
+                showMilaEditor: false,
+                showMilaFeatured: true,
+                showCaptionCreator: false,
+                showCaptionEditor: false,
+                showRequestCreator: false,
+                showRequestViewer: false,
+                showUserSearchOptions: false,
+                showProfileEdit: false,
+                showMyRequests: false
+            })
+        } else {
+            this.setState({
+                showMilaFeatured: false
+            })
+        }
+    }
+
+    onClickCaption = () => {
+        if (this.state.showCaptionCreator === false) {
+            this.setState({
+                showAdminCaptionCreator: false,
+                showCategoryCreator: false,
+                showMilaEditor: false,
+                showMilaFeatured: false,
+                showCaptionCreator: true,
+                showCaptionEditor: false,
+                showRequestCreator: false,
+                showRequestViewer: false,
+                showUserSearchOptions: false,
+                showProfileEdit: false,
+                showMyRequests: false,
             })
         } else {
             this.setState({
@@ -87,6 +200,10 @@ class UserDash extends Component {
     onClickEditCaption = () => {
         if (this.state.showCaptionEditor === false) {
             this.setState({
+                showAdminCaptionCreator: false,
+                showCategoryCreator: false,
+                showMilaEditor: false,
+                showMilaFeatured: false,
                 showCaptionCreator: false,
                 showCaptionEditor: true,
                 showRequestCreator: false,
@@ -105,6 +222,10 @@ class UserDash extends Component {
     onClickUserRequest = () => {
         if (this.state.showRequestCreator === false) {
             this.setState({
+                showAdminCaptionCreator: false,
+                showCategoryCreator: false,
+                showMilaEditor: false,
+                showMilaFeatured: false,
                 showCaptionCreator: false,
                 showCaptionEditor: false,
                 showRequestCreator: true,
@@ -123,6 +244,10 @@ class UserDash extends Component {
     onClickViewRequest = () => {
         if (this.state.showRequestViewer === false) {
             this.setState({
+                showAdminCaptionCreator: false,
+                showCategoryCreator: false,
+                showMilaEditor: false,
+                showMilaFeatured: false,
                 showCaptionCreator: false,
                 showCaptionEditor: false,
                 showRequestCreator: false,
@@ -141,6 +266,10 @@ class UserDash extends Component {
     onClickSearchOptions = () => {
         if (this.state.showUserSearchOptions === false) {
             this.setState({
+                showAdminCaptionCreator: false,
+                showCategoryCreator: false,
+                showMilaEditor: false,
+                showMilaFeatured: false,
                 showCaptionCreator: false,
                 showCaptionEditor: false,
                 showRequestCreator: false,
@@ -164,6 +293,10 @@ class UserDash extends Component {
     onClickProfileEdit = () => {
         if (this.state.showProfileEdit === false) {
             this.setState({
+                showAdminCaptionCreator: false,
+                showCategoryCreator: false,
+                showMilaEditor: false,
+                showMilaFeatured: false,
                 showCaptionCreator: false,
                 showCaptionEditor: false,
                 showRequestCreator: false,
@@ -182,6 +315,10 @@ class UserDash extends Component {
     onClickViewMyRequests = () => {
         if (this.state.showMyRequests === false) {
             this.setState({
+                showAdminCaptionCreator: false,
+                showCategoryCreator: false,
+                showMilaEditor: false,
+                showMilaFeatured: false,
                 showCaptionCreator: false,
                 showCaptionEditor: false,
                 showRequestCreator: false,
@@ -211,6 +348,10 @@ class UserDash extends Component {
                     logOut={this.onClickLogout}
                     editProfile={this.onClickProfileEdit}
                     viewMyRequests={this.onClickViewMyRequests}
+                    createAdminOption={this.onClickAdminCaption}
+                    createCategoryOption={this.onClickCategory}
+                    editMilaOption={this.onClickEditMila}
+                    featureOption={this.onClickFeaturedMila}
                 />
                 <Container fluid>
                     <Row>
@@ -218,31 +359,51 @@ class UserDash extends Component {
                             {/* Blank Space for SideNavPage */}
                         </Col>
                         <Col size="8">
-                            {/* <input type="submit" value="Create Community Caption" onClick={this.onClickCaption} /> */}
+                            {/* User Tools Below */}
+                            {/* User Create Caption Tool */}
                             <div>
                                 {this.state.showCaptionCreator ? <UserCaptionCreator userdata={this.state.userData} categories={this.state.categories} captions={this.state.captions} /> : null}
                             </div>
-                            {/* <input type="submit" value="View/Edit Your Community Captions" onClick={this.onClickEditCaption} /> */}
+                            {/* User Edit Caption Tool */}
                             <div>
                                 {this.state.showCaptionEditor ? <UserEditCaptions userdata={this.state.userData} categories={this.state.categories} rerender={this.importCaptions} captions={this.state.captions} /> : null}
                             </div>
-                            {/* <input type="submit" value="Request a Caption for an Image" onClick={this.onClickUserRequest} /> */}
+                            {/* User Create Request Tool */}
                             <div>
                                 {this.state.showRequestCreator ? <UserRequestCreator userdata={this.state.userData} categories={this.state.categories} /> : null}
                             </div>
-                            {/* <input type="submit" value="Review Regional Caption Requests" onClick={this.onClickViewRequest} /> */}
+                            {/* View All Requests Tool /swipeables/ */}
                             <div>
                                 {this.state.showRequestViewer ? <UserRequestViewer userdata={this.state.userData} categories={this.state.categories} /> : null}
                             </div>
-                            {/* <input type="submit" value="Search for Captions" onClick={this.onClickSearchOptions} /> */}
+                            {/* Search for Captions Tool */}
                             <div>
                                 {this.state.showUserSearchOptions ? <UserSearchOptions categories={this.state.categories} /> : null}
                             </div>
+                            {/* User Update Profile Tool */}
                             <div>
                                 {this.state.showProfileEdit ? <UserProfileEdit userdata={this.state.userData} /> : null}
                             </div>
+                            {/* User View their personal request cards */}
                             <div>
                                 {this.state.showMyRequests ? <UserMyRequests userdata={this.state.userData} /> : null}
+                            </div>
+                            {/* Admin Tools Below */}
+                            {/* Create a Mila Official caption */}
+                            <div>
+                                {this.state.showAdminCaptionCreator ? <AdminCaptionCreator categories={this.state.categories} toggleShow={this.OnClickAdminCaption} /> : null}
+                            </div>
+                            {/* Create a Category for future caption creation */}
+                            <div>
+                                {this.state.showCategoryCreator ? <AdminCategoryCreator categories={this.state.categories} rerender={this.state.gatherCategories} toggleShow={this.OnClickCategory} /> : null}
+                            </div>
+                            {/* Edit Mila Official captions */}
+                            <div>
+                                {this.state.showMilaEditor ? <AdminEditMila categories={this.state.categories} captions={this.state.captions} rerender={this.gatherAdminCaptions} /> : null}
+                            </div>
+                            {/* View / Unfeature Mila Captions */}
+                            <div>
+                                {this.state.showMilaFeatured ? <AdminFeaturedMila featuredCaps={this.state.featuredCaps} rerender={this.gatherFeaturedCaptions} toggleShow={this.OnClickFeaturedMila} /> : null}
                             </div>
                         </Col>
 

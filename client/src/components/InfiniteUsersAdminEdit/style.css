@@ -1,0 +1,27 @@
+
+.container {
+    height: 30;
+}
+
+h1 {
+
+    font-family: 'Pacifico', cursive;
+    color:white;
+}
+
+
+#scrolly-admin {
+    background-color: white;
+    opacity: .8;
+    font-size: 16px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: black;
+    margin: 10;
+    height: 90;
+    width: 75;
+}
+
+#scrolly-admin:hover {
+    background-color: white;
+    opacity: 1;
+} 
