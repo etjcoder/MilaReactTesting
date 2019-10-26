@@ -32,8 +32,6 @@ class UserSearchResults extends Component {
     render() {
         return (
             <div className="card" id="searchResults">
-                <h5>Search Results Below</h5>
-
                     <div className="card bg-warning text-white">
                         {this.props.results.map(result => (
                             <SearchResult key={result._id}

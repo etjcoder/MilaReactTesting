@@ -38,7 +38,7 @@ hr {
 }
 
 #scrolly:hover {
-    background-color: #8e46d1;
+    background-color: rgb(66, 66, 66);
     opacity: 0.8;
     color: white;
 } 
