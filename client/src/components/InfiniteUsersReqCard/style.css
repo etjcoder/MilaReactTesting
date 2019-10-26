@@ -26,10 +26,12 @@ hr {
     color: black;
     margin: 10;
     height: 90;
+    opacity: 0.95; 
     width: 75;
     cursor: pointer;
     padding: 3px;
     margin-top: 9px;
+    border-radius: 25px; 
 }
 
 #scrolly:hover {
