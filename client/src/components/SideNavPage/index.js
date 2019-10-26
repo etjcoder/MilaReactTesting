@@ -33,7 +33,6 @@ export default props => {
 
       <a className="menu-item" onClick={props.requestOption}>
       <i class="fa fa-camera-retro"></i>&nbsp;
-<<<<<<< HEAD
         Request a Caption
       </a>
 
@@ -78,17 +77,10 @@ export default props => {
       <a className="menu-item" onClick={props.featureOption}>
       <i class="fa fa-star"></i>&nbsp;
         Feature Captions
-=======
-        Request
-      </a>
-
-      <a className="menu-item" onClick={props.viewrequestsOption}>
-      <i class="fa fa-hashtag"></i>&nbsp;
-        View My Caps
->>>>>>> dec466051ff5d2b891ac3161e385fa50af816066
       </a>
 
     </Menu>
   );
 };
 
+// export default SideNavPage;

@@ -9,7 +9,6 @@ import UserSearchOptions from "../components/UserSearchOptions";
 import Nav from "../components/Nav/";
 import "./page-styles/css/style.css";
 import SideNavPage from "../components/SideNavPage";
-<<<<<<< HEAD
 import CommunityInfiniteScroll from "../components/InfiniteUsers";
 import cogoToast from "cogo-toast";
 import fire from "../config/Fire";
@@ -22,8 +21,6 @@ import AdminCaptionCreator from "../components/AdminCaptionCreator";
 import AdminCategoryCreator from "../components/AdminCategoryCreator";
 import AdminEditMila from "../components/AdminEditMila";
 import AdminFeaturedMila from "../components/AdminFeaturedMila";
-=======
->>>>>>> dec466051ff5d2b891ac3161e385fa50af816066
 
 class UserDash extends Component {
 
@@ -32,7 +29,7 @@ class UserDash extends Component {
         showCaptionEditor: false,
         showRequestCreator: false,
         showRequestViewer: false,
-        showUserSearchOptions: true,
+        showUserSearchOptions: false,
         showProfileEdit: false,
         showMyRequests: false,
         categories: [],
@@ -342,7 +339,6 @@ class UserDash extends Component {
     render() {
         return (
             <div>
-<<<<<<< HEAD
                 <Nav user={this.props.user} />
                 <SideNavPage createOption={this.onClickCaption}
                     editOption={this.onClickEditCaption}
@@ -419,37 +415,6 @@ class UserDash extends Component {
                     </Row>
                 </Container>
             </div >
-=======
-            <SideNavPage createOption={this.onClickCaption} editOption={this.onClickEditCaption} requestOption={this.onClickUserRequest} searchOption={this.onClickSearchOptions} viewrequestsOption={this.onClickViewRequest}/>
-            <Container fluid>
-                <Row>
-                
-                        {/* <input type="submit" value="Create Community Caption" onClick={this.onClickCaption} /> */}
-                        <div>
-                            {this.state.showCaptionCreator ? <UserCaptionCreator categories={this.state.categories} captions={this.state.captions}  /> : null }
-                        </div>
-                        {/* <input type="submit" value="View/Edit Your Community Captions" onClick={this.onClickEditCaption} /> */}
-                        <div>
-                            {this.state.showCaptionEditor ? <UserEditCaptions categories={this.state.categories} captions={this.state.captions}  /> : null }
-                        </div>
-                        {/* <input type="submit" value="Request a Caption for an Image" onClick={this.onClickUserRequest} /> */}
-                        <div>
-                            {this.state.showRequestCreator ? <UserRequestCreator categories={this.state.categories}  /> : null }
-                        </div>
-                        {/* <input type="submit" value="Review Regional Caption Requests" onClick={this.onClickViewRequest} /> */}
-                        <div>
-                            {this.state.showRequestViewer ? <UserRequestViewer categories={this.state.categories} /> : null }
-                        </div>
-                        {/* <input type="submit" value="Search for Captions" onClick={this.onClickSearchOptions} /> */}
-                        <div>
-                            {this.state.showUserSearchOptions ? <UserSearchOptions categories={this.state.categories} /> : null }
-                        </div>
-                      
-                
-                </Row>
-            </Container>
-            </div>
->>>>>>> dec466051ff5d2b891ac3161e385fa50af816066
         )
     }
 }
