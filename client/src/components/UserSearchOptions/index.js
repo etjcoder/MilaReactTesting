@@ -4,7 +4,6 @@ import API from "../../utils/API";
 import UserSearchResults from "../UserSearchResults"
 import "./style.css";
 
-
 class UserSearchOptions extends Component {
 
     state = {
@@ -16,6 +15,7 @@ class UserSearchOptions extends Component {
     }
 
     componentDidMount() {
+
         console.log(this.props.categories);
     }
 
@@ -46,6 +46,7 @@ class UserSearchOptions extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
+
     }
 
     handleKeywordSearchSubmit = event => {
@@ -67,16 +68,10 @@ class UserSearchOptions extends Component {
                 <form>
                     <h4>Search By Keyword</h4><br/>
                     <Input value={this.state.keyword} onChange={this.handleInputChange} name="keyword" placeholder="Enter search terms here" />
-                    <div class="container">
-                    <button onClick={this.handleKeywordSearchSubmit}>
-                    Search
-                    <div class="fill"></div>
-                    </button>
-                </div>
+                    <button onClick={this.handleKeywordSearchSubmit}>Search by Tags</button>
                 </form>
+                <hr/>
                 <form>
-                <br/>
-                <br/>
                     <h4>Search By Category</h4>
                     <br/>
                     <select value={this.state.category} onChange={this.handleInputChange} name="category">
@@ -84,13 +79,12 @@ class UserSearchOptions extends Component {
                             <option key={listedcategory._id} value={listedcategory.category}>{listedcategory.category}</option>
                         ))}
                     </select>{' '}
-                <div class="container">
-			    <button onClick={this.handleCategorySearchSubmit}>
-				Search by Category
-				<div class="fill"></div>
-			    </button>
-		        </div>
+                    <button onClick={this.handleCategorySearchSubmit}> Search by Category</button>
                 </form>
+                <hr/>
+                <br/>
+                <button>Search By Imagereader (Coming soon!)</button>
+                <br/>
             </div>
             <UserSearchResults results={this.state.searchResults}/>
             </div>
