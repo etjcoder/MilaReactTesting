@@ -1,6 +1,9 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
 
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+
 
 #SideNavPage { 
   font-family: sans-serif;
@@ -43,7 +46,11 @@
 }
 
 .bm-menu {
+<<<<<<< HEAD
   background-color: #8e46d1;
+=======
+  background: #957c96;
+>>>>>>> dec466051ff5d2b891ac3161e385fa50af816066
   font-family: 'Cuprum', sans-serif;
   opacity: .8;
   padding: 2.5em 1.5em 0;

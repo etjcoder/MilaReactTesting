@@ -1,10 +1,8 @@
 #searchResults {
     border-radius: 8px; 
     padding: 2px; 
+    background-color: rgb(18, 8, 54);
     margin-left: 30%; 
     margin-top: 60px;
 }
 
-#searchResults h5 {
-    color: rgb(29, 28, 28); 
-}

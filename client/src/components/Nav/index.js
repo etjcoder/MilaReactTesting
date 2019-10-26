@@ -30,8 +30,6 @@ class Nav extends Component {
           M I L A
       </a>
 
-        <a href="/user" className="navbar-text ml-auto"> View User Dash/  </a>
-        <a href="/admin" className="navbar-text">  View Admin Dash </a>
         <div class="avatar ml-auto">
         {/* {this.state.image ? <img alt="" class="card-image" src={this.state.image} /> : null } */}
         <img alt="profilePic" class="card-image" src="https://picsum.photos/id/141/45/45"/>

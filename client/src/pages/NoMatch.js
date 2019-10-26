@@ -10,12 +10,20 @@ function NoMatch() {
     <Nav />
       <Row>
         <Col size="md-12">
+<<<<<<< HEAD
+=======
+        
+>>>>>>> dec466051ff5d2b891ac3161e385fa50af816066
             <h1>404 Page Not Found</h1>
             <h1>
               <span role="img" aria-label="Face With Rolling Eyes Emoji">
                 🙄
               </span>
             </h1>
+<<<<<<< HEAD
+=======
+         
+>>>>>>> dec466051ff5d2b891ac3161e385fa50af816066
         </Col>
       </Row>
     </Container>
