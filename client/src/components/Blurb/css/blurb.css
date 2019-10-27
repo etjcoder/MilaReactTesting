@@ -1,0 +1,39 @@
+/* body {
+    background-image: url("../../../assets/images/navyblue.jpg");
+} */
+
+/* #blurbContainer {
+    height: 500px; 
+} */
+
+#blurb {
+    float: left;
+    font-size: 30px; 
+}
+
+#blurb2 {
+    float: right; 
+    font-size: 30px; 
+}
+
+  ul {
+    background: rgb(252, 252, 252);
+    padding: 20px 0;
+    margin: 40px auto;
+    width: 400px;
+    border: 4px solid rgb(216, 216, 216); 
+    border-radius: 40px; 
+  }
+  
+  li {
+    background: rgb(212, 212, 214);
+    border-radius: 8px;
+    display: block;
+    height: 40px;
+    margin: 40px auto;
+    width: 270px;
+  }
+  
+  .l { margin-left: 5px; height: 80px; color: white; background-color: rgba(45, 86, 219, 0.867)}
+  
+  .r { margin-right: 5px; height: 50px; }
