@@ -63,7 +63,14 @@
 }
 
 .admin-item {
-  background-color: rgb(28, 13, 82);
   padding: 2px; 
-  text-align: center; 
+  text-decoration: underline;
+  color: rgb(18, 8, 54);
+}
+
+.admin-item:hover {
+  color: rgb(18, 8, 54);
+  text-decoration: underline;
+  font-weight: normal;
+  cursor: default; 
 }

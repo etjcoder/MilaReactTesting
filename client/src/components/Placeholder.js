@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { omit } from '../utils/helpers';
 import style from '../style/placeholder';
+import "./placeholder.css";
 
 const placeholderPropTypes = {
   children: PropTypes.oneOfType([

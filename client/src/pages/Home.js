@@ -10,6 +10,7 @@ import Banner from "../components/BannerOne";
 import Header2 from "../components/Header2";
 import QuickSearch from "../components/QuickSearch";
 import Footer from "../components/Footer";
+import Blurb from "../components/Blurb";
 import LoginRegister from "../components/LoginRegister";
 
 
@@ -65,6 +66,7 @@ class Home extends Component {
         </div>
         </div>
       </div>
+      <Blurb/>
       <div className="bg-image img4">
       <Footer/>
       </div>
