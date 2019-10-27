@@ -64,11 +64,10 @@ class LoginForm extends Component {
           <br />
           <input value={this.state.email} onChange={this.handleChange} type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
           <br />
-          <br />
           <input value={this.state.password} onChange={this.handleChange} type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
-          <button type="submit" onClick={this.login} style={{marginTop: '5px', marginLeft: '25px'}} className="btn btn-primary">Login</button>
-          <button onClick={this.signup} style={{ marginTop: '5px', marginLeft: '25px' }} className="btn btn-success">Signup</button>
-          <button onClick={this.logOut} style={{ marginTop: '5px', marginLeft: '25px' }} className="btn btn-danger">Logout</button>
+          <button type="submit" onClick={this.login} className="btn">Login</button>
+          <button onClick={this.signup} className="btn">Sign up</button>
+          {/* <button onClick={this.logOut} style={{ marginTop: '5px', marginLeft: '25px' }} className="btn btn-danger">Logout</button> */}
         </form>
       </div>
     )

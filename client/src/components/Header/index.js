@@ -9,8 +9,8 @@ function Header () {
                 <a href="#team" id="team">Team </a></div>
                 <div className="contactLink">
                 <a href="contact" id="contact">Contact</a></div>
-                <div className="loginLink">
-                <a href="#login" id="login">Login</a></div>
+                {/* <div className="loginLink">
+                <a href="#login" id="login">Login</a></div> */}
         </header>
     )
 }

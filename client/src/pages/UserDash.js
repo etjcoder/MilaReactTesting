@@ -29,7 +29,7 @@ class UserDash extends Component {
         showCaptionEditor: false,
         showRequestCreator: false,
         showRequestViewer: false,
-        showUserSearchOptions: false,
+        showUserSearchOptions: true,
         showProfileEdit: false,
         showMyRequests: false,
         categories: [],

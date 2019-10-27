@@ -3,7 +3,7 @@ import './style.css'
 
 function Header2 () {
     return (
-        <div id="howTo" data-aos='fade-in'> LIGHTS - CAMERA - CAPTION 
+        <div id="howTo" data-aos='fade-up'> LIGHTS - CAMERA - CAPTION  
         </div>
     )
 }
