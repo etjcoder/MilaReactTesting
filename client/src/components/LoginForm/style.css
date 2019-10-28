@@ -1,15 +1,16 @@
 .login-form {
-    background-color: #8e46d1;
-    opacity: 0.9;
-    width: 405px;
-    height: 350px;
+    background-image: linear-gradient(to right, #8e46d1, rgb(85, 14, 151));
+    /* background-image: linear-gradient(to right, #8e46d1, #733ea5); */
+    opacity: 0.86;
+    width: 425px;
+    height: 326px;
     padding: 40px;
-    margin-top: -25px;
-    margin-left: 827px; 
+    margin-top: -20px;
+    margin-left: 830px; 
     color: white;
     border-radius: 10px;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 26px;
+    font-family: 'Poiret One', cursive;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -18,10 +19,14 @@
     color: white;
 }
 
-.btn {
-    background-color: transparent;
-    font-size: 25px;
+form .btn {
+    /* background-color: rgb(18, 8, 54); */
+    background-image: linear-gradient(to right, rgb(18, 8, 54), rgb(36, 20, 92));
+    width: 105px; 
+    font-size: 20px;
     font-weight: bold;
+    margin-top: 30px;
+    margin-left: 45px; 
     color: white;
 }
 
@@ -33,8 +38,10 @@
     width: 100%;
     border: none;
     border-bottom: 1px solid #eaeaea;
-    color: #5f5f5f;
+    color: #4e4e4e;
     border-radius: 5px; 
+    font-size: 17px; 
+    font-family: Arial;
 }
 
 
@@ -50,3 +57,5 @@
 #forgot:hover {
     color:rgb(182, 182, 182);  
 }
+
+

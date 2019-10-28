@@ -31,7 +31,10 @@ body, html {
   .img1 { background-image: url("../assets/images/girl.jpg"); height: 600px; }
   .img2 { background-image: url("../assets/images/white.jpg"); height: 520px; }
   .img3 { background-image: url("../assets/images/white.jpg"); height: 70%; }
-  .img4 { background-image: url("../assets/images/darkgrey.jpg"); height: 70%; }
+  .img4 { background-image: url("../assets/images/lightgray.jpg"); height: 70%; }
+  .img5 { background-image: url("../assets/images/navypurple2.png"); height: 680px; }
+  .img6 { background-image: url("../assets/images/halfgraywhite.png"); height: 70%; }
+  .img7 { background-image: url("../assets/images/grey.png"); height: 100px; }
   
   @media only screen and (max-width: 1000px) {
     .img1 {

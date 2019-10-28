@@ -1,10 +1,17 @@
 #howTo {
-    color: rgb(31, 31, 31);
+    color: rgb(82, 82, 83);
+    /* color: #b362ff; */
     font-family: 'Raleway Dots', cursive;
+    /* font-family: 'Poiret One', cursive; */
+    margin: 0 auto; 
     text-align: center; 
-    font-size: 81px;
-    margin-top: 40px;
-    margin-bottom: -30px; 
+    font-size: 70px;
+    margin-bottom: -20px; 
+}
+
+.fa-camera {
+  color: rgb(236, 236, 236);
+  font-size: 50px;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -13,3 +20,4 @@
     font-size: 50px; 
   }
 }
+

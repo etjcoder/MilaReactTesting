@@ -48,10 +48,13 @@ class Home extends Component {
           </div>
         </div>
       </div>
-      <div className="bg-image img3">
+      <div className="bg-image img7">
+      <Header2/> 
+      </div>
+      <div className="bg-image img6">
       <div className="container">
         <div className="row">
-        <Header2/> 
+        {/* <Header2/>  */}
           <div className="lg-col-12">
             {photoThingData && photoThingData.map((item, i) => {
               return <Photothingy
@@ -66,8 +69,10 @@ class Home extends Component {
         </div>
         </div>
       </div>
+      <div className="bg-image img5">
       <Blurb/>
-      <div className="bg-image img4">
+      </div>
+      <div className="bg-image img3">
       <Footer/>
       </div>
     </>
