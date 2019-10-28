@@ -18,7 +18,7 @@ module.exports = {
     },
     searchKeywords: function(req, res) {
         db.Maincaption
-            .find({tags : req.params.keyword})
+            .find( { $text: { $search: req.params.keyword } } )
             .then(dbCaption => res.json(dbCaption))
             .catch(err => res.status(422).json(err))
     },

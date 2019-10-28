@@ -409,7 +409,7 @@ class UserDash extends Component {
 
                         <Col size="3">
                             <div className="card" id="infinite-card" style={{ height: 800, overflow: 'auto' }}>
-                                <InfiniteUsers />
+                                {this.state.showMilaEditor ? null : <InfiniteUsers />}
                             </div>
                         </Col>
                     </Row>
