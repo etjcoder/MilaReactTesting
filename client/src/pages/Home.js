@@ -13,7 +13,6 @@ import QuickSearchResults from "../components/QuickSearchResults";
 import Footer from "../components/Footer";
 import Blurb from "../components/Blurb";
 import ContactForm from "../components/ContactForm";
-import Doodle from "../components/Doodle";
 import LoginRegister from "../components/LoginRegister";
 
 
