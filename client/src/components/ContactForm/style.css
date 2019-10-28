@@ -1,0 +1,50 @@
+#contact-form {
+    width: 760px; 
+    font-family: 'Poiret One', cursive;
+    color: white;
+    padding: 30px; 
+    background-color: rgb(43, 43, 43); 
+    /* border: 5px solid #8e46d1; */
+    text-align: center; 
+}
+
+#contact-form input { 
+   width: 500px;
+
+}
+
+label {
+    text-align: left; 
+}
+
+#contact-form textarea {
+    width: 500px;
+    height: 150px;
+ }
+
+ #contact-form button {
+     color: white;
+     border-radius: 10px; 
+     font-size: 18px; 
+     padding-left: 30px; 
+     padding-right: 30px; 
+    background-image: linear-gradient(to right, #8e46d1, rgb(85, 14, 151));
+ }
+/* Hide success/failure message
+   (especially since the php is missing) */
+   #failure, #success {
+    color: #6EA070; 
+    display:none;  
+ }
+
+ /* Hide success/failure message
+   (especially since the php is missing) */
+#failure, #success {
+    color: #6EA070; 
+    display:none;  
+ }
+
+ #doodle {
+     float: right; 
+     background-color: yellow; 
+ }
