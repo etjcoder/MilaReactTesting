@@ -34,7 +34,9 @@ body, html {
   .img4 { background-image: url("../assets/images/lightgray.jpg"); height: 70%; }
   .img5 { background-image: url("../assets/images/navypurple2.png"); height: 680px; }
   .img6 { background-image: url("../assets/images/halfgraywhite.png"); height: 70%; }
-  .img7 { background-image: url("../assets/images/grey.png"); height: 100px; }
+  .img7 { background-image: url("../assets/images/darkgrey.jpg"); height: 100px; }
+  .img8 { background-image: url("../assets/images/phillydoodle.png"); height: 70%; }
+
   
   @media only screen and (max-width: 1000px) {
     .img1 {

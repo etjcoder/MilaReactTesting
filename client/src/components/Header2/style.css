@@ -1,12 +1,13 @@
 #howTo {
-    color: rgb(82, 82, 83);
+    /* color: rgb(82, 82, 83); */
+    color: white;
     /* color: #b362ff; */
     font-family: 'Raleway Dots', cursive;
     /* font-family: 'Poiret One', cursive; */
     margin: 0 auto; 
     text-align: center; 
     font-size: 70px;
-    margin-bottom: -20px; 
+    margin-bottom: -20px;
 }
 
 .fa-camera {

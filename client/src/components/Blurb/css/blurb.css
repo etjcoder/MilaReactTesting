@@ -1,36 +1,14 @@
-/* body {
-    background-image: url("../../../assets/images/navyblue.jpg");
-} */
-
-/* #blurbContainer {
-    height: 500px; 
-} */
-
-#blurb {
-    float: left;
-    margin-top: 20px; 
-    font-size: 35px; 
-    color: white;
-    font-family: 'Poiret One', cursive;
-}
-
-#blurb2 {
-    float: right; 
-    margin-top: 20px; 
-    font-size: 50px; 
-    color: white;
-}
-
   ul {
     background: none;
     padding: 30px;
     margin: 40px auto;
+    margin-top: 90px; 
     width: 400px;
     border-radius: 40px; 
   }
   
   li {
-    background: white;
+    background: rgb(224, 224, 224);
     border-radius: 8px;
     display: block;
     height: 40px;
@@ -39,19 +17,88 @@
   }
   
   .l { 
-    margin-left: 1px; 
-    height: 105px; 
+    margin-left: -10px; 
+    height: 86px; 
     color: white; 
-    background-color: rgba(32, 129, 255, 0.867);
+    background-color: rgba(60, 144, 253, 0.867);
     font-size: 17px; 
-    padding: 17px 
+    padding: 17px;
+    margin-top: 30px; 
   }
   
   .r { 
-    margin-right: 1px; 
-    height: 50px; 
+    margin-right: -20px; 
+    height: 72px; 
+    padding: 16px
   }
 
   #convo {
     margin-top: -90px; 
+  }
+
+  #convo2 {
+    margin-top: 140px; 
+    margin-left: 185px; 
+    color: #a65ceb;
+    text-align: center; 
+    font-size: 42px; 
+    font-weight: bold; 
+    font-family: 'Poiret One', cursive;
+    /* transform: rotate(-90deg); */
+  }
+ 
+  #convo3 {
+    margin-left: 187px; 
+    color: white;
+    background-color: rgb(58, 57, 57);
+    padding: 4px; 
+    font-size: 26px; 
+    font-family: 'Poiret One', cursive;
+    /* transform: rotate(-90deg); */
+  }
+
+  #convo4 {
+    margin-left: 189px; 
+    color: white;
+    font-size: 60px; 
+    font-family: 'Poiret One', cursive;
+    /* transform: rotate(-90deg); */
+  }
+
+  #convo4 span {
+    color: #a65ceb;
+    font-weight: bold; 
+  }
+
+  #convo5 {
+    margin-left: 260px; 
+    margin-top: -17px; 
+    color: white;
+    font-size: 34px; 
+    font-family: 'Poiret One', cursive;
+    /* transform: rotate(-90deg); */
+  }
+
+
+  #convo6 {
+    margin-left: 380px; 
+    margin-top: -17px; 
+    color: white;
+    font-size: 34px; 
+    font-family: 'Poiret One', cursive;
+    /* transform: rotate(-90deg); */
+  }
+
+  #convo7 {
+    margin-left: 187px; 
+    margin-top: 5px; 
+    color: white; 
+    background-color: #a65ceb;
+    /* background-color: #353535; */
+    text-align: center; 
+    padding: 4px; 
+    font-size: 53px; 
+    border-radius: 5px; 
+    font-family: 'Poiret One', cursive;
+    /* transform: rotate(-90deg); */
   }

@@ -9,8 +9,11 @@ import LoginForm from "../components/LoginForm"
 import Banner from "../components/BannerOne";
 import Header2 from "../components/Header2";
 import QuickSearch from "../components/QuickSearch";
+import QuickSearchResults from "../components/QuickSearchResults";
 import Footer from "../components/Footer";
 import Blurb from "../components/Blurb";
+import ContactForm from "../components/ContactForm";
+import Doodle from "../components/Doodle";
 import LoginRegister from "../components/LoginRegister";
 
 
@@ -44,9 +47,13 @@ class Home extends Component {
           <div className="row">
             <div className="col-12">
               <QuickSearch/>
+              <QuickSearchResults/>
             </div>
           </div>
         </div>
+      </div>
+      <div className="bg-image img5">
+      <Blurb/>
       </div>
       <div className="bg-image img7">
       <Header2/> 
@@ -69,8 +76,8 @@ class Home extends Component {
         </div>
         </div>
       </div>
-      <div className="bg-image img5">
-      <Blurb/>
+      <div className="bg-image img8">
+      <ContactForm/>
       </div>
       <div className="bg-image img3">
       <Footer/>

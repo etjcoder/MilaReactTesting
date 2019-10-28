@@ -1,0 +1,13 @@
+.quick-search-results {
+    color: rgb(71, 71, 71); 
+    width: 390px;
+    margin-top: 50px; 
+    margin-left: -80px; 
+    background-color: white;
+    padding: 20px; 
+    border-radius: 10px; 
+}
+
+#qsresults {
+    opacity: 0.88; 
+}

@@ -20,18 +20,22 @@
 }
 
 form .btn {
-    /* background-color: rgb(18, 8, 54); */
-    background-image: linear-gradient(to right, rgb(18, 8, 54), rgb(36, 20, 92));
+    background-color: rgb(255, 255, 255);
+    opacity: 0.96;
+    /* background-image: linear-gradient(to right, rgb(18, 8, 54), rgb(36, 20, 92)); */
     width: 105px; 
+    border-radius: 10px; 
     font-size: 20px;
     font-weight: bold;
     margin-top: 30px;
     margin-left: 45px; 
-    color: white;
+    color: rgb(58, 56, 56);
+    border: 2px solid rgb(58, 56, 56);
 }
 
 .btn:hover {
-    color:rgb(182, 182, 182);  
+    color:rgb(182, 182, 182); 
+    cursor: pointer;  
 }
 
 .login-form input {
