@@ -18,3 +18,11 @@ button:hover {
         width: 100%;
         background-color: transparent;
 }
+
+#request-card-dash {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -150px;
+}

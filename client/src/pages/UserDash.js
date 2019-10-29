@@ -21,6 +21,8 @@ import AdminCaptionCreator from "../components/AdminCaptionCreator";
 import AdminCategoryCreator from "../components/AdminCategoryCreator";
 import AdminEditMila from "../components/AdminEditMila";
 import AdminFeaturedMila from "../components/AdminFeaturedMila";
+import InfiniteUsersCaptionScroll from "../components/InfiniteUsersCaptionScroll";
+import RequestCardDash from "../components/RequestCardDash";
 
 class UserDash extends Component {
 
@@ -39,7 +41,10 @@ class UserDash extends Component {
         showCategoryCreator: false,
         showMilaEditor: false,
         showMilaFeatured: false,
-        featuredCaps: []
+        featuredCaps: [],
+        suggestables: [],
+        chosenRequestData: "",
+        showRequestCardDash: false
     };
 
     componentDidMount = () => {
@@ -48,6 +53,7 @@ class UserDash extends Component {
         this.gatherCategories();
         this.gatherAdminCaptions();
         this.gatherFeaturedCaptions();
+        this.gatherSuggestables();
 
     };
 
@@ -87,6 +93,25 @@ class UserDash extends Component {
                 }))
     }
 
+    gatherSuggestables = () => {
+        API.getRequests()
+        .then(res =>
+            this.setState({
+                suggestables: res.data
+            })
+        )
+    } 
+
+    getSuggestable = (id) => {
+        console.log(id)
+        API.getRequest(id)
+            .then(res =>
+                this.setState({
+                    chosenRequestData: res.data
+                })
+                )
+    }
+
     onClickAdminCaption = () => {
         if (this.state.showAdminCaptionCreator === false) {
             this.setState({
@@ -100,7 +125,8 @@ class UserDash extends Component {
                 showRequestViewer: false,
                 showUserSearchOptions: false,
                 showProfileEdit: false,
-                showMyRequests: false
+                showMyRequests: false,
+                showRequestCardDash: false
             })
         } else {
             this.setState({
@@ -122,7 +148,8 @@ class UserDash extends Component {
                 showRequestViewer: false,
                 showUserSearchOptions: false,
                 showProfileEdit: false,
-                showMyRequests: false
+                showMyRequests: false,
+                showRequestCardDash: false
             })
         } else {
             this.setState({
@@ -144,7 +171,8 @@ class UserDash extends Component {
                 showRequestViewer: false,
                 showUserSearchOptions: false,
                 showProfileEdit: false,
-                showMyRequests: false
+                showMyRequests: false,
+                showRequestCardDash: false
             })
         } else {
             this.setState({
@@ -166,7 +194,8 @@ class UserDash extends Component {
                 showRequestViewer: false,
                 showUserSearchOptions: false,
                 showProfileEdit: false,
-                showMyRequests: false
+                showMyRequests: false,
+                showRequestCardDash: false
             })
         } else {
             this.setState({
@@ -189,6 +218,7 @@ class UserDash extends Component {
                 showUserSearchOptions: false,
                 showProfileEdit: false,
                 showMyRequests: false,
+                showRequestCardDash: false
             })
         } else {
             this.setState({
@@ -210,7 +240,8 @@ class UserDash extends Component {
                 showRequestViewer: false,
                 showUserSearchOptions: false,
                 showProfileEdit: false,
-                showMyRequests: false
+                showMyRequests: false,
+                showRequestCardDash: false
             })
         } else {
             this.setState({
@@ -232,7 +263,8 @@ class UserDash extends Component {
                 showRequestViewer: false,
                 showUserSearchOptions: false,
                 showProfileEdit: false,
-                showMyRequests: false
+                showMyRequests: false,
+                showRequestCardDash: false
             })
         } else {
             this.setState({
@@ -254,7 +286,8 @@ class UserDash extends Component {
                 showRequestViewer: true,
                 showUserSearchOptions: false,
                 showProfileEdit: false,
-                showMyRequests: false
+                showMyRequests: false,
+                showRequestCardDash: false
             })
         } else {
             this.setState({
@@ -276,7 +309,8 @@ class UserDash extends Component {
                 showRequestViewer: false,
                 showUserSearchOptions: true,
                 showProfileEdit: false,
-                showMyRequests: false
+                showMyRequests: false,
+                showRequestCardDash: false
             })
         } else {
             this.setState({
@@ -303,7 +337,8 @@ class UserDash extends Component {
                 showRequestViewer: false,
                 showUserSearchOptions: false,
                 showProfileEdit: true,
-                showMyRequests: false
+                showMyRequests: false,
+                showRequestCardDash: false
             })
         } else {
             this.setState({
@@ -325,11 +360,36 @@ class UserDash extends Component {
                 showRequestViewer: false,
                 showUserSearchOptions: false,
                 showProfileEdit: false,
-                showMyRequests: true
+                showMyRequests: true,
+                showRequestCardDash: false
+
             })
         } else {
             this.setState({
                 showMyRequests: false
+            })
+        }
+    }
+
+    onClickShowRequestCardDash = () => {
+        if (this.state.showRequestCardDash === false) {
+            this.setState({
+                showAdminCaptionCreator: false,
+                showCategoryCreator: false,
+                showMilaEditor: false,
+                showMilaFeatured: false,
+                showCaptionCreator: false,
+                showCaptionEditor: false,
+                showRequestCreator: false,
+                showRequestViewer: false,
+                showUserSearchOptions: false,
+                showProfileEdit: false,
+                showMyRequests: false,
+                showRequestCardDash: true
+            })
+        } else {
+            this.setState({
+                showRequestCardDash: false
             })
         }
     }
@@ -388,6 +448,7 @@ class UserDash extends Component {
                             <div>
                                 {this.state.showMyRequests ? <UserMyRequests userdata={this.state.userData} /> : null}
                             </div>
+
                             {/* Admin Tools Below */}
                             {/* Create a Mila Official caption */}
                             <div>
@@ -405,11 +466,16 @@ class UserDash extends Component {
                             <div>
                                 {this.state.showMilaFeatured ? <AdminFeaturedMila featuredCaps={this.state.featuredCaps} rerender={this.gatherFeaturedCaptions} toggleShow={this.OnClickFeaturedMila} /> : null}
                             </div>
+
+                            {/* Dashboard Community Request Card */}
+                            <div id="request-card-dash">
+                                {this.state.showRequestCardDash ? <RequestCardDash card={this.state.chosenRequestData} userdata={this.state.userData} /> : null}
+                            </div>
                         </Col>
 
                         <Col size="3">
                             <div className="card" id="infinite-card" style={{ height: 800, overflow: 'auto' }}>
-                                {this.state.showMilaEditor ? null : <InfiniteUsers />}
+                                {this.state.showMilaEditor ? null : <InfiniteUsersCaptionScroll suggestableShown={this.state.showRequestCardDash} getSuggestable={this.getSuggestable} showSuggestable={this.onClickShowRequestCardDash} suggestables={this.state.suggestables} />}
                             </div>
                         </Col>
                     </Row>

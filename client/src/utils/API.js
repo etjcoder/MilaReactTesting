@@ -25,6 +25,9 @@ export default {
     getRequests: function() {
         return axios.get("/api/user/request")
     },
+    getRequest: function(id) {
+        return axios.get("/api/user/suggestable/" + id )
+    },
     getSuggestions: function(id) {
         return axios.get("/api/user/suggestion/" + id)
     },

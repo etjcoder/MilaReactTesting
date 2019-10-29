@@ -22,6 +22,9 @@ router.route("/request/:id")
     .post(userController.saveUserRequest)
     .get(userController.findUserRequest)
 
+router.route("/suggestable/:id")
+    .get(userController.findSuggestable)
+
 router.route("/suggestion/:id")
     .post(userController.saveSuggestedCaption)
     .get(userController.getSuggestedCaptions)

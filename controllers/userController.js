@@ -43,6 +43,12 @@ module.exports = {
             .then(dbImage => res.json(dbImage))
             .catch(err => res.status(422).json(err))
     },
+    findSuggestable: function(req, res) {
+        db.Suggestableimage
+            .findById(req.params.id)
+            .then(dbImage => res.json(dbImage))
+            .catch(err => res.status(422).json(err))
+    },
     createCommunityCaption: function(req, res) {
         db.Communitycaption 
             .create(req.body)
