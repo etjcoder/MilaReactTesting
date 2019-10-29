@@ -22,13 +22,13 @@ hr {
     background-color: white;
     font-size: 16px;
     font-family: 'PT Sans Narrow', sans-serif;
-    color: black;
+    color: rgb(49, 33, 49);
     margin: 10;
     height: 90;
     opacity: 0.95;
     width: 75;
     cursor: pointer;
-    padding: 3px;
+    padding: 2px;
     margin-top: 9px;
     border-radius: 25px;
 }

@@ -1,0 +1,80 @@
+.card-image {
+    text-align: center;
+}
+
+#fullGallery {
+    background-color: rgb(37, 35, 35);
+    opacity: .9;
+    margin-left: 200px;
+    margin-top: 30px;
+    padding: 15px;
+    width: 700px;
+    height: 500px;
+}
+
+#requestHeader {
+    color: white;
+    float: left;
+    font-family: 'Raleway Dots', cursive;
+    z-index: 2;
+}
+
+/* structure css code */
+
+#flipcard {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    text-align: center;
+    color: lightslategray;
+    font-size: 20px;
+    cursor: pointer;
+ }
+
+     #flipcard .front {
+     position: absolute;
+     width: 200px;
+     height: 190px;
+     background: #270347;
+     opacity: 0.95; 
+     border-radius: 16px; 
+     backface-visibility: hidden;
+     transform: perspective(600px) rotateY(0deg);
+     transition: transform 0.55s linear
+ }
+
+     #flipcard .back {
+     position: absolute;
+     margin: 50px;
+     width: 400px;
+     height: 200px;
+     font-size: 20px;
+     background: #270347;
+     opacity: 0.95; 
+     color: white;
+     border-radius: 20px; 
+     backface-visibility: hidden;
+     transform: perspective(600px) rotateY(180deg);
+     transition: transform 0.55s linear
+ }
+
+    #flipcard:hover .front {
+     transform: perspective(600px) rotateY(-180deg)
+ }
+
+     #flipcard:hover .back {
+     transform: perspective(600px) rotateY(0deg)
+ } 
+
+ #userImg {
+    width: 160px;
+    height: 160px;
+    margin-Top: 8%;
+    border-radius: 16px; 
+    opacity: 1;
+ }
+
+ .ul {
+     text-align: center;
+     margin-top: 50px
+ }

@@ -42,12 +42,11 @@ export default props => {
       </a>
 
 
-      <a className="admin-item">
-        MILA Admin
-      </a>
+      <p id="navHead">
+       M I L A - A D M I N 
+      </p>
 
-      {/* insert admin options here when admin page becomes obsolete */}
-
+       {/* Admin Options Below - do not appear on User nav panel */}
 
       <a className="menu-item" onClick={props.createAdminOption}>
         <i class="fa fa-plus-circle"></i>&nbsp;
