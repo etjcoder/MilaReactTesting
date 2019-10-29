@@ -15,7 +15,7 @@ function ContactForm () {
 			<div>
 		      <label for="name">
 		      	<span class="required">*Name: </span> 
-		      	<input type="text" id="name" name="name" value="" placeholder="Your Name" required="required" autofocus="autofocus" />
+		      	<input type="text" id="name" name="name" value="" placeholder="Your Name" required="required" />
 		      </label> 
 			</div>
 			<div>
