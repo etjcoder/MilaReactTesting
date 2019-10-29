@@ -3,13 +3,14 @@ import ReactDom from "react-dom"
 import { Input } from "../Form";
 import API from "../../utils/API"
 import cogoToast from 'cogo-toast'
+import "./style.css";
 
 
 class AdminCaptionCreator extends Component {
 
     state = {
         caption: "",
-        category: this.props.categories[0].category,
+        // category: this.props.categories[0].category,
         author: "",
         reference: "",
         lyric: "",
@@ -19,10 +20,10 @@ class AdminCaptionCreator extends Component {
         categories: []
     }
 
-    componentDidMount() {
-        // this.gatherCaptions();
-        console.log(this.props.categories);
-    }
+    // componentDidMount() {
+    //     // this.gatherCaptions();
+    //     console.log(this.props.categories);
+    // }
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -62,10 +63,10 @@ class AdminCaptionCreator extends Component {
 
     render() {
         return (
-            <div className="card bg-dark text-white">
+            <div className="card" id="adminCaption">
                 <form>
                     <h5>Input your caption here</h5>
-                    <Input value={this.state.caption} onChange={this.handleInputChange} name="caption" placeholder="Caption goes here" />
+                    <Input value={this.state.caption} onChange={this.handleInputChange} className="bigT" name="caption" placeholder="Caption goes here" />
                     {/* <Input value={this.state.category} onChange={this.handleInputChange} name="category" placeholder="Category goes here" /> */}
                     <select value={this.state.category} onChange={this.handleInputChange} name="category">
 
@@ -74,11 +75,11 @@ class AdminCaptionCreator extends Component {
                         ))}
 
                     </select>
-                    <Input value={this.state.author} onChange={this.handleInputChange} name="author" placeholder="Your name goes here" />
-                    <Input value={this.state.reference} onChange={this.handleInputChange} name="reference" placeholder="Caption's reference goes here" />
+                    <Input value={this.state.author} onChange={this.handleInputChange} className="bigT" name="author" placeholder="Your name goes here" />
+                    <Input value={this.state.reference} onChange={this.handleInputChange} className="bigT" name="reference" placeholder="Caption's reference goes here" />
                     {/* <Input value={this.state.lyric} onChange={this.handleInputchange} name="caption" placeholder="Is this a Lyric? (true or false)"/> */}
                     {/* <Input value={this.state.quote} onChange={this.handleInputchange} name="quote" placeholder="Is this a quote? (true or false)"/> */}
-                    <Input value={this.state.tags} onChange={this.handleInputChange} name="tags" placeholder="Tags go here, separate with commas!" />
+                    <Input value={this.state.tags} onChange={this.handleInputChange} className="bigT" name="tags" placeholder="Tags go here, separate with commas!" />
                     <button onClick={this.handleFormSubmit}>Submit your caption</button>
                 </form>
             </div>
