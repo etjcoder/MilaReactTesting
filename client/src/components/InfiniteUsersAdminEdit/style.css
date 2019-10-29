@@ -9,7 +9,6 @@ h1 {
     color:white;
 }
 
-
 #scrolly-admin {
     background-color: white;
     opacity: .8;
@@ -25,3 +24,7 @@ h1 {
     background-color: white;
     opacity: 1;
 } 
+
+#caption-td {
+    width: 500px;
+}
