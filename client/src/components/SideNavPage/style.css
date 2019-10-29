@@ -1,6 +1,6 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Archivo+Narrow&display=swap');
 
 #SideNavPage { 
   font-family: sans-serif;
@@ -43,8 +43,8 @@
 }
 
 .bm-menu {
-  background-color: #8e46d1;
-  font-family: 'Cuprum', sans-serif;
+  background-color: #8730d8;
+  font-family: 'Archivo Narrow', sans-serif;
   opacity: .8;
   padding: 2.5em 1.5em 0;
   font-size: 1.5em;
@@ -62,9 +62,8 @@
   background: white;
 }
 
-.admin-item {
+#navHead {
   padding: 2px; 
-  text-decoration: underline;
   color: rgb(18, 8, 54);
 }
 
