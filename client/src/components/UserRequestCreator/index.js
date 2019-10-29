@@ -92,24 +92,35 @@ class UserCaptionCreator extends Component {
         return (
             <div className="card" id="createCard">
                 <form>
-                    <h5>Input your Request for a Caption here</h5>
-                    {/* <Input value={this.state.category} onChange={this.handleInputChange} name="category" placeholder="Category goes here" /> */}
-
-                    <input type="file" onChange={this.fileSelectedHandler} />
-                    <button onClick={this.fileUploadHandlerB}>Upload</button>
-
-                    <select value={this.state.category} onChange={this.handleInputChange} name="category">
+                    <h5 id="requestHead">Upload your Photo</h5>
+                    <p id="uploadBlurb">See what the Mila community has to offer. 
+                    Submit your photo and have your fellow users submit caption suggestions. 
+                    Head to <i>'View My Requests'</i> to rank and select your favorite!</p>
+                    <br/>
+                    <input id="photoUpload" type="file" onChange={this.fileSelectedHandler} />
+                    <br/>
+                    <br/>
+                    <button id="UserRequestBtn" onClick={this.fileUploadHandlerB}>Upload</button>
+                    <br/>
+                    <br/>
+                    <h1 id="categorySelectText">We'll cap it, you tag it </h1>
+                    <br/>
+                    <br/>
+                    <select id="catDrop2" value={this.state.category} onChange={this.handleInputChange} name="category">
 
                         {this.props.categories.map(listedcategory => (
                             <option key={listedcategory._id} value={listedcategory.category}>{listedcategory.category}</option>
                         ))}
-
                     </select>
-                    <Input value={this.state.description} onChange={this.handleInputChange} name="description" placeholder="Description of your photo goes here" />
+                    <br/>
+                    <br/>
+                    <Input id="uploadText" value={this.state.description} onChange={this.handleInputChange} name="description" placeholder="Insert photo description" />
+                    <br/>
                     {/* <Input value={this.state.lyric} onChange={this.handleInputchange} name="caption" placeholder="Is this a Lyric? (true or false)"/> */}
                     {/* <Input value={this.state.quote} onChange={this.handleInputchange} name="quote" placeholder="Is this a quote? (true or false)"/> */}
-                    <Input value={this.state.tags} onChange={this.handleInputChange} name="tags" placeholder="Tags go here, separate with commas!" />
-                    <button onClick={this.handleFormSubmit}>Submit</button>
+                    <Input id="uploadText" value={this.state.tags} onChange={this.handleInputChange} name="tags" placeholder="Insert tags, separate with commas" />
+                    <br/>
+                    <button id="UserRequestBtn" onClick={this.handleFormSubmit}>Submit</button>
                 </form>
             </div>
         )

@@ -1,31 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette|Yantramanav&display=swap');
+
 #createCard {
     width: 600px; 
     padding: 50px; 
     margin-left: 30%; 
+    float: left;
     margin-top: 60px;
     border-radius: 20px; 
     background-image: linear-gradient(315deg, rgb(38, 19, 114) 9%, rgb(18, 8, 54)74%);
     opacity: 0.95; 
+    color: white;
+
+    display: left;
+    align-items: left;
+    justify-content: left;
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    font-family: 'Yantramanav', sans-serif;
 }
 
-.card h5 {
-    font-size: 23px; 
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-weight: bold; 
+#requestHead {
+    font-size: 30px; 
+    font-family: 'Pacifico', cursive;
     color: white; 
+    font-weight: 100;
+    cursor: pointer;
 }
 
-.card button {
-    background-color:  #8e46d1;
-    border-radius: 8px; 
+#photoUpload {
+    border-radius: 5px;
+    float: left;
+    cursor: pointer;
+}
+
+#UserRequestBtn {
+    position: relative;
+    float: left;
+    background-image: linear-gradient(to right, rgb(219, 105, 248), rgb(72, 15, 124));
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
     color: white; 
 }
  
-.card button:hover {
-    background-color: rgb(191, 132, 247);
+#UserRequestBtn:hover {
     color: white;
+    opacity: .8;
+    cursor: pointer;
 }
 
 hr {
     background-color: white; 
 }
+
+#uploadText {
+    width: 500px;
+    position: absolute;
+    padding-left: 10px;
+    height: 30px;
+    background-color: white;
+    font-family: 'Yantramanav', sans-serif;
+}
+
+#uploadBlurb {
+    color: white;
+    font-weight: 100;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#categorySelectText {
+    position: absolute;
+    font-family: 'Pacifico', cursive;
+    color: white;
+    font-size: 23px;
+    background-color: transparent;
+}
+
+#catDrop2 {
+    width: 300px;
+    font-size: 18px;
+    line-height: 18px;
+    padding-left: 10px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1.5px solid white;
+    color: white;
+    height: 30px;
+    opacity: .85;
+    font-family: 'Open Sans Condensed', sans-serif;
+    cursor: pointer;
+  }
