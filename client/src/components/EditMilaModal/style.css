@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette|Yantramanav&display=swap');
 
-#adminCategory {
-    width: 600px; 
-    padding: 50px; 
-    margin-left: 30%; 
+.admin-editModal { 
+    width: 100%;
+    padding: 20px; 
     float: left;
     margin-top: 60px;
     border-radius: 20px; 
     background-image: linear-gradient(315deg, rgb(38, 19, 114) 9%, rgb(18, 8, 54)74%);
     opacity: 0.95; 
     color: white;
+
     display: center;
     align-items: center;
     justify-content: center;
@@ -18,8 +18,7 @@
     font-family: 'Yantramanav', sans-serif;
 }
 
-
-#admin-requestHeadCat {
+#admin-modalHead {
     font-size: 30px; 
     font-family: 'Pacifico', cursive;
     color: white; 
@@ -27,23 +26,34 @@
     cursor: pointer;
 }
 
-#admin-createCategoryBtn {
+#catDrop5 {
+    width: 600px;
+    font-size: 18px;
+    line-height: 18px;
+    padding-left: 10px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1.5px solid white;
+    color: white;
+    height: 30px;
+    opacity: .85;
+    font-family: 'Open Sans Condensed', sans-serif;
+    cursor: pointer;
+    text-align: center;
+}
+
+#admin-modalEditBtn {
     position: relative;
     float: left;
     background-image: linear-gradient(to right, rgb(219, 105, 248), rgb(72, 15, 124));
     height: 30px;
-    width: 300px;
+    width: 600px;
     border-radius: 5px;
     color: white; 
     }
 
-    #admin-createCategoryBtn:hover  {
-        color: white;
-        opacity: .8;
-        cursor: pointer;
-    }
-
-hr {
-    background-color: white;
+#admin-modalEditBtn:hover  {
+    color: white;
+    opacity: .8;
+    cursor: pointer;
 }
-

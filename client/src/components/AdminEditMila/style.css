@@ -10,7 +10,11 @@
     color: white; 
 }
 
-.card h5 {
-    font-size: 24px;
+#admin-editMila {
+    font-size: 30px; 
+    font-family: 'Pacifico', cursive;
+    color: white; 
+    font-weight: 100;
+    cursor: pointer;
 }
 

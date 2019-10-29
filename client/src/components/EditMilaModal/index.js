@@ -3,6 +3,7 @@ import ReactDom from "react-dom";
 import cogoToast from "cogo-toast"
 import { Input } from "../Form";
 import API from "../../utils/API"
+import "./style.css"
 
 export default class EditMilaModal extends React.Component {
 
@@ -90,11 +91,11 @@ export default class EditMilaModal extends React.Component {
 
     render() {
         return (
-            <div className="card bg-dark text-white">
+            <div className="card admin-editModal">
                 <form>
-                    <h5>Input your caption here</h5>
+                    <h5 id="admin-modalHead">Input your caption here</h5>
                     <Input value={this.state.caption} onChange={this.handleInputChange} name="caption" placeholder="Caption goes here" />
-                    <select value={this.state.category} onChange={this.handleInputChange} name="category">
+                    <select id="catDrop5" value={this.state.category} onChange={this.handleInputChange} name="category">
 
                         {this.props.categories.map(listedcategory => (
                             <option key={listedcategory._id} value={listedcategory.category}>{listedcategory.category}</option>
@@ -103,9 +104,9 @@ export default class EditMilaModal extends React.Component {
                     </select>
                     <Input value={this.state.author} onChange={this.handleInputChange} name="author" placeholder="Your name goes here" />
                     <Input value={this.state.reference} onChange={this.handleInputChange} name="reference" placeholder="Caption's reference goes here" />
-                    <p>Current Tags {this.props.caption.tags}, must re-enter and separate with comma's!</p>
+                    <p><i>When re-entering tags, please separate with comma's!</i></p>
                     <Input value={this.state.tags} onChange={this.handleInputChange} name="tags" placeholder="Insert captions here" />
-                    <button onClick={this.prepareFormSubmit}>Submit your caption</button>
+                    <button id="admin-modalEditBtn" onClick={this.prepareFormSubmit}>Submit your caption</button>
                 </form>
             </div>
         )

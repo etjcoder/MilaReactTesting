@@ -35,11 +35,11 @@ class AdminFeaturedMila extends Component {
     render() {
         return (
             <div className="card" id="adminFeatured">
-                <h5>Featured Mila Captions Below</h5>
+                <h5 id="admin-featuredHead">Featured Mila Captions Below</h5>
                 
                 <br />
                 <br />
-                <table className="table">
+                <table className="table table-responsive">
                     <thead>
                         <tr>
                             <th>Caption</th>

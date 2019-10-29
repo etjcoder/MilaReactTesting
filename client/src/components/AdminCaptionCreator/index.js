@@ -3,6 +3,7 @@ import ReactDom from "react-dom"
 import { Input } from "../Form";
 import API from "../../utils/API"
 import cogoToast from 'cogo-toast'
+import "./style.css"
 
 
 class AdminCaptionCreator extends Component {
@@ -10,7 +11,7 @@ class AdminCaptionCreator extends Component {
     state = {
         caption: "",
         category: this.props.categories[0].category,
-        author: "",
+        author: "Mila",
         reference: "",
         lyric: "",
         quote: "",
@@ -33,8 +34,7 @@ class AdminCaptionCreator extends Component {
 
     testState = () => {
         console.log(this.state.books)
-    } 
-
+    }
 
 
     handleFormSubmit = event => {
@@ -45,7 +45,7 @@ class AdminCaptionCreator extends Component {
         var splicedArr = lowerCaseTags.split(", ")
         console.log(splicedArr)
 
-          API.saveCaption({
+        API.saveCaption({
             caption: this.state.caption,
             category: this.state.category,
             author: this.state.author,
@@ -53,33 +53,37 @@ class AdminCaptionCreator extends Component {
             originalAuthor: this.state.originalAuthor,
             tags: splicedArr
         })
-        .then(res => 
-            cogoToast.success("Your caption was saved!"))
-        .catch(err => console.log)
+            .then(res =>
+                cogoToast.success("Your caption was saved!"))
+            .catch(err => console.log)
     }
 
-    
+
 
     render() {
         return (
-            <div className="card bg-dark text-white">
+            <div className="card" id="admin-createCard">
                 <form>
-                    <h5>Input your caption here</h5>
-                    <Input value={this.state.caption} onChange={this.handleInputChange} name="caption" placeholder="Caption goes here" />
+                    <h5 id="admin-requestHead">Admin Caption Creator</h5>
+                    <br />
+                    <Input className="caption-create-input" value={this.state.caption} onChange={this.handleInputChange} name="caption" placeholder="Caption goes here" />
                     {/* <Input value={this.state.category} onChange={this.handleInputChange} name="category" placeholder="Category goes here" /> */}
-                    <select value={this.state.category} onChange={this.handleInputChange} name="category">
+                    <br />
+                    <select id="catDrop3" value={this.state.category} onChange={this.handleInputChange} name="category">
 
                         {this.props.categories.map(listedcategory => (
-                           <option key={listedcategory._id} value={listedcategory.category}>{listedcategory.category}</option>
+                            <option key={listedcategory._id} value={listedcategory.category}>{listedcategory.category}</option>
                         ))}
 
                     </select>
-                    <Input value={this.state.author} onChange={this.handleInputChange} name="author" placeholder="Your name goes here" />
-                    <Input value={this.state.reference} onChange={this.handleInputChange} name="reference" placeholder="Caption's reference goes here" />
+                    <br />
+                    <Input className="caption-create-input" value={this.state.reference} onChange={this.handleInputChange} name="reference" placeholder="Caption's reference goes here" />
+                    <br />
                     {/* <Input value={this.state.lyric} onChange={this.handleInputchange} name="caption" placeholder="Is this a Lyric? (true or false)"/> */}
                     {/* <Input value={this.state.quote} onChange={this.handleInputchange} name="quote" placeholder="Is this a quote? (true or false)"/> */}
-                    <Input value={this.state.tags} onChange={this.handleInputChange} name="tags" placeholder="Tags go here, separate with commas!" />
-                    <button onClick={this.handleFormSubmit}>Submit your caption</button>
+                    <Input className="caption-create-input" value={this.state.tags} onChange={this.handleInputChange} name="tags" placeholder="Tags go here, separate with commas!" />
+                    <br />
+                    <button id="admin-createCaptionBtn" onClick={this.handleFormSubmit}>Submit your caption</button>
                 </form>
             </div>
         )

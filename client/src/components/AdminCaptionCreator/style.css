@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Courgette|Yantramanav&display=swap');
 
-#adminCategory {
+#admin-createCard {
     width: 600px; 
-    padding: 50px; 
+    padding: 20px; 
     margin-left: 30%; 
     float: left;
     margin-top: 60px;
@@ -10,6 +10,7 @@
     background-image: linear-gradient(315deg, rgb(38, 19, 114) 9%, rgb(18, 8, 54)74%);
     opacity: 0.95; 
     color: white;
+
     display: center;
     align-items: center;
     justify-content: center;
@@ -18,8 +19,7 @@
     font-family: 'Yantramanav', sans-serif;
 }
 
-
-#admin-requestHeadCat {
+#admin-requestHead {
     font-size: 30px; 
     font-family: 'Pacifico', cursive;
     color: white; 
@@ -27,23 +27,42 @@
     cursor: pointer;
 }
 
-#admin-createCategoryBtn {
-    position: relative;
-    float: left;
-    background-image: linear-gradient(to right, rgb(219, 105, 248), rgb(72, 15, 124));
-    height: 30px;
-    width: 300px;
-    border-radius: 5px;
-    color: white; 
-    }
+#admin-createCaptionBtn {
+position: relative;
+float: left;
+background-image: linear-gradient(to right, rgb(219, 105, 248), rgb(72, 15, 124));
+height: 30px;
+width: 300px;
+border-radius: 5px;
+color: white; 
+}
 
-    #admin-createCategoryBtn:hover  {
-        color: white;
-        opacity: .8;
-        cursor: pointer;
-    }
+#catDrop3 {
+    width: 300px;
+    font-size: 18px;
+    line-height: 18px;
+    padding-left: 10px;
+    border-radius: 10px;
+    background: transparent;
+    border: 1.5px solid white;
+    color: white;
+    height: 30px;
+    opacity: .85;
+    font-family: 'Open Sans Condensed', sans-serif;
+    cursor: pointer;
+    text-align: center;
+  } 
+
+#admin-createCaptionBtn:hover  {
+    color: white;
+    opacity: .8;
+    cursor: pointer;
+}
 
 hr {
     background-color: white;
 }
 
+.caption-create-input {
+    width: 100%;
+}
