@@ -6,6 +6,7 @@ import request from "superagent";
 // import InfiniteScroll from 'react-infinite-scroller';
 import debounce from "lodash.debounce";
 import VirtualList from 'react-virtual-list';
+import TopSuggestion from '../TopSuggestion';
 
 import "./style.css";
 
@@ -63,6 +64,11 @@ class InfiniteUsersCaptionScroll extends Component {
 
   }
 
+  getTopCaption = (id) => {
+
+
+  }
+
   render() {
     const {
       error,
@@ -88,8 +94,8 @@ class InfiniteUsersCaptionScroll extends Component {
                 }}
               />
               <div id="CommunityCard" style={{ marginLeft: '4%', marginTop: '2%'}}>
-              <p>{suggestable.description}</p>
-              <p></p>
+              <p><strong><u>{suggestable.description}</u></strong></p>
+              <p><TopSuggestion suggestions={suggestable.suggestedCaptions}/></p>
               </div>
             </div>
           </Fragment>

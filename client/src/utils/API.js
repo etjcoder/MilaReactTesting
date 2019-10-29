@@ -49,6 +49,9 @@ export default {
     updateCaption: function(id, data) {
         return axios.put("/api/admin/captions/" + id, data);
     },
+    getTopSuggestion: function(id) {
+        return axios.get("/api/user/suggestion/top/" + id)
+    },
     updateUserCaption: function(id, data) {
         return axios.put("/api/user/captions/" + id, data);
     },
