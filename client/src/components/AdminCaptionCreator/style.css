@@ -1,0 +1,22 @@
+#adminCaption {
+    width: 500px; 
+    padding: 80px; 
+    margin-left: 35%; 
+    margin-top: 60px;
+    border-radius: 20px; 
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: rgb(18, 8, 54);
+    opacity: 0.95; 
+    color: white; 
+}
+
+.card .bigT {
+    font-size: 24px;
+    font-weight: bold; 
+    
+}
+
+.card h5 {
+    padding-bottom: 40px;
+    /* color: white; */
+}
