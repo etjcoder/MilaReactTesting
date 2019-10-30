@@ -36,6 +36,11 @@ export default props => {
           Edit Profile
       </a>
 
+      {/* <a className="menu-item" onClick={props.leaderBoardOption}>
+      <i class="fas fa-medal"></i>&nbsp;
+          Leaderboard
+      </a> */}
+
       <a className="menu-item" onClick={props.logOut}>
         <i class="fa fa-sign-out"></i>&nbsp;
           Logout

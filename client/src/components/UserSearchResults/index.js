@@ -29,13 +29,18 @@ class UserSearchResults extends Component {
         
     }
 
+    onClickCloseBtn = () => {
+        this.props.empty()
+    }
+
     render() {
         return (
             <div className="card" id="searchResults">
+                <button id="closeBtn" onClick={this.onClickCloseBtn}>X</button>
                         {this.props.results.map(result => (
                         <SearchResult key={result._id} author={result.author} caption={result.caption} id={result._id} category={result.category} reference={result.reference} />
                        ))}
-                       <button id="closeBtn">X</button>
+                       
 
             </div>
         )

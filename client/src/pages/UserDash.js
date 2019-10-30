@@ -23,6 +23,7 @@ import AdminEditMila from "../components/AdminEditMila";
 import AdminFeaturedMila from "../components/AdminFeaturedMila";
 import InfiniteUsersCaptionScroll from "../components/InfiniteUsersCaptionScroll";
 import RequestCardDash from "../components/RequestCardDash";
+import LeaderBoard from "../components/LeaderBoard"
 
 class UserDash extends Component {
 
@@ -41,6 +42,7 @@ class UserDash extends Component {
         showCategoryCreator: false,
         showMilaEditor: false,
         showMilaFeatured: false,
+        showLeaderBoard: false,
         featuredCaps: [],
         suggestables: [],
         chosenRequestData: "",
@@ -126,7 +128,8 @@ class UserDash extends Component {
                 showUserSearchOptions: false,
                 showProfileEdit: false,
                 showMyRequests: false,
-                showRequestCardDash: false
+                showRequestCardDash: false,
+                showLeaderBoard: false
             })
         } else {
             this.setState({
@@ -149,7 +152,8 @@ class UserDash extends Component {
                 showUserSearchOptions: false,
                 showProfileEdit: false,
                 showMyRequests: false,
-                showRequestCardDash: false
+                showRequestCardDash: false,
+                showLeaderBoard: false
             })
         } else {
             this.setState({
@@ -172,7 +176,8 @@ class UserDash extends Component {
                 showUserSearchOptions: false,
                 showProfileEdit: false,
                 showMyRequests: false,
-                showRequestCardDash: false
+                showRequestCardDash: false,
+                showLeaderBoard: false
             })
         } else {
             this.setState({
@@ -195,7 +200,8 @@ class UserDash extends Component {
                 showUserSearchOptions: false,
                 showProfileEdit: false,
                 showMyRequests: false,
-                showRequestCardDash: false
+                showRequestCardDash: false,
+                showLeaderBoard: false
             })
         } else {
             this.setState({
@@ -218,7 +224,8 @@ class UserDash extends Component {
                 showUserSearchOptions: false,
                 showProfileEdit: false,
                 showMyRequests: false,
-                showRequestCardDash: false
+                showRequestCardDash: false,
+                showLeaderBoard: false
             })
         } else {
             this.setState({
@@ -241,7 +248,8 @@ class UserDash extends Component {
                 showUserSearchOptions: false,
                 showProfileEdit: false,
                 showMyRequests: false,
-                showRequestCardDash: false
+                showRequestCardDash: false,
+                showLeaderBoard: false
             })
         } else {
             this.setState({
@@ -264,7 +272,8 @@ class UserDash extends Component {
                 showUserSearchOptions: false,
                 showProfileEdit: false,
                 showMyRequests: false,
-                showRequestCardDash: false
+                showRequestCardDash: false,
+                showLeaderBoard: false
             })
         } else {
             this.setState({
@@ -287,7 +296,8 @@ class UserDash extends Component {
                 showUserSearchOptions: false,
                 showProfileEdit: false,
                 showMyRequests: false,
-                showRequestCardDash: false
+                showRequestCardDash: false,
+                showLeaderBoard: false
             })
         } else {
             this.setState({
@@ -310,7 +320,8 @@ class UserDash extends Component {
                 showUserSearchOptions: true,
                 showProfileEdit: false,
                 showMyRequests: false,
-                showRequestCardDash: false
+                showRequestCardDash: false,
+                showLeaderBoard: false
             })
         } else {
             this.setState({
@@ -338,7 +349,8 @@ class UserDash extends Component {
                 showUserSearchOptions: false,
                 showProfileEdit: true,
                 showMyRequests: false,
-                showRequestCardDash: false
+                showRequestCardDash: false,
+                showLeaderBoard: false
             })
         } else {
             this.setState({
@@ -361,7 +373,8 @@ class UserDash extends Component {
                 showUserSearchOptions: false,
                 showProfileEdit: false,
                 showMyRequests: true,
-                showRequestCardDash: false
+                showRequestCardDash: false,
+                showLeaderBoard: false
 
             })
         } else {
@@ -385,11 +398,36 @@ class UserDash extends Component {
                 showUserSearchOptions: false,
                 showProfileEdit: false,
                 showMyRequests: false,
-                showRequestCardDash: true
+                showRequestCardDash: true,
+                showLeaderBoard: false
             })
         } else {
             this.setState({
                 showRequestCardDash: false
+            })
+        }
+    }
+
+    onClickLeaderBoard = () => {
+        if (this.state.showLeaderBoard === false) {
+            this.setState({
+                showAdminCaptionCreator: false,
+                showCategoryCreator: false,
+                showMilaEditor: false,
+                showMilaFeatured: false,
+                showCaptionCreator: false,
+                showCaptionEditor: false,
+                showRequestCreator: false,
+                showRequestViewer: false,
+                showUserSearchOptions: false,
+                showProfileEdit: false,
+                showMyRequests: false,
+                showRequestCardDash: false,
+                showLeaderBoard: true
+            })
+        } else {
+            this.setState({
+                showLeaderBoard: false
             })
         }
     }
@@ -412,6 +450,7 @@ class UserDash extends Component {
                     createCategoryOption={this.onClickCategory}
                     editMilaOption={this.onClickEditMila}
                     featureOption={this.onClickFeaturedMila}
+                    leaderBoardOption={this.onClickLeaderBoard}
                 />
                 <Container fluid>
                     <Row>
@@ -447,6 +486,10 @@ class UserDash extends Component {
                             {/* User View their personal request cards */}
                             <div>
                                 {this.state.showMyRequests ? <UserMyRequests userdata={this.state.userData} /> : null}
+                            </div>
+                            {/* Shows leaderboard in Goldstars and Likes */}
+                            <div>
+                                {this.state.showLeaderBoard ? <LeaderBoard userdata={this.state.userData} /> : null}
                             </div>
 
                             {/* Admin Tools Below */}

@@ -9,7 +9,7 @@
     opacity: 1;
     color: white;
     width: 750px;
-    height: 400px;
+    height: 100%;
     z-index: -2;
     border: 2px white;
 }

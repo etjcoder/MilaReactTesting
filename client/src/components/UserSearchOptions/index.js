@@ -53,6 +53,12 @@ class UserSearchOptions extends Component {
         console.log("You're searching for: " + this.state.category)
     }
 
+    emptySearch = () => {
+        this.setState({
+            searchResults: []
+        })
+    }
+
     render() {
         return (
             <div className="card" id="searchCard">
@@ -89,7 +95,7 @@ class UserSearchOptions extends Component {
                             </button>
                         </div>
                     </form>   
-                <UserSearchResults results={this.state.searchResults} />
+                <UserSearchResults empty={this.emptySearch} results={this.state.searchResults} />
             </div>
         )
     }
