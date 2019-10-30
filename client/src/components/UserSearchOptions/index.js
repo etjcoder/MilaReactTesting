@@ -4,6 +4,7 @@ import API from "../../utils/API";
 import {render} from 'react-dom';
 import UserSearchResults from "../UserSearchResults";
 import "./style.css";
+import cogoToast from "cogo-toast"
 
 class UserSearchOptions extends Component {
     state = {
@@ -22,6 +23,12 @@ class UserSearchOptions extends Component {
             .then(res =>
                 this.setState({
                     searchResults: res.data,
+                },
+                () => {
+                    // console.log(this.state.searchResults.length)
+                    if (this.state.searchResults.length < 1) {
+                        cogoToast.warn("No results found!")
+                    }
                 })
             )
     }
@@ -30,6 +37,12 @@ class UserSearchOptions extends Component {
             .then(res =>
                 this.setState({
                     searchResults: res.data,
+                },
+                () => {
+                    // console.log(this.state.searchResults.length)
+                    if (this.state.searchResults.length < 1) {
+                        cogoToast.warn("No results found!")
+                    }
                 })
             )
     }
