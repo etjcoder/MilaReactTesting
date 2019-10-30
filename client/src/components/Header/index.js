@@ -5,12 +5,9 @@ function Header () {
     return (
         <header data-aos='fade-in'>MILA
             <div id="nunc">{ `{ mee-luh }` }</div>
-                <div className="teamLink">
-                <a href="#team" id="team">Team </a></div>
-                <div className="contactLink">
-                <a href="contact" id="contact">Contact</a></div>
-                {/* <div className="loginLink">
-                <a href="#login" id="login">Login</a></div> */}
+                <div className="Dashboard">
+                    <a href="user"> M I L A &nbsp; D A S H B O A R D </a>
+                </div>
         </header>
     )
 }
