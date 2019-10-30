@@ -58,13 +58,13 @@ export default class UserProfileEdit extends React.Component {
         return(
             <div className="card" id="userEdit">
                 <form>
-                    <h5>Update your profile</h5>
-                    <Input value={this.state.firstName} onChange={this.handleInputChange} name="firstName" placeholder="What is your first name?" />
-                    <Input value={this.state.lastName} onChange={this.handleInputChange} name="lastName" placeholder="What is your last name?" />
-                    <Input value={this.state.username} onChange={this.handleInputChange} name="username" placeholder="What will be your username?" />
-                    <Input value={this.state.imageURL} onChange={this.handleInputChange} name="imageURL" placeholder="Please upload an image for your profile" />
-                    <Input value={this.state.profileDesc} onChange={this.handleInputChange} name="profileDesc" placeholder="Tell us a little about yourself." />
-                    <button onClick={this.handleFormSubmit}>Submit your changes</button>
+                    <h5 id="editProfileHeader">Update your profile</h5>
+                    <Input id="editProfileField" value={this.state.firstName} onChange={this.handleInputChange} name="firstName" placeholder="First Name" />
+                    <Input id="editProfileField" value={this.state.lastName} onChange={this.handleInputChange} name="lastName" placeholder="Last Name" />
+                    <Input id="editProfileField" value={this.state.username} onChange={this.handleInputChange} name="username" placeholder="Username" />
+                    <Input id="editProfileField" value={this.state.imageURL} onChange={this.handleInputChange} name="imageURL" placeholder="Please upload an image for your profile" />
+                    {/* <Input id="editProfileField" value={this.state.profileDesc} onChange={this.handleInputChange} name="profileDesc" placeholder="Tell us a little about yourself." /> */}
+                    <button id="submitProfileEditsBtn" onClick={this.handleFormSubmit}>Submit your changes</button>
                 </form>
             </div>
         )
