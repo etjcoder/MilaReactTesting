@@ -64,8 +64,7 @@ class RequestCardDash extends Component {
                 <div class="container">
                     <div class="front">
                         <div id="image-here">
-                            <img className="card-image" style={{ width: 280, height: 280, marginTop: "10%" }} alt={this.props.card._id} src={this.props.card.imageURL} />
-                
+                            <img className="card-image" style={{ width: 350, height: 335, marginTop: "10%", border: "17px solid white", borderBottom: "100px solid white"}} alt={this.props.card._id} src={this.props.card.imageURL} />
                             <SuggestionForm id={this.props.card._id} userdata={this.props.userdata} />
                         </div>
                     </div>

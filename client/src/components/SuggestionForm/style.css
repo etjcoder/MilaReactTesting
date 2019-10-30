@@ -2,3 +2,21 @@ input {
     display: block;
     margin: 0 auto;
 }
+
+.btn-outline-warning {
+    color: white; 
+    background-color: rgb(1, 1, 27); 
+    border: none; 
+    padding: 10px; 
+    opacity: 0.9; 
+}
+
+.btn-outline-warning:hover {
+    background-color: rgb(4, 4, 37); 
+    color: white; 
+    opacity: 0.8; 
+}
+
+.center-block {
+    margin-bottom: -40px; 
+}
