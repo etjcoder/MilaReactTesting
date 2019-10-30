@@ -4,7 +4,7 @@
 
 /* structure css code */
 
-#flipcard {
+#flipcardComm {
     width: 300px;
     height: 500px;
     position: relative;
@@ -15,41 +15,40 @@
     cursor: pointer
  }
 
-     #flipcard .front {
+     #flipcardComm .front {
      position: absolute;
      width: 100%;
      height: 100%;
-     background: #8e46d1;
-     opacity: 0.9; 
-     border-radius: 40px; 
-     backface-visibility: hidden;
-     transform: perspective(600px) rotateY(0deg);
-     transition: transform 0.55s linear
- }
-
-     #flipcard .back {
-     position: absolute;
-     margin: 50px;
-     width: 100%;
-     height: 100%;
-     font-size: 20px;
-     background: #4f1288;
+     background: transparent;
      opacity: 0.95; 
-     border-radius: 40px; 
      backface-visibility: hidden;
-     transform: perspective(600px) rotateY(180deg);
+     transform: perspective(600px) rotateY(360deg);
      transition: transform 0.55s linear
  }
 
-    #flipcard:hover .front {
+     #flipcardComm .back {
+     position: absolute;
+     width: 352px;
+     height: 385px;
+     font-size: 20px;
+     background: rgb(185, 184, 184);
+     opacity: 0.95; 
+     border: 9px solid rgb(218,218,218);
+     border-radius: 0px; 
+     backface-visibility: hidden;
+     transform: perspective(65px) rotateY(360deg);
+     transition: transform 0.55s linear;
+     margin-right: 5px;
+ }
+
+    /* #flipcard:hover .front {
      transform: perspective(600px) rotateY(-180deg)
  }
 
      #flipcard:hover .back {
      transform: perspective(600px) rotateY(0deg)
- } 
+ }  */
 
  .ul {
      text-align: center;
-     margin-top: 50px
  }

@@ -14,7 +14,8 @@ class RequestCard extends Component {
         showSuggestions: true,
         showSuggestionForm: true,
         suggestions: [],
-        goldStarGiven: ""
+        goldStarGiven: "",
+        cardFront: true
     }
 
     componentDidMount() {
@@ -54,18 +55,31 @@ class RequestCard extends Component {
         }
     }
 
+    onClickFlipCard = () => {
+        if (this.state.cardFront === true) {
+            this.setState({
+                cardFront: false
+            })
+        } else {
+            this.setState({
+                cardFront: true
+            })
+        }
+    }
+
     render() {
         return (
-            <div id="flipcard">
+            <div id="flipcardComm">
                 <div class="container">
+                    { this.state.cardFront ? 
                     <div class="front">
                         <div id="image-here">
-                            <img className="card-image" style={{ width: 280, height: 280, marginTop: "10%" }} alt={this.props.id} src={this.props.imageSrc} />
+                            <img className="card-image" style={{ width: 350, height: 335, marginTop: "10%", border:"17px solid white", borderBottom:"30px solid white"}} alt={this.props.id} src={this.props.imageSrc} />
                 
-                            <SuggestionForm id={this.props.id} userdata={this.props.userdata} />
+                            <SuggestionForm id={this.props.id} flipCard={this.onClickFlipCard} userdata={this.props.userdata} />
                         </div>
                     </div>
-
+                    :
                     <div class="back">
                         {/* <div id="caption-here"> */}
                         {/* <button onClick={() => this.onClickShowSuggestions()}>Show Suggestions</button> */}
@@ -80,9 +94,10 @@ class RequestCard extends Component {
 
                             : null}
                         {this.state.showSuggestionForm ?
-                            <div style={{ marginTop: "5%" }}><SuggestionForm rerender={this.getSuggestions} userdata={this.props.userdata} id={this.props.id} /> </div> : null}
+                            <div style={{ marginTop: "5%" }}><SuggestionForm flipCard={this.onClickFlipCard} rerender={this.getSuggestions} userdata={this.props.userdata} id={this.props.id} /> </div> : null}
                         {/* </div> */}
                     </div>
+                    }
                 </div>
             </div>
         )
