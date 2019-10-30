@@ -60,7 +60,7 @@ class RequestCard extends Component {
                 <div class="container">
                     <div class="front">
                         <div id="image-here">
-                            <img className="card-image" style={{ width: 280, height: 280, marginTop: "10%" }} alt={this.props.id} src={this.props.imageSrc} />
+                            <img className="card-image" style={{ width: 278, height: 260, marginTop: "10%" }} alt={this.props.id} src={this.props.imageSrc} />
                 
                             <SuggestionForm id={this.props.id} userdata={this.props.userdata} />
                         </div>

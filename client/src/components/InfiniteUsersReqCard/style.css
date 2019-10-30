@@ -37,3 +37,9 @@ hr {
     background-color: white;
     opacity: 1;
 } 
+
+#sugCaps h4 {
+    font-family: 'Raleway Dots', cursive;
+    color: black; 
+    font-weight: bold; 
+}
