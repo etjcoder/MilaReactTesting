@@ -41,10 +41,15 @@
     "react-infinite-scroll-component": "^4.5.3",
     "react-infinite-scroller": "^1.2.4",
     "react-modal": "^3.11.1",
+    "react-multi-carousel": "^2.3.0",
+    "react-photostory": "^0.7.2",
     "react-router-dom": "^5.1.2",
+    "react-slick": "^0.25.2",
+    "react-swipe-card": "^0.1.4",
     "react-typing-animation": "^1.6.2",
     "react-virtual-list": "^2.3.0",
     "semantic-ui-react": "^0.88.1",
+    "slick-carousel": "^1.8.1",
     "superagent": "^5.1.0"
   }
 }

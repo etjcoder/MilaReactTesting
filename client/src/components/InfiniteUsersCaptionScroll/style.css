@@ -1,4 +1,12 @@
-#communityHeader {
-    font-family: 'Raleway Dots', cursive;
-    color:white;
- }
+
+    #communityHeader {
+        font-family: 'Raleway Dots', cursive;
+        color:rgb(21, 7, 54);
+        font-size: 26px;
+        text-align: center; 
+        margin-top: 10px; 
+        padding: 5px;
+        font-weight: bold;
+        letter-spacing: 1.5;
+    }
+ 

@@ -141,7 +141,7 @@ incrementState = (userID) => {
 render() {
     return (
         <div className="bubble" style = { { fontSize: '18px', color: this.props.goldstar ? '#787D2E' : 'darkslategrey'}}>
-              { this.props.goldstar ?  <i class="fas fa-star"></i>: null}<div className="li">{this.props.suggestion} </div>
+              { this.props.goldstar ?  <i class="fas fa-star"></i>: null}<div>{this.props.suggestion} </div>
             <div>
             <p>
             <span>

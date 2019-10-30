@@ -3,6 +3,8 @@ import { Input } from "../Form";
 import API from "../../utils/API";
 import SearchResult from "../SearchResult"
 import "./style.css";
+import cogoToast from 'cogo-toast';
+
 
 class UserSearchResults extends Component {
 
@@ -27,28 +29,14 @@ class UserSearchResults extends Component {
         
     }
 
-
-
     render() {
         return (
             <div className="card" id="searchResults">
-
-                    <div className="card bg-warning text-white">
                         {this.props.results.map(result => (
-                            <SearchResult key={result._id}
-                                author={result.author}
-                                caption={result.caption}
-                                id={result._id}
-                                category={result.category}
-                                reference={result.reference}
-                                lyric={result.lyric}
-                                quote={result.quote}
-                                originalAuthor={result.originalAuthor}
-                                tags={JSON.stringify(result.tags)}
-                                comments={result.comments}
-                            />
-                        ))}
-                    </div>
+                        <SearchResult key={result._id} author={result.author} caption={result.caption} id={result._id} category={result.category} reference={result.reference} />
+                       ))}
+                       <button id="closeBtn">X</button>
+
             </div>
         )
     }

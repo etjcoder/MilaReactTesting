@@ -1,10 +1,24 @@
 #searchResults {
     border-radius: 8px; 
-    padding: 2px; 
-    margin-left: 30%; 
+    padding: 20px; 
+    float: left;
+    position: relative;
     margin-top: 60px;
+    margin-left: 0px;
+    background-color: #563d94;
+    opacity: 1;
+    color: white;
+    width: 750px;
+    height: 400px;
+    z-index: -2;
+    border: 2px white;
 }
 
-#searchResults h5 {
-    color: rgb(29, 28, 28); 
+#closeBtn {
+    border-radius: 50px;
+    color: white;
+    width: 30px;
+    font-weight: bold;
+    float: right;
+    text-align: center;
 }

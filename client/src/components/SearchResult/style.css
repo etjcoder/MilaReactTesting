@@ -1,3 +1,29 @@
-#search-text {
-    color: darkslategray
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+#searchResDiv {
+    font-family: 'Poppins', sans-serif;
+    width: 710px;
+    background-color: #1a0944;
+    opacity: 0.9;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+#capResult {
+    color: white;
+    font-weight: bold;
+    width: 550px;
+    font-size: 20px;
+}
+
+#categoryTxt {
+    color: white;
+    width: 550px;
+    font-size: 16px;
+}
+
+#referenceTxt {
+    color: white;
+    width: 550px;
+    font-size: 16px;
 }

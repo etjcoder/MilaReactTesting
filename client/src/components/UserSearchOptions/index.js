@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import { Input } from "../Form";
 import API from "../../utils/API";
+import {render} from 'react-dom';
 import UserSearchResults from "../UserSearchResults";
 import "./style.css";
+
 class UserSearchOptions extends Component {
     state = {
         keyword: "",
-        category: "Autumn",
+        category: "",
         imageKeywords: [],
         searchResults: [],
-        showResults: false
+        showResults: false,
     }
+
     componentDidMount() {
         console.log(this.props.categories);
     }
@@ -49,41 +52,43 @@ class UserSearchOptions extends Component {
         this.searchCategory(this.state.category)
         console.log("You're searching for: " + this.state.category)
     }
+
     render() {
         return (
             <div className="card" id="searchCard">
-                <div>
+            <h1 id="userHead">Welcome to the hub.</h1>
+            <p id="userDashBlurb">Search the Mila caption database below. If you'd like to open your photo
+            to suggestions from other users, upload it to the community feed! </p>
+
+            <br/>
+                <h4 id="searchHeader">Find a Caption</h4>              
                     <form>
-                        <h4 id="searchHeader">Find a Caption</h4>
                         <input class="search_input" value={this.state.keyword} onChange={this.handleInputChange} name="keyword" id="searchEntry" placeholder="Search by Keyword..." />
                         <br />
                         <div class="container" id="searchContain"><br />
-                            <button id="searchBtn1" onClick={this.handleKeywordSearchSubmit}>
+                            <button id="searchBtn1" onClick={this.handleKeywordSearchSubmit} >
                                 Search
                    <div class="fill"></div>
                             </button>
                         </div>
                     </form>
+                    <br/>
                     <form>
-                        <br />
-                        <br />
-                        <br />
-                        <h5 id="categoryHeader">Search By Category</h5>
+                        <h5 id="categoryHeader">Search by Category</h5>
                         <select id="catDrop" value={this.state.category} onChange={this.handleInputChange} name="category">
                             {this.props.categories.map(listedcategory => (
                                 <option key={listedcategory._id} value={listedcategory.category}>{listedcategory.category}</option>
                             ))}
                         </select>{' '}
-                        <br />
+                        <br/>
                         <div class="container" id="searchContain">
                             <br />
                             <button id="searchBtn" onClick={this.handleCategorySearchSubmit}>
                                 Search by Category
-                <div class="fill"></div>
+                           <div class="fill"></div>
                             </button>
                         </div>
-                    </form>
-                </div>
+                    </form>   
                 <UserSearchResults results={this.state.searchResults} />
             </div>
         )

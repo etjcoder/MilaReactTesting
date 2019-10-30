@@ -1,24 +1,46 @@
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
+
 #searchCard {
-   width: 355px;
+   width: 800px;
    padding: 20px;
-   height: 350px;
-   margin-top: 14%;
-   margin-left: 40%;
+   height: 560px;
+   margin-top: 1%;
+   margin-left: 25%;
    border-radius: 15px;
-   background-color: rgb(46, 2, 104);
+   background-color: #1a0944;
    opacity: 0.89;
 }
+
+#userHead {
+   font-size: 40px;
+   font-weight: bold;
+   color: white;
+   float: left;
+   font-family: 'Raleway Dots', cursive;
+  }
+
+  #userDashBlurb {
+   font-size: 20px;
+   font-weight: bold;
+   color: white;
+   float: left;
+   font-family: 'Raleway Dots', cursive;
+  }
+
 #searchHeader {
-   font-size: 42px;
+   font-size: 30px;
+   font-weight: bold;
    color: white;
-   font-family: 'Pacifico', cursive;
-}
+   font-family: 'Raleway Dots', cursive;
+  }
+
 #categoryHeader {
-   font-size: 18px;
-   font-family: 'Pacifico', cursive;
-   color: white;
+   font-size: 30px;
+   font-weight: bold;
+   font-family: 'Raleway Dots', cursive;
+   color:white;
 }
+
 #searchContain {
     text-align: left;
     position: relative;
@@ -26,10 +48,11 @@
     margin: 0 auto;
     cursor: pointer;
 }
+
 #searchBtn {
     position: relative;
-    float: right;
-    height: 37px;
+    float: center;
+    height: 39px;
     width: 270px;
     border: 0;
     border-radius: 5px;
@@ -42,11 +65,12 @@
     font-weight: 100;
     color: #fff;
 }
+
 #searchBtn1 {
    position: relative;
-   float: right;
-   height: 37px;
-   width: 120px;
+   float: center;
+   height: 39px;
+   width: 270px;
    border: 0;
    border-radius: 5px;
    text-transform: uppercase;
