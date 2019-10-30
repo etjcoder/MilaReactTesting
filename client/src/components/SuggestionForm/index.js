@@ -36,7 +36,7 @@ class SuggestionForm extends Component {
     render() {
         return (
                 <div className="center-block">
-                <form>
+                <form> 
                     <Input value={this.state.caption} onChange={this.handleInputChange} name="caption" placeholder="Write your caption here" />
                     <button className="btn-sm btn-outline-warning" onClick={this.handleFormSubmit}>Submit your suggestion</button>
                 </form>
