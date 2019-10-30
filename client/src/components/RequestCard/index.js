@@ -85,7 +85,7 @@ class RequestCard extends Component {
                         {/* <button onClick={() => this.onClickShowSuggestions()}>Show Suggestions</button> */}
                         {this.state.showSuggestions ?
 
-                            <div className="ul" style={{ height: 300, overflow: 'auto' }}>
+                            <div className="ul" style={{ height: 250, overflow: 'auto' }}>
                                 <InfiniteUsersReqCard goldStarGiven={this.props.goldStarGiven} suggestions={this.state.suggestions} userdata={this.props.userdata}/>
                             </div>
 

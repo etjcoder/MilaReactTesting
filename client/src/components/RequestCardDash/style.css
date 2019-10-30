@@ -31,9 +31,9 @@
      width: 352px;
      height: 385px;
      font-size: 20px;
-     background: rgb(185, 184, 184);
+     background: white;
      opacity: 0.95; 
-     border: 9px solid rgb(218, 218, 218);
+     border: 9px solid white;
      border-radius: 0px;
      backface-visibility: hidden;
      transform: perspective(65px) rotateY(360deg);

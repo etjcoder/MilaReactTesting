@@ -59,8 +59,9 @@ class InfiniteUsersReqCard extends Component {
 
     return (
       <container>
-        <h4>SuggestedCaptions</h4>
-        <hr />
+        <div id="sugCaps">
+          <h4>SuggestedCaptions</h4>
+        </div>
         {this.props.suggestions.map(suggestedCap => (
           <SuggestedCaptions
             key={suggestedCap._id}

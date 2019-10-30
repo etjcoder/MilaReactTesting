@@ -104,7 +104,7 @@ class RequestCardDash extends Component {
 
                                 : null}
                             {this.state.showSuggestionForm ?
-                                <div style={{ marginTop: "5%" }}><SuggestionForm flipCard={this.onClickFlipCard} rerender={this.getSuggestions} userdata={this.props.userdata} id={this.props.card._id} /> </div> : null}
+                                <div style={{ marginTop: "5%", marginLeft: "-9px" }}><SuggestionForm flipCard={this.onClickFlipCard} rerender={this.getSuggestions} userdata={this.props.userdata} id={this.props.card._id} /> </div> : null}
                             {/* </div> */}
                         </div>
                         }

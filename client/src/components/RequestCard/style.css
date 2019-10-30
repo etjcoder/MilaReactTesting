@@ -5,21 +5,24 @@
 /* structure css code */
 
 #flipcardComm {
-    width: 300px;
-    height: 500px;
+    width: 352px;
+    height: 450px;
     position: relative;
     text-align: center;
     color: black;
     font-size: 20px;
     /* line-height: 300px; */
-    cursor: pointer
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 90px;
  }
 
      #flipcardComm .front {
      position: absolute;
      width: 100%;
      height: 100%;
-     background: transparent;
+     /* background: transparent; */
+     background: white;
      opacity: 0.95; 
      backface-visibility: hidden;
      transform: perspective(600px) rotateY(360deg);
@@ -28,17 +31,17 @@
 
      #flipcardComm .back {
      position: absolute;
-     width: 352px;
+     width: 360px;
      height: 385px;
      font-size: 20px;
-     background: rgb(185, 184, 184);
+     background: white;
      opacity: 0.95; 
-     border: 9px solid rgb(218,218,218);
+     border: 8px solid white;
      border-radius: 0px; 
      backface-visibility: hidden;
      transform: perspective(65px) rotateY(360deg);
      transition: transform 0.55s linear;
-     margin-right: 5px;
+     /* margin-right: 5px; */
  }
 
     /* #flipcard:hover .front {

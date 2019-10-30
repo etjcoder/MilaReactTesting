@@ -1,9 +1,6 @@
 
-.container {
-    height: 30;
-}
 
-h1 {
+/* h1 {
 
     font-family: 'Pacifico', cursive;
     color:rgb(21, 7, 54);
@@ -11,12 +8,12 @@ h1 {
     text-align: center; 
     margin-top: 10px; 
     padding: 2px;
-}
+} */
 
-hr {
+/* hr {
     background-color: rgb(207, 206, 209);
     opacity: 0.95;
-}
+} */
 
 #scrolly {
     background-color: white;
@@ -37,3 +34,30 @@ hr {
     background-color: white;
     opacity: 1;
 } 
+
+#scrollyCard {
+    background-color: white;
+    font-size: 16px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    color: rgb(49, 33, 49);
+    margin: 10;
+    height: 90;
+    opacity: 0.95;
+    width: 75;
+    cursor: pointer;
+    padding: 2px;
+    margin-top: 9px;
+    border-radius: 25px;
+}
+
+#scrollyCard:hover {
+    background-color: white;
+    opacity: 1;
+} 
+
+
+#sugCaps h4 {
+    font-family: 'Raleway Dots', cursive;
+    color: black;
+    font-weight: bold
+}
