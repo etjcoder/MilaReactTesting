@@ -3,17 +3,19 @@
     height: 30;
 }
 
-h1 {
 
-    font-family: 'Pacifico', cursive;
-    background-color: #8e46d1;
-    opacity: 0.92;
-    padding: 10px;
-    color: white;
+#communityHeader {
+    font-family: 'Raleway Dots', cursive;
+    color:rgb(21, 7, 54);
     font-size: 26px;
     text-align: center; 
-    border-radius: 10px; 
     margin-top: 10px; 
+    padding: 5px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-color: #1a0944;
+    opacity: 0.89;
+    color: white;
 }
 
 hr {
