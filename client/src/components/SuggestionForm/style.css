@@ -19,4 +19,23 @@ input {
 
 .center-block {
     margin-bottom: -40px; 
-} 
+}
+
+.input-group {
+    background-color: white;
+    font-family: 'Raleway Dots', cursive;
+    width: 350px;
+    font-size: 15px;
+    color: black; 
+    padding: 10px; 
+}
+
+input {
+    width: 240px; 
+    border-radius: 10px; 
+    border: 1px solid gray; 
+    font-family: arial; 
+    padding-left: 15px; 
+}
+
+

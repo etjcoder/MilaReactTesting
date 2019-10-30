@@ -36,9 +36,9 @@ class SuggestionForm extends Component {
     render() {
         return (
             <div class="input-group">
-                        <span className="input-group-btn"><button className="btn btn-dark" onClick={this.props.flipCard}> ↻ </button></span>
+                        <span className="input-group-btn"><button className="btn btn-light" onClick={this.props.flipCard}> ↻ </button></span>
                         <input value={this.state.caption} onChange={this.handleInputChange} name="caption" placeholder="Write your caption here" />
-                        <span className="input-group-btn"><button className="btn btn-dark" onClick={this.handleFormSubmit}> ⮑ </button></span>
+                        <span className="input-group-btn"><button className="btn btn-light" onClick={this.handleFormSubmit}> ⮑ </button></span>
             </div>
         );
     }
