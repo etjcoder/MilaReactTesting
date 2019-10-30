@@ -100,7 +100,7 @@ class MyRequestCard extends Component {
     render() {
         return (
 
-            <div className="col-md-4 col-sm-offset-4 myreqcard" style={{textAlign: "center"}}>
+            <div className="col-md-4 col-sm-6 myreqcard" style={{textAlign: "center"}}>
 
                 <br />
                 <br /><br />

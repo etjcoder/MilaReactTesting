@@ -1,17 +1,18 @@
-/* #fullGallery {
+#fullGallery-custom {
     background-color: rgb(37, 35, 35);
     opacity: .9;
-    margin-left: 200px;
-    margin-top: 30px;
     padding: 15px;
-    width: 700px;
-    height: 500px;
     text-align: center
-} */
+}
 
-#requestHeader {
+#requestHeader-custom {
     color: white;
     float: left;
     font-family: 'Raleway Dots', cursive;
     z-index: 2;
+    background: rgb(72, 15, 124);
+    opacity: .9px;
+    padding: 15px;
+    text-align: center;
+    border-radius: 20px; 
 }

@@ -11,6 +11,12 @@
    opacity: 0.89;
 }
 
+@media (max-width: 992px) { 
+   #searchCard {
+   margin-left: 0%
+   }
+ }
+
 #userHead {
    font-size: 40px;
    font-weight: bold;
