@@ -28,16 +28,17 @@
 
      #flipcard2 .back {
      position: absolute;
-     width: 350px;
-     height: 290px;
+     width: 352px;
+     height: 385px;
      font-size: 20px;
-     background: rgb(160, 160, 160);
+     background: rgb(185, 184, 184);
      opacity: 0.95; 
-     border: 17px solid rgb(218, 218, 218);
+     border: 9px solid rgb(218, 218, 218);
      border-radius: 0px;
      backface-visibility: hidden;
-     transform: perspective(600px) rotateY(360deg);
-     transition: transform 0.55s linear
+     transform: perspective(65px) rotateY(360deg);
+     transition: transform 0.55s linear;
+     margin-right: 5px;
  }
 
     /* #flipcard2 .front {
