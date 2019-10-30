@@ -2,26 +2,11 @@
     text-align: center;
 }
 
-#fullGallery {
-    background-color: rgb(37, 35, 35);
-    opacity: .9;
-    margin-left: 200px;
-    margin-top: 30px;
-    padding: 15px;
-    width: 700px;
-    height: 500px;
-}
 
-#requestHeader {
-    color: white;
-    float: left;
-    font-family: 'Raleway Dots', cursive;
-    z-index: 2;
-}
 
 /* structure css code */
 
-#flipcard {
+#flipcard-myrequest {
     width: 200px;
     height: 200px;
     position: absolute;
@@ -31,7 +16,7 @@
     cursor: pointer;
  }
 
-     #flipcard .front {
+     #flipcard-myrequest .front {
      position: absolute;
      width: 200px;
      height: 190px;
@@ -43,7 +28,7 @@
      transition: transform 0.55s linear
  }
 
-     #flipcard .back {
+     #flipcard-myrequest .back {
      position: absolute;
      margin: 50px;
      width: 400px;
@@ -58,13 +43,13 @@
      transition: transform 0.55s linear
  }
 
-    #flipcard:hover .front {
+    /* #flipcard:hover .front {
      transform: perspective(600px) rotateY(-180deg)
  }
 
      #flipcard:hover .back {
      transform: perspective(600px) rotateY(0deg)
- } 
+ }  */
 
  #userImg {
     width: 160px;
@@ -78,3 +63,8 @@
      text-align: center;
      margin-top: 50px
  }
+
+ .myreqcard {
+     height: 300px;
+ }
+
