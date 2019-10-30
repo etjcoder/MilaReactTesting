@@ -1,6 +1,44 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
 
-.li {
-    margin-top: 10px
+.bubble
+{
+position: relative;
+width: 100%;
+height: 100px;
+padding: 0px;
+background: #FFFFFF;
+-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+border: #502C9D solid 9px;
+margin-bottom: 10px;
+}
+
+.bubble:after
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 6px 19px 0;
+border-color: #FFFFFF transparent;
+display: block;
+width: 0;
+z-index: 1;
+bottom: -6px;
+left: 160px;
+}
+
+.bubble:before
+{
+content: '';
+position: absolute;
+border-style: solid;
+border-width: 14px 27px 0;
+border-color: #502C9D transparent;
+display: block;
+width: 0;
+z-index: 0;
+bottom: -23px;
+left: 152px;
 }

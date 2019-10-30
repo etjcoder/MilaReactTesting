@@ -79,7 +79,7 @@ class InfiniteUsersCaptionScroll extends Component {
 
     return (
       <container>
-        <h1>Community Requests</h1>
+        <h1 id="communityHeader">COMMUNITY</h1>
         {this.props.suggestables.map(suggestable => (
           <Fragment key={suggestable._id}>
             {/* <hr /> */}

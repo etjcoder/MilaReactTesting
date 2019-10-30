@@ -52,6 +52,7 @@ class UserMyRequests extends Component {
 
    render() {
     return (
+        <div id="fullGalley">
         <Row>
            {this.state.requests.map(request =>(
                <Col size="6">
@@ -71,6 +72,7 @@ class UserMyRequests extends Component {
                </Col>
            ))}
         </Row>
+        </div>
             )
         }
     }

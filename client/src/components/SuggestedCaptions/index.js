@@ -140,13 +140,20 @@ incrementState = (userID) => {
 
 render() {
     return (
-        <div style = { { fontSize: '18px', background: 'lightgray', color: this.props.goldstar ? '#787D2E' : 'darkslategrey'}}>
-            <div className="li">{this.props.suggestion} 
-            { this.props.goldstar ?  <i class="fa fa-users"></i> : null}
-            <p>Likes: {this.props.likes}</p></div>
-            <button className="btn-sm" onClick={() => this.onClickLikeSuggestion(this.props.userdata[0]._id)}>Vote</button> 
-            <button className="btn-sm" onClick={() => this.onClickGiveGoldStar(this.props.parentID, this.props.userdata[0]._id)}>Give Goldstar</button>
-            <hr />
+        <div className="bubble" style = { { fontSize: '18px', color: this.props.goldstar ? '#787D2E' : 'darkslategrey'}}>
+              { this.props.goldstar ?  <i class="fas fa-star"></i>: null}<div className="li">{this.props.suggestion} </div>
+            <div>
+            <p>
+            <span>
+                <i onClick={() => this.onClickLikeSuggestion(this.props.userdata[0]._id)} class="fas fa-heart-circle"></i> {this.props.likes}
+                <i class="fal fa-horizontal-rule"></i>
+                <i class="fas fa-medal" onClick={() => this.onClickGiveGoldStar(this.props.parentID, this.props.userdata[0]._id)}></i>
+            </span>
+            </p>
+
+            </div>
+            <br />
+            <br />
         </div>
     );
 }
