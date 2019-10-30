@@ -5,7 +5,7 @@
    padding: 20px;
    height: 560px;
    margin-top: 1%;
-   margin-left: 0px;
+   margin-left: 200px;
    border-radius: 15px;
    background-color: #1a0944;
    opacity: 0.89;
@@ -13,6 +13,7 @@
 
 #userHead {
    font-size: 40px;
+   background-color: transparent;
    font-weight: bold;
    color: white;
    float: left;
@@ -139,7 +140,7 @@
    line-height: 15px;
    padding-left: 10px;
    border-radius: 10px;
-   background: transparent;
+   background-color: #1a0944;
    border: 1.5px solid white;
    color: white;
    height: 30px;
