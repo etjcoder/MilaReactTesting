@@ -1,7 +1,7 @@
 #userEdit {
     width: 600px; 
     padding: 32px; 
-    margin-left: 32%; 
+    margin-left: 15%; 
     margin-top: 130px;
     border-radius: 20px; 
     background-color: rgb(221, 220, 220);
@@ -13,20 +13,42 @@
     margin-left: 0px;
 }
 
-.card h5 {
+#editProfileHeader {
     color: rgb(31, 31, 31);
+}
+
+#editProfileField {
+    width: 500px;
+    position: relative;
+}
+
+#submitProfileEditsBtn {
+    /* position: relative; */
+    float: center;
+    height: 39px;
+    width: 270px;
+    border: 0;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    letter-spacing: 0.1em;
+    overflow: hidden;
+    box-shadow: 0 4px 10px 0 rgba(152, 160, 180, 10);
+    font-family: Helvetica, sans-serif;
+    font-weight: 150;
+    color: #fff;
 }
 
 form placeholder {
     float: left; 
 }
 
-#UserProfileEditBtn {
+/* #UserProfileEditBtn {
     position: relative;
     /* float: left; */
-    background-image: linear-gradient(to right, rgb(219, 105, 248), rgb(72, 15, 124));
+    /* background-image: linear-gradient(to right, rgb(219, 105, 248), rgb(72, 15, 124));
     height: 30px;
     width: 100px;
     border-radius: 5px;
     color: white; 
-}
+} */ 

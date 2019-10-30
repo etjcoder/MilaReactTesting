@@ -94,8 +94,9 @@ class UserSearchOptions extends Component {
                            <div class="fill"></div>
                             </button>
                         </div>
-                    </form>   
-                <UserSearchResults empty={this.emptySearch} results={this.state.searchResults} />
+                    </form>
+                { this.state.searchResults.length > 0 ? <UserSearchResults empty={this.emptySearch} results={this.state.searchResults} />  : null }
+              
             </div>
         )
     }

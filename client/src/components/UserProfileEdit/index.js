@@ -91,10 +91,10 @@ export default class UserProfileEdit extends React.Component {
         return(
             <div className="card" id="userEdit">
                 <form>
-                    <h5>Update your profile</h5>
-                    <Input className="edit-input" value={this.state.firstName} onChange={this.handleInputChange} name="firstName" placeholder="What is your first name?" />
-                    <Input className="edit-input" value={this.state.lastName} onChange={this.handleInputChange} name="lastName" placeholder="What is your last name?" />
-                    <Input className="edit-input" value={this.state.username} onChange={this.handleInputChange} name="username" placeholder="What will be your username?" />
+                    <h5 id="editProfileHeader">Update your profile</h5>
+                    <Input id="editProfileField" className="edit-input" value={this.state.firstName} onChange={this.handleInputChange} name="firstName" placeholder="What is your first name?" />
+                    <Input id="editProfileField" className="edit-input" value={this.state.lastName} onChange={this.handleInputChange} name="lastName" placeholder="What is your last name?" />
+                    <Input id="editProfileField" className="edit-input" value={this.state.username} onChange={this.handleInputChange} name="username" placeholder="What will be your username?" />
                     <input className="form-group" id="photoUpload" type="file" onChange={this.fileSelectedHandler} />
                     <br />
                     <br />
@@ -102,7 +102,7 @@ export default class UserProfileEdit extends React.Component {
                     <br />
                     <br />
                     {/* <Input value={this.state.imageURL} onChange={this.handleInputChange} name="imageURL" placeholder="Please upload an image for your profile" /> */}
-                    <button style={{textAlign: "center"}} onClick={this.handleFormSubmit}>Submit your changes</button>
+                    <button id="submitProfileEditsBtn" style={{textAlign: "center"}} onClick={this.handleFormSubmit}>Submit your changes</button>
                 </form>
             </div>
         )
