@@ -517,6 +517,7 @@ class UserDash extends Component {
                         </Col>
 
                         <Col size="lg-3 md-12">
+                        <h1 id="communityHeader">COMMUNITY</h1>
                             <div className="card" id="infinite-card" style={{ height: 800, overflow: 'auto' }}>
                                 {this.state.showMilaEditor ? null : <InfiniteUsersCaptionScroll suggestableShown={this.state.showRequestCardDash} getSuggestable={this.getSuggestable} showSuggestable={this.onClickShowRequestCardDash} suggestables={this.state.suggestables} />}
                             </div>

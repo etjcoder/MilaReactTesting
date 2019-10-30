@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
 
 #searchCard {
-   width: 800px;
-   padding: 20px;
-   height: 560px;
-   margin-top: 1%;
-   margin-left: 10%;
-   border-radius: 15px;
-   background-color: #1a0944;
-   opacity: 0.89;
+      width: 760px;
+      padding: 20px;
+      height: 560px;
+      margin-top: 10%;
+      margin-left: 25%;
+      border-radius: 15px;
+      background-color: #1a0944;
+      opacity: 0.89;
 }
 
 @media (max-width: 992px) { 

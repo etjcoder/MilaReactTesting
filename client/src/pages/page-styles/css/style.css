@@ -25,4 +25,34 @@ button:hover {
     left: 50%;
     margin-top: -250px;
     margin-left: -150px;
+    height: 500px
+}
+
+@media (max-width: 992px) { 
+    #request-card-dash {
+        position: relative;
+        height: 500px;
+        display: block;
+        margin-left: -22.5%;
+        margin-right: 0px;
+        margin-top: -200px;
+        margin-bottom: 150px;
+    }
+  }
+
+
+
+
+#communityHeader {
+    font-family: 'Raleway Dots', cursive;
+    color:rgb(21, 7, 54);
+    font-size: 26px;
+    text-align: center; 
+    margin-top: 10px; 
+    padding: 5px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-color: #1a0944;
+    opacity: 0.89;
+    color: white;
 }
