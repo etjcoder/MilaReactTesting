@@ -14,7 +14,9 @@ class RequestCardDash extends Component {
         showSuggestions: true,
         showSuggestionForm: true,
         suggestions: [],
-        goldStarGiven: ""
+        goldStarGiven: "",
+        card: "not focused",
+        cardFront: true
     }
 
     componentDidMount() {
@@ -46,6 +48,21 @@ class RequestCardDash extends Component {
         }
     }
 
+
+
+    onClickFlipCard = () => {
+        if (this.state.cardFront === true) {
+            this.setState({
+                cardFront: false
+            })
+        } else {
+            this.setState({
+                cardFront: true
+            })
+        }
+    }
+
+
     onClickShowSuggestions() {
         if (this.state.showSuggestions === false) {
             this.setState({
@@ -60,32 +77,37 @@ class RequestCardDash extends Component {
 
     render() {
         return (
-            <div id="flipcard">
-                <div class="container">
-                    <div class="front">
-                        <div id="image-here">
-                            <img className="card-image" style={{ width: 280, height: 280, marginTop: "10%" }} alt={this.props.card._id} src={this.props.card.imageURL} />
-                
-                            <SuggestionForm id={this.props.card._id} userdata={this.props.userdata} />
-                        </div>
-                    </div>
-
-                    <div class="back">
-                        {/* <div id="caption-here"> */}
-                        {/* <button onClick={() => this.onClickShowSuggestions()}>Show Suggestions</button> */}
-                        {this.state.showSuggestions ?
-
-                            <div className="ul" style={{ height: 300, overflow: 'auto' }}>
-                                <InfiniteUsersReqCard goldStarGiven={this.props.card.goldStarGiven} suggestions={this.state.suggestions} userdata={this.props.userdata}/>
+            <div>
+                <div id="flipcard2" ref="flippercard">
+                    <div class="container">
+                        { this.state.cardFront ?  
+                        <div class="front">
+                            <div id="image-here">
+                            <img className="card-image" style={{ width: 350, height: 335, marginTop: "10%", border: "17px solid white", borderBottom: "100px solid white"}} alt={this.props.card._id} src={this.props.card.imageURL} />
+                            
+                                <SuggestionForm id={this.props.card._id} flipCard={this.onClickFlipCard} userdata={this.props.userdata} />
                             </div>
+                        </div>
+
+                        :
+                        <div class="back">
+                            {/* <div id="caption-here"> */}
+                            {/* <button onClick={() => this.onClickShowSuggestions()}>Show Suggestions</button> */}
+                            {this.state.showSuggestions ?
+
+                                <div className="ul" style={{ height: 300, overflow: 'auto' }}>
+                                    <InfiniteUsersReqCard goldStarGiven={this.props.card.goldStarGiven} suggestions={this.state.suggestions} userdata={this.props.userdata} />
+                                </div>
 
 
 
 
-                            : null}
-                        {this.state.showSuggestionForm ?
-                            <div style={{ marginTop: "5%" }}><SuggestionForm rerender={this.getSuggestions} userdata={this.props.userdata} id={this.props.card._id} /> </div> : null}
-                        {/* </div> */}
+                                : null}
+                            {this.state.showSuggestionForm ?
+                                <div style={{ marginTop: "5%" }}><SuggestionForm flipCard={this.onClickFlipCard} rerender={this.getSuggestions} userdata={this.props.userdata} id={this.props.card._id} /> </div> : null}
+                            {/* </div> */}
+                        </div>
+                        }
                     </div>
                 </div>
             </div>
