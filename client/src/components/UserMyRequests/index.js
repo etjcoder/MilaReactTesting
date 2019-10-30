@@ -52,7 +52,7 @@ class UserMyRequests extends Component {
 
     render() {
         return (
-            <div id="fullGalley">
+            <div id="fullGallery">
                 <h1 id="requestHeader">MY REQUESTS</h1>
                 <Row>
                     {this.state.requests.map(request => (

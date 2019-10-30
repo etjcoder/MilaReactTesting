@@ -4,16 +4,18 @@ import cogoToast from "cogo-toast";
 import { Input } from "../Form";
 import API from "../../utils/API";
 import "./style.css";
+import { storage } from "../../config/Fire"; 
 
 export default class UserProfileEdit extends React.Component {
 
     state = {
         firstName: "",
         lastName: "",
-        imageURL: "",
+        url: "",
         profileDesc: "",
         id: "",
-        username: ""
+        username: "",
+        image: ""
     }
 
 
@@ -34,6 +36,37 @@ export default class UserProfileEdit extends React.Component {
         });
     };
 
+    fileSelectedHandler = event => {
+        event.preventDefault();
+        if (event.target.files[0]) {
+            this.setState({
+                image: event.target.files[0]
+            })
+        }
+    }
+
+    fileUploadHandlerB = (event) => {
+        event.preventDefault();
+        const uploadTask = storage.ref(`*/${this.state.image.name}`).put(this.state.image);
+        uploadTask.on('state_changed',
+            (snapshot) => {
+                //progress function .... demonstrates progress
+                console.log(snapshot)
+            },
+            (error) => {
+                //error function .... 
+                console.log(error)
+            },
+            () => {
+                //complete function ....
+                storage.ref('*').child(this.state.image.name).getDownloadURL().then(urlB => {
+                    this.setState({
+                        url: urlB
+                    });
+                })
+            });
+    }
+
     handleFormSubmit = (e) => {
         e.preventDefault();
 
@@ -41,7 +74,7 @@ export default class UserProfileEdit extends React.Component {
         API.updateUser(this.state.id, {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
-            image: this.state.imageURL,
+            image: this.state.url,
             username: this.state.username,
             profileDesc: this.state.profileDesc
         })
@@ -59,12 +92,17 @@ export default class UserProfileEdit extends React.Component {
             <div className="card" id="userEdit">
                 <form>
                     <h5>Update your profile</h5>
-                    <Input value={this.state.firstName} onChange={this.handleInputChange} name="firstName" placeholder="What is your first name?" />
-                    <Input value={this.state.lastName} onChange={this.handleInputChange} name="lastName" placeholder="What is your last name?" />
-                    <Input value={this.state.username} onChange={this.handleInputChange} name="username" placeholder="What will be your username?" />
-                    <Input value={this.state.imageURL} onChange={this.handleInputChange} name="imageURL" placeholder="Please upload an image for your profile" />
-                    <Input value={this.state.profileDesc} onChange={this.handleInputChange} name="profileDesc" placeholder="Tell us a little about yourself." />
-                    <button onClick={this.handleFormSubmit}>Submit your changes</button>
+                    <Input className="edit-input" value={this.state.firstName} onChange={this.handleInputChange} name="firstName" placeholder="What is your first name?" />
+                    <Input className="edit-input" value={this.state.lastName} onChange={this.handleInputChange} name="lastName" placeholder="What is your last name?" />
+                    <Input className="edit-input" value={this.state.username} onChange={this.handleInputChange} name="username" placeholder="What will be your username?" />
+                    <input className="form-group" id="photoUpload" type="file" onChange={this.fileSelectedHandler} />
+                    <br />
+                    <br />
+                    <button id="UserProfileEditBtn" onClick={this.fileUploadHandlerB}>Upload</button>
+                    <br />
+                    <br />
+                    {/* <Input value={this.state.imageURL} onChange={this.handleInputChange} name="imageURL" placeholder="Please upload an image for your profile" /> */}
+                    <button style={{textAlign: "center"}} onClick={this.handleFormSubmit}>Submit your changes</button>
                 </form>
             </div>
         )

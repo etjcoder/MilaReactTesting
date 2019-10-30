@@ -1,4 +1,4 @@
-#fullGallery {
+/* #fullGallery {
     background-color: rgb(37, 35, 35);
     opacity: .9;
     margin-left: 200px;
@@ -6,7 +6,8 @@
     padding: 15px;
     width: 700px;
     height: 500px;
-}
+    text-align: center
+} */
 
 #requestHeader {
     color: white;

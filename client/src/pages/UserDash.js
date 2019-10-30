@@ -454,10 +454,10 @@ class UserDash extends Component {
                 />
                 <Container fluid>
                     <Row>
-                        <Col size="1">
+                        <Col size="1" md="12">
                             {/* Blank Space for SideNavPage */}
                         </Col>
-                        <Col size="8">
+                        <Col size="8" md="12">
                             {/* User Tools Below */}
                             {/* User Create Caption Tool */}
                             <div>
@@ -516,7 +516,7 @@ class UserDash extends Component {
                             </div>
                         </Col>
 
-                        <Col size="3">
+                        <Col size="3" md="12">
                             <div className="card" id="infinite-card" style={{ height: 800, overflow: 'auto' }}>
                                 {this.state.showMilaEditor ? null : <InfiniteUsersCaptionScroll suggestableShown={this.state.showRequestCardDash} getSuggestable={this.getSuggestable} showSuggestable={this.onClickShowRequestCardDash} suggestables={this.state.suggestables} />}
                             </div>

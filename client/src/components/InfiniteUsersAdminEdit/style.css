@@ -3,11 +3,11 @@
     height: 30;
 }
 
-h1 {
+/* h1 {
 
     font-family: 'Pacifico', cursive;
     color:white;
-}
+} */
 
 #scrolly-admin {
     background-color: white;
@@ -28,3 +28,22 @@ h1 {
 #caption-td {
     width: 500px;
 }
+
+#masterDataBtn {
+    position: relative;
+    float: center;
+    height: 30px;
+    width: 30px;
+    border: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 40px 0 rgba(152, 160, 180, 10);
+    font-family: Helvetica, sans-serif;
+    font-weight: 100;
+ }
+
+#masterDataBtn:hover {
+    background-color: rgb(191, 132, 247);
+    color: white;
+    cursor: pointer;
+ }

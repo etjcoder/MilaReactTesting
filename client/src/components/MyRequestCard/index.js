@@ -100,13 +100,13 @@ class MyRequestCard extends Component {
     render() {
         return (
 
-            <div class="col-md-4 myreqcard">
+            <div className="col-md-4 col-sm-offset-4 myreqcard" style={{textAlign: "center"}}>
 
                 <br />
                 <br /><br />
                 <div id="flipcard-myrequest">
-                    <div class="container">
-                        <div class="front" onClick={this.openModal}>
+                    <div className="container">
+                        <div className="front" onClick={this.openModal}>
                             <div id="image-here">
                                 <img id="userImg" className="card-image" alt={this.props.id} src={this.props.imageSrc} />
 
@@ -115,7 +115,7 @@ class MyRequestCard extends Component {
                         </div>
 
                         <Modal isOpen={this.state.modalIsOpen} onAfterOpen={this.afterOpenModal} onRequestClose={this.closeModal} style={this.customStyles} contentLabel="Your Request Viewer">
-                            <div class="back">
+                            <div className="back">
                                     {this.state.showSuggestions ?
                                     <div className="ul" style={{ height: 300, overflow: 'auto' }}>
                                         <InfiniteUsersReqCard goldStarGiven={this.props.goldStarGiven} suggestions={this.state.suggestions} userdata={this.props.userdata} />

@@ -59,7 +59,7 @@ class InfiniteUsersAdminEdit extends Component {
 
     return (
       <div>
-        <table className="table">
+        <table className="table" id="editDatabaseTable">
           <thead>
             <tr>
               <th>Caption</th>
@@ -82,9 +82,9 @@ class InfiniteUsersAdminEdit extends Component {
             <td>{caption.reference}</td>
             <td>{caption.originalAuthor}</td>
             <td>{JSON.stringify(caption.tags)}</td>
-            <td><button value={caption._id} onClick={() => this.props.editMilaRow(caption)}>Edit</button></td>
-            <td><button value={caption._id} onClick={() => this.props.deleteCaption(caption._id)}>Delete</button></td>
-            <td><button value={caption._id} onClick={() => this.props.featureCaption(caption._id)}>Feature</button></td>
+            <td><button id="masterDataBtn" value={caption._id} onClick={() => this.props.editMilaRow(caption)}>Edit</button></td>
+            <td><button id="masterDataBtn" value={caption._id} onClick={() => this.props.deleteCaption(caption._id)}>Delete</button></td>
+            <td><button id="masterDataBtn" value={caption._id} onClick={() => this.props.featureCaption(caption._id)}>Feature</button></td>
           </tr>
         ))}
         </tbody>

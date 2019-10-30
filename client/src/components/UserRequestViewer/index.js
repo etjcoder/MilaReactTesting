@@ -46,7 +46,7 @@ class UserRequestViewer extends Component {
         return (
 
             <div style={{ textAlign: "center"}}>
-                <Slider swipeToSlide="true" arrows="false" fade="true">
+                <Slider swipeToSlide="true" arrows="false">
                     {this.state.requests.map(request => (
                         <RequestCard
                             key={request._id}
